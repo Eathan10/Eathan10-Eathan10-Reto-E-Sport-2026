@@ -1,5 +1,7 @@
 package Controllers;
 
+import Utilidades.DatoNoValido;
+import Utilidades.Valid;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -8,16 +10,26 @@ import javafx.scene.control.TextField;
 public class AdministradorController {
 
     @FXML
-    private Button Bentrar;
+    private Button btnEntrar;
 
     @FXML
-    private TextField TFnombre;
+    private TextField tfNombre;
 
     @FXML
-    private TextField TFpassword;
+    private TextField tfPassword;
 
     @FXML
     void onClickEntrar(ActionEvent event) {
-        System.out.println(TFnombre.getText());
+
+        String nombre = tfNombre.getText();
+        String password = tfPassword.getText();
+
+        if (Valid.validarDatos(nombre, "^[a-zA-Z]+$") && Valid.validarDatos(password, "^[a-zA-Z0-9]+$")) {
+            throw new DatoNoValido("Nombre de administrador o contraseña incorrectos");
+        } else {
+
+
+        }
+
     }
 }
