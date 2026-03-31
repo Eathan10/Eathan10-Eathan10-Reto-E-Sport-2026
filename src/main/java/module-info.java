@@ -1,8 +1,0 @@
-module com.example.retoesport33 {
-    requires javafx.controls;
-    requires javafx.fxml;
-
-
-    opens com.example.retoesport33 to javafx.fxml;
-    exports com.example.retoesport33;
-}
