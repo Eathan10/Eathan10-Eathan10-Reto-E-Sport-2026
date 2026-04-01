@@ -3,7 +3,13 @@ package Controllers.VistaEquipo;
 import Controllers.EquipoController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
+
+import java.io.IOException;
 
 public class ModificarEquipoView {
 
@@ -23,7 +29,7 @@ public class ModificarEquipoView {
     private TextField tfNombreEquipo;
 
     @FXML
-    void onAceptar(ActionEvent event) {
+    void onAceptar(ActionEvent event) throws IOException {
         String NombreEquipo = tfNombreEquipo.getText().trim();
 
         if (NombreEquipo.isEmpty()) {
@@ -42,8 +48,39 @@ public class ModificarEquipoView {
             limpiarcajas();
         }
 
+        FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/example/RetoE-Sport33/ModificarEquipo2-view.fxml"));
+        Parent root = fxmlLoader.load();
 
+
+        Scene scene = new Scene(root);
+        Stage stage = new Stage();
+        stage.setTitle("Ventana dos");
+        stage.setScene(scene);
+
+        ModificacionEquipo2View controller2 = fxmlLoader.getController();
+
+        controller2.init(tfNombreEquipo.getText(),stage,this);
+
+        stage.show();
+        this.stage.close();
     }
+
+
+
+
+    private Stage stage;
+
+    public void setStage(Stage stage) {
+        // Establece la ventana actual
+        this.stage = stage;
+    }
+
+
+    public void show() {
+        // Muestra la ventana
+        stage.show();
+    }
+
 
     @FXML
     void onCancelar(ActionEvent event) {

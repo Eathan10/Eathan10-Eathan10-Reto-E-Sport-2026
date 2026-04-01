@@ -7,6 +7,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 import java.time.LocalDate;
 
@@ -36,10 +37,6 @@ public class ModificacionEquipo2View {
     @FXML
     private TextField tfNombreEquipo;
 
-    @FXML
-    void omCancelar(ActionEvent event) {
-
-    }
 
     @FXML
     void onContinuar(ActionEvent event) {
@@ -54,5 +51,24 @@ public class ModificacionEquipo2View {
         EquipoController.actualizarEquipo(codigoFinal, nombreFinal, fechaFundacion);
 
     }
+
+
+    @FXML
+    void onVolver(ActionEvent event) {
+        controller.show();
+        stage.close();
+
+    }
+
+
+    private ModificarEquipoView controller;
+    private Stage stage;
+
+    public void init(String text, Stage stage, ModificarEquipoView modificarEquipoView) {
+        lbNombre.setText(text);
+        this.controller = modificarEquipoView;
+        this.stage = stage;
+    }
+
 
 }
