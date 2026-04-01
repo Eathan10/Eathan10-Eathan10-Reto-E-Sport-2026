@@ -4,9 +4,8 @@ import Modelo.Equipo;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
-
-import static jdk.internal.org.jline.utils.Colors.s;
 
 public class EquipoDAO {
     public static void insertarEquipo(Equipo equipo) {
@@ -31,5 +30,45 @@ public class EquipoDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static void borrarEquipo(String nombreEquipo) {
+        String sql = "DELETE FROM equipos WHERE nombre_equipo = ?";
+
+        try {
+            Connection conn = DBConnection.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ps.setString(1, nombreEquipo);
+
+            ps.executeUpdate();
+
+            System.out.println("Equipo borrado correctamente.");
+            DBConnection.closeConnection();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static boolean comprobarExistencia(String nombreEquipo) {
+        String sql = "SELECT COUNT(*) FROM equipos WHERE nombre_equipo = ?";
+
+        try {
+            Connection conn = DBConnection.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ps.setString(1, nombreEquipo);
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                int count = rs.getInt(1);
+                return count > 0; // Devuelve true si el equipo existe, false si no
+            }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return false;
     }
 }

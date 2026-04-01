@@ -22,4 +22,12 @@ public class EquipoController {
     public static  ArrayList<Jugador>  obtenerTodosLosJugadores() {
         return todosLosJugadores;
     }
+
+    public static void borrarEquipo(String nombreEquipo) {
+            EquipoDAO.borrarEquipo(nombreEquipo);
+    }
+
+    public static boolean existeEquipo(String nombreEquipo) {
+        return EquipoDAO.comprobarExistencia(nombreEquipo);
+    }
 }
