@@ -28,6 +28,7 @@ public class ModificarEquipoView {
     @FXML
     private TextField tfNombreEquipo;
 
+
     @FXML
     void onAceptar(ActionEvent event) throws IOException {
         String NombreEquipo = tfNombreEquipo.getText().trim();
@@ -48,6 +49,7 @@ public class ModificarEquipoView {
             limpiarcajas();
         }
 
+        // parab unirlo con la otra ventana
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/example/RetoE-Sport33/ModificarEquipo2-view.fxml"));
         Parent root = fxmlLoader.load();
 
@@ -82,10 +84,7 @@ public class ModificarEquipoView {
     }
 
 
-    @FXML
-    void onCancelar(ActionEvent event) {
 
-    }
 
 
     private boolean confirmarAccion(String mensaje) {
@@ -112,4 +111,17 @@ public class ModificarEquipoView {
         tfNombreEquipo.clear();
     }
 
+
+    @FXML
+    void onVolver(ActionEvent event) {
+        equipoView.show();
+        stage.close();
+    }
+
+    private EquipoView equipoView;
+
+    public void init(Stage stage, EquipoView equipoView) {
+        this.stage = stage;
+        this.equipoView = equipoView;
+    }
 }

@@ -4,6 +4,7 @@ import Controllers.EquipoController;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
@@ -27,6 +28,7 @@ public class AltaEquipoView {
 
     @FXML
     private TextField tfNombreEquipo;
+
 
     @FXML
     public void initialize() {
@@ -55,8 +57,16 @@ public class AltaEquipoView {
     }
 
     @FXML
-    void onSalir(ActionEvent event) {
-
+    void onVolver(ActionEvent event) {
+        equipoView.show();
+        stage.close();
     }
 
+    private Stage stage;
+    private EquipoView equipoView;
+    public void init(Stage stage, EquipoView equipoView) {
+        this.stage = stage;
+        this.equipoView = equipoView;
+
+    }
 }

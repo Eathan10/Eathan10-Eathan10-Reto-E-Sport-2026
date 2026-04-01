@@ -7,6 +7,7 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 public class BajaEquipoView {
 
@@ -42,8 +43,9 @@ public class BajaEquipoView {
     }
 
     @FXML
-    void onSalir(ActionEvent event) {
-
+    void onVolver(ActionEvent event) {
+        equipoView.show();
+        stage.close();
     }
 
 
@@ -72,4 +74,10 @@ public class BajaEquipoView {
         tfNombreEquipo.clear();
     }
 
+    private Stage stage;
+    private EquipoView equipoView;
+    public void init(Stage stage, EquipoView equipoView) {
+        this.stage = stage;
+        this.equipoView = equipoView;
+    }
 }
