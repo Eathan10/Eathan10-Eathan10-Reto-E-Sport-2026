@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
 
+import static jdk.internal.org.jline.utils.Colors.s;
+
 public class EquipoDAO {
     public static void insertarEquipo(Equipo equipo) {
         String sql = "INSERT INTO equipos (nombre_equipo, codigo_equipo, fecha_fundacion, cantidad_jugador) VALUES (?, ?, ?, ?)";
@@ -17,7 +19,9 @@ public class EquipoDAO {
             ps.setString(1, equipo.getNombreEquipo());
             ps.setString(2, equipo.getCodigoEquipo());
             ps.setDate(3, java.sql.Date.valueOf(equipo.getFechaFundacion()));
-            ps.setInt(4, equipo.getCantidadJugador());
+
+            ps.setInt(4, equipo.getListaJugadores().size());
+
 
             ps.executeUpdate();
 

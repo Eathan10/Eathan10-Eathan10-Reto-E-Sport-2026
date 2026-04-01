@@ -1,18 +1,26 @@
 package Modelo;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Equipo {
     private String NombreEquipo;
     private String CodigoEquipo;
     private LocalDate FechaFundacion;
-    private int CantidadJugador;
 
-    public Equipo(String nombreEquipo, String codigoEquipo, LocalDate fechaFundacion, int cantidadJugador) {
+
+    //RELACION
+    private ArrayList<Jugador> listaJugadores; //1 equipo -- N jugadores
+
+    public Equipo() {
+        this.listaJugadores = new ArrayList<>(); // Es buena práctica inicializar la lista aquí
+    }
+
+    public Equipo(String nombreEquipo, String codigoEquipo, LocalDate fechaFundacion, ArrayList<Jugador> seleccionados) {
         NombreEquipo = nombreEquipo;
         CodigoEquipo = codigoEquipo;
         FechaFundacion = fechaFundacion;
-        setCantidadJugador(cantidadJugador);
+        setListaJugadores(seleccionados);
     }
 
 
@@ -40,15 +48,15 @@ public class Equipo {
         FechaFundacion = fechaFundacion;
     }
 
-    public int getCantidadJugador() {
-        return CantidadJugador;
+    public ArrayList<Jugador> getListaJugadores() {
+        return listaJugadores;
     }
 
-    public void setCantidadJugador(int cantidadJugador) {
-        if (cantidadJugador > 2 && cantidadJugador <= 6) {
-            this.CantidadJugador = cantidadJugador;
+    public void setListaJugadores(ArrayList<Jugador> lista) {
+        if (lista != null && lista.size() >= 3 && lista.size() <= 6) {
+            this.listaJugadores = lista;
         } else {
-            throw new IllegalArgumentException("La cantidad de jugadores debe ser entre 2 y 6");
+            throw new IllegalArgumentException("El equipo debe tener entre 3 y 6 jugadores.");
         }
     }
 
