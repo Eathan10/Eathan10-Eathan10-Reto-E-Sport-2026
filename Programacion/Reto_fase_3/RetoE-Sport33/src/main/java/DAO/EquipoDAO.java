@@ -71,4 +71,25 @@ public class EquipoDAO {
         }
         return false;
     }
+
+    public static void actualizarEquipo(Equipo equipo) {
+        String sql = "UPDATE equipos SET codigo_equipo = ?, fecha_fundacion = ? WHERE nombre_equipo = ?";
+
+        try {
+            Connection conn = DBConnection.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ps.setString(1, equipo.getCodigoEquipo());
+            ps.setDate(2, java.sql.Date.valueOf(equipo.getFechaFundacion()));
+            ps.setString(3, equipo.getNombreEquipo());
+
+            ps.executeUpdate();
+
+            System.out.println("Equipo actualizado correctamente.");
+            DBConnection.closeConnection();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }

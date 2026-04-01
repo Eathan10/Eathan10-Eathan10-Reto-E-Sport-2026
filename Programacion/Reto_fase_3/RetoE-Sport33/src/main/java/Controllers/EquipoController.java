@@ -30,4 +30,10 @@ public class EquipoController {
     public static boolean existeEquipo(String nombreEquipo) {
         return EquipoDAO.comprobarExistencia(nombreEquipo);
     }
+
+
+    public static void actualizarEquipo(String codigoFinal, String nombreFinal, LocalDate fechaFundacion) {
+        Equipo equipo = new Equipo(nombreFinal, codigoFinal, fechaFundacion, null);
+        EquipoDAO.actualizarEquipo(equipo);
+    }
 }

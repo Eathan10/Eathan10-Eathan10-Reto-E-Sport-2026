@@ -12,6 +12,7 @@ public class Equipo {
     //RELACION
     private ArrayList<Jugador> listaJugadores; //1 equipo -- N jugadores
 
+
     public Equipo() {
         this.listaJugadores = new ArrayList<>(); // Es buena práctica inicializar la lista aquí
     }
