@@ -11,10 +11,12 @@ public class Valid {
         Pattern pattern = Pattern.compile(exprecion);
         Matcher matcher = pattern.matcher(var);
 
-        return matcher.matches();
+        if(matcher.matches()){
+            return true;
+        }
 
 
-
+        return false;
     }
 
 }
