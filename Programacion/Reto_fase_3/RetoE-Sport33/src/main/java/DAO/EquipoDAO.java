@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
 public class EquipoDAO {
     public static void insertarEquipo(Equipo equipo) {
@@ -91,5 +92,8 @@ public class EquipoDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static List<Equipo> obtenerTodos() {
     }
 }

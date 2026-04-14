@@ -62,4 +62,6 @@ public class Equipo {
     }
 
 
+    public String getNombre() {
+    }
 }
