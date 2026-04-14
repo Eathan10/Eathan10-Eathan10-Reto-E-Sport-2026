@@ -15,7 +15,6 @@ public class Jornada {
 
     //RELACIONES
     private List<Partido> partidos;// 1 jornada ---- N partidos
-    private Competicion competicion;// 1 jornada ---- 1 competicion
 
 
     //CONSTRUCTORES
@@ -24,21 +23,19 @@ public class Jornada {
     public Jornada() {
     }
 
-    public Jornada(int numJornada, LocalDate fecha_inicio, Competicion competicion, List<Partido> partidos) {
+    public Jornada(int numJornada, LocalDate fecha_inicio, List<Partido> partidos) {
         this.numJornada = contadorGneral++;
         this.fecha_inicio = fecha_inicio;
         this.partidos = partidos;
-        this.competicion = competicion;
+
     }
 
-    public Jornada(int numJornada, LocalDate fecha_inicio, Competicion competicion) {
+    public Jornada(int numJornada, LocalDate fecha_inicio) {
         this.numJornada = contadorGneral++;
         this.fecha_inicio = fecha_inicio;
-        this.competicion = competicion;
     }
 
-    public Jornada(int numJornada, LocalDate fecha) {
-    }
+
 
 
     //GETTER AND SETTER
@@ -66,11 +63,4 @@ public class Jornada {
         this.partidos = partidos;
     }
 
-    public Competicion getCompeticion() {
-        return competicion;
-    }
-
-    public void setCompeticion(Competicion competicion) {
-        this.competicion = competicion;
-    }
 }

@@ -1,6 +1,5 @@
-package Controllers;
+package Controllers.VistaJornada;
 
-import Controllers.VistaJornada.GestionJornadaView;
 import DAO.EquipoDAO;
 import Modelo.Equipo;
 import Modelo.Partido;

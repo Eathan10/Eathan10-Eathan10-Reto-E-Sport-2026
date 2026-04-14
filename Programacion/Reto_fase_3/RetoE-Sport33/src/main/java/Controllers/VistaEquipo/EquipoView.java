@@ -24,6 +24,9 @@ public class EquipoView {
     private Button btnSalir;
 
     @FXML
+    private Button btnVolver;
+
+    @FXML
     void onActualizar(ActionEvent event) throws IOException {
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/example/RetoE-Sport33/ModificarEquipo-view.fxml"));
         Parent root = fxmlLoader.load();
@@ -99,6 +102,11 @@ public class EquipoView {
 
     @FXML
     void onSalir(ActionEvent event) {
+
+    }
+
+    @FXML
+    void onVolver(ActionEvent event) {
 
     }
 

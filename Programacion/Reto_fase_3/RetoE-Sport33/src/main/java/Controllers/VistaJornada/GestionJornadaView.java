@@ -1,11 +1,7 @@
 package Controllers.VistaJornada;
 
-import DAO.EquipoDAO;
-import Modelo.Equipo;
 import Modelo.Jornada;
 import Modelo.Partido;
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 
@@ -17,11 +13,9 @@ import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import javafx.util.StringConverter;
 
 import java.io.IOException;
 import java.time.LocalDate;
-import java.util.List;
 
 public class GestionJornadaView {
 
@@ -69,7 +63,7 @@ public class GestionJornadaView {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vistas/partido-view.fxml"));
             Parent root = loader.load();
 
-            Controllers.PartidoController controllerPartidos = loader.getController();
+            PartidoController controllerPartidos = loader.getController();
             controllerPartidos.setParentController(this);
 
 

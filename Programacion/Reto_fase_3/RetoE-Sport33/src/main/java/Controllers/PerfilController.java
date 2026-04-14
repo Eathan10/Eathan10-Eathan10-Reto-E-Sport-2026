@@ -21,7 +21,8 @@ public class PerfilController {
 
     //click en admin
 
-    public void irAdmin(ActionEvent event) throws Exception {
+    @FXML
+    void onAdiminstrador(ActionEvent event) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("administrador.fxml"));
         Parent root = loader.load();
 
@@ -30,9 +31,13 @@ public class PerfilController {
         stage.show();
     }
 
+
+
+
     //click en usuario
 
-    public void irUsuario(ActionEvent event) throws Exception {
+    @FXML
+    void onUsuario(ActionEvent event) throws Exception {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("usuario.fxml"));
         Parent root = loader.load();
 
