@@ -7,10 +7,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.util.StringConverter;
 
 import java.util.List;
@@ -18,71 +15,27 @@ import java.util.List;
 public class PartidoController {
 
     @FXML
-    private Button btnAñadir;
+    private Label lbfecha;
 
     @FXML
-    private ComboBox<Equipo> cbLocal;
+    private Label lbhora;
 
     @FXML
-    private ComboBox<Equipo> cbVisitante;
+    private Label lblocal;
 
     @FXML
-    private TextField tfhora;
-
-    // referencia a la tabla jornada
-    private GestionJornadaView parentController;
-
-    public void setParentController(GestionJornadaView parent) {
-        this.parentController = parent;
-    }
+    private Label lbprediccion;
 
     @FXML
-    public void initialize() {
-        List<Equipo> listaEquipos = EquipoDAO.obtenerTodos();
-
-        for (Equipo e : listaEquipos) {
-            cbLocal.getItems().add(e);
-            cbVisitante.getItems().add(e);
-        }
-    }
+    private Label lbresultadolocal;
 
     @FXML
-    void onAñadir(ActionEvent event) {
-        Equipo local = cbLocal.getValue();
-        Equipo visitante = cbVisitante.getValue();
-        String hora = tfhora.getText();
+    private Label lbresultadovisitante;
 
-        if (local == null || visitante == null || hora.isEmpty()) {
-            mostrarAlerta("Campos incompletos", "Por favor, selecciona ambos equipos e introduce una hora.");
-            return;
-        }
+    @FXML
+    private Label lbvisitante;
 
-        if (local.equals(visitante)) {
-            mostrarAlerta("Error de selección", "Un equipo no puede jugar contra sí mismo. Elige equipos diferentes.");
-            return;
-        }
 
-        Partido nuevoPartido = new Partido(hora, local, visitante);
-
-        if (parentController != null) {
-            parentController.agregarPartidoATabla(nuevoPartido);
-
-            mostrarAlerta("Éxito", "Partido añadido a la jornada.");
-
-            cbLocal.setValue(null);
-            cbVisitante.setValue(null);
-            tfhora.clear();
-        }
-
-    }
-
-    private void mostrarAlerta(String titulo, String mensaje) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(titulo);
-        alert.setHeaderText(null);
-        alert.setContentText(mensaje);
-        alert.showAndWait();
-    }
 
 }
 
