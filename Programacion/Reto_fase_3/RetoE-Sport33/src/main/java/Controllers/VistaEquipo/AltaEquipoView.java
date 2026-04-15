@@ -1,6 +1,7 @@
 package Controllers.VistaEquipo;
 
 import Controllers.EquipoController;
+import Modelo.Jugador;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;

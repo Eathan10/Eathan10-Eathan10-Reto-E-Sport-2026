@@ -13,6 +13,7 @@ public class Equipo {
     private ArrayList<Jugador> listaJugadores; //1 equipo -- N jugadores
 
 
+
     public Equipo() {
         this.listaJugadores = new ArrayList<>(); // Es buena práctica inicializar la lista aquí
     }
@@ -59,6 +60,11 @@ public class Equipo {
         } else {
             throw new IllegalArgumentException("El equipo debe tener entre 3 y 6 jugadores.");
         }
+    }
+
+    public String getNombre() {
+
+        return "";
     }
 
 

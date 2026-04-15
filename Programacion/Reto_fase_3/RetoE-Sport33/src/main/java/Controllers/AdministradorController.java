@@ -26,7 +26,7 @@ public class AdministradorController {
         String nombre = tfNombre.getText();
         String password = tfPassword.getText();
 
-        if (!Valid.validarDatos(nombre, "^[a-zA-Z]+$") && Valid.validarDatos(password, "^[a-zA-Z0-9]+$")) {
+        if (Valid.validarDatos(nombre, "^[a-zA-Z]+$") && Valid.validarDatos(password, "^[a-zA-Z0-9]+$")) {
             throw new DatoNoValido("Nombre de administrador o contraseña incorrectos");
         } else {
             JOptionPane.showMessageDialog(null, "Datos correctos");
