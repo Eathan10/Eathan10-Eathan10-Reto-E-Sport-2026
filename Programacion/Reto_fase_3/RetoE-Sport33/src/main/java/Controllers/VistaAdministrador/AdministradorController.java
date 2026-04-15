@@ -12,6 +12,7 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import javax.swing.*;
 import java.io.IOException;
 
 public class AdministradorController {
@@ -34,14 +35,14 @@ public class AdministradorController {
         if (Valid.validarDatos(nombre, "^[a-zA-Z]+$") && Valid.validarDatos(password, "^[a-zA-Z0-9]+$")) {
             throw new DatoNoValido("Nombre de administrador o contraseña incorrectos");
         } else {
-
+            JOptionPane.showMessageDialog(null, "Datos correctos");
         }
 
-        menuAdministrador();
 
+        menuAdministrador();
     }
 
-    //para cargar la ventana de menu del admin
+    // para cargar la ventana de menu del admin. Cone3ctar ventanas
     private void menuAdministrador() {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vistas/menuAdministrador-view.fxml"));

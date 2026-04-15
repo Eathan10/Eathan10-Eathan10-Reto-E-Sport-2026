@@ -1,7 +1,7 @@
 module com.example.retoesport33 {
     requires javafx.controls;
     requires javafx.fxml;
-
+    requires java.desktop;
 
 
     opens com.example.retoesport33 to javafx.fxml;
@@ -11,5 +11,7 @@ module com.example.retoesport33 {
 
     exports Controllers.VistaEquipo;
     opens Controllers.VistaEquipo to javafx.fxml;
+    exports Controllers.VistaAdministrador;
+    opens Controllers.VistaAdministrador to javafx.fxml;
 
 }
