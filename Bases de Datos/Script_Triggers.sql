@@ -8,7 +8,7 @@ for each row
 begin
     if :new.sueldo < 1221 then
         raise_application_error
-        (-20001,'El sueldo del jugador no puede ser menor al SMI (1.221)');
+        (-20001,'error: El sueldo del jugador no puede ser menor al SMI (1.221)');
     end if;
 end tr_sueldo_jugador;
 ------------------------------------------
@@ -26,7 +26,7 @@ compound trigger
 
         if v_max_jugadores > 6 then
             raise_application_error
-            (-20001,'error: operación cancelada. ningún equipo puede tener más de 6 jugadores.');
+            (-20001,'error: Operación cancelada. Ningún equipo puede tener más de 6 jugadores.');
         end if;
         
     end after statement;
