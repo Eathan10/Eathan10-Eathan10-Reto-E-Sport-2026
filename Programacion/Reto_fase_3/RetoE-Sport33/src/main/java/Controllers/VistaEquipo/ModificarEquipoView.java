@@ -45,9 +45,11 @@ public class ModificarEquipoView {
             return;
         }
 
-        if (confirmarAccion("¿Estás seguro de que deseas borrar el equipo: " + NombreEquipo + "?")) {
-            limpiarcajas();
+        if (confirmarAccion("¿Estás seguro de que deseas modificar el equipo: " + NombreEquipo + "?")) {
+            return;
         }
+
+        limpiarcajas();
 
         // parab unirlo con la otra ventana
         FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource("/org/example/RetoE-Sport33/ModificarEquipo2-view.fxml"));
