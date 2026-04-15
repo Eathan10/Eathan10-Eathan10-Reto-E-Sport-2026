@@ -40,24 +40,10 @@ public class PartidoController {
     public void initialize() {
         List<Equipo> listaEquipos = EquipoDAO.obtenerTodos();
 
-        ObservableList<Equipo> items = FXCollections.observableArrayList(listaEquipos);
-        cbLocal.setItems(items);
-        cbVisitante.setItems(items);
-
-        StringConverter<Equipo> converter = new StringConverter<Equipo>() {
-            @Override
-            public String toString(Equipo equipo) {
-                return (equipo == null) ? "" : equipo.getNombre();
-            }
-
-            @Override
-            public Equipo fromString(String string) {
-                return null;
-            }
-        };
-
-        cbLocal.setConverter(converter);
-        cbVisitante.setConverter(converter);
+        for (Equipo e : listaEquipos) {
+            cbLocal.getItems().add(e);
+            cbVisitante.getItems().add(e);
+        }
     }
 
     @FXML
