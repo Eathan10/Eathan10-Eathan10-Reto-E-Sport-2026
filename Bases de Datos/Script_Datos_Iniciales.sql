@@ -29,5 +29,11 @@ values (50, 'diego', 'lopez', 'chileno', to_date('18-11-2002', 'dd-mm-yyyy'), 'd
 insert into jugadores (cod_jugador, nombre, apellido, nacionalidad, fecha_nac, nickname, rol, sueldo, cod_equipo)
 values (60, 'maria', 'sanchez', 'peruana', to_date('30-09-1997', 'dd-mm-yyyy'), 'mary-spot', 'iniciador', 2900, 3);
 
+insert into jugadores (cod_jugador, nombre, apellido, nacionalidad, fecha_nac, nickname, rol, sueldo, cod_equipo)
+values (70, 'jhonda', 'ozpina', 'mexicano', to_date('15-03-2008', 'dd-mm-yyyy'), 'jondas', 'duelista', 2590, 1);
 
+insert into jugadores (cod_jugador, nombre, apellido, nacionalidad, fecha_nac, nickname, rol, sueldo, cod_equipo)
+values (80, 'xemelas', 'torres', 'estadounidense', to_date('11-09-2001', 'dd-mm-yyyy'), 'lol', 'iniciador', 2590, 1);
 
+insert into jugadores (cod_jugador, nombre, apellido, nacionalidad, fecha_nac, nickname, rol, sueldo, cod_equipo)
+values (90, 'lola', 'garcia', 'estadounidense', to_date('01-09-2021', 'dd-mm-yyyy'), 'elmejor', 'iniciador', 2590, 1);
