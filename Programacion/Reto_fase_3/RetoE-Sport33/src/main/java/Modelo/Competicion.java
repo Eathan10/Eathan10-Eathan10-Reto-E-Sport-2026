@@ -1,5 +1,11 @@
 package Modelo;
 
+/**
+ * Clase que sirve para crear la competicion con sus atributos
+ * @author Fatima
+ * @version 1.0
+ * @since 2026-04-15
+ */
 public class Competicion {
     private int codComp;
     private String nombre;
