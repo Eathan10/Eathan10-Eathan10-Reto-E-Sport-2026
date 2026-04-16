@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.AnchorPane?>
 
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CONTROLLER_NAME">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="CrearCuentaController">
    <children>
       <TextField fx:id="tfnombre" layoutX="254.0" layoutY="151.0" />
       <ChoiceBox fx:id="cbtipo" layoutX="253.0" layoutY="269.0" prefHeight="30.0" prefWidth="169.0" />
