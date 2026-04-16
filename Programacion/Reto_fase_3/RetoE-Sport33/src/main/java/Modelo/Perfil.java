@@ -1,5 +1,11 @@
 package Modelo;
 
+/**
+ * Clase que sirve para crear los perfiles con sus atributos
+ * @author Unax
+ * @version 1.0
+ * @since 2026-04-16
+ */
 public class Perfil {
 
     private int codPerfil;
