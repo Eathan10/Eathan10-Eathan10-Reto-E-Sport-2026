@@ -94,16 +94,17 @@ public class PerfilDAO{
     }
 
 
-    public int modificarPerfil(Perfil perfil) throws Exception{
+    public int modificarPerfil(Perfil perfil) throws Exception {
 
         String sql = "UPDATE perfiles" +
-                "SET nombre = ? , password = ?, tipo = ?" +
-                "WHERE cod_perfil = ?";
+                " SET nombre = ? , password = ?, tipo = ?" +
+                " WHERE cod_perfil = ?";
 
-        try{
+        PreparedStatement ps = null;
+        try {
 
             Connection conexion = BaseDatos.getConnection();
-            PreparedStatement ps = conexion.prepareStatement(sql);
+            ps = conexion.prepareStatement(sql);
 
             ps.setString(1, perfil.getNombre());
             ps.setString(2, perfil.getPassword());
@@ -111,11 +112,10 @@ public class PerfilDAO{
             ps.setInt(4, perfil.getCodPerfil());
 
 
-
-        }catch (Exception e){
+        } catch (Exception e) {
             e.getMessage();
 
-        }finally {
+        } finally {
             BaseDatos.closeConnection();
         }
 

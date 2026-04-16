@@ -2,15 +2,19 @@
 
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
 <?import javafx.scene.text.*?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1">
    <children>
-      <Button fx:id="btnadministrador" layoutX="114.0" layoutY="200.0" mnemonicParsing="false" onAction="#onAdiminstrador" prefHeight="54.0" prefWidth="125.0" text="ADMINISTRADOR">
+      <Button fx:id="btnadministrador" layoutX="78.0" layoutY="134.0" mnemonicParsing="false" onAction="#onAdiminstrador" prefHeight="54.0" prefWidth="158.0" text="ADMINISTRADOR">
          <font>
             <Font size="13.0" />
          </font></Button>
-      <Button fx:id="btnusuario" layoutX="355.0" layoutY="199.0" mnemonicParsing="false" onAction="#onUsuario" prefHeight="54.0" prefWidth="125.0" text="USUARIO" />
-      <Label layoutX="245.0" layoutY="91.0" text="INICIO DE SESIÓN" textAlignment="CENTER" />
+      <Button fx:id="btnusuario" layoutX="78.0" layoutY="253.0" mnemonicParsing="false" onAction="#onUsuario" prefHeight="54.0" prefWidth="157.0" text="USUARIO" />
+      <Label layoutX="245.0" layoutY="50.0" text="INICIO DE SESIÓN" textAlignment="CENTER" />
+      <Button layoutX="408.0" layoutY="200.0" mnemonicParsing="false" text="CREAR CUENTA" />
+      <Label layoutX="383.0" layoutY="161.0" text="¿Todavía no tienes cuenta?" />
+      <Line endX="-0.399993896484375" endY="-114.19999694824219" layoutX="301.0" layoutY="214.0" startX="-0.399993896484375" startY="131.79998779296875" />
    </children>
 </AnchorPane>
