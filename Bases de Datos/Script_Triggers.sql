@@ -33,5 +33,57 @@ compound trigger
 
 end tr_numero_jugadores_max;
 
+--------------------------------------------------------
+
+create or replace trigger tr_numero_jugadores_min 
+before update of estado on competiciones
+for each row
+
+when (new.estado = 'Cerrado')
+
+declare
+
+v_conteo_minimo number;
+
+begin
+
+    select min(count(*)) into v_conteo_minimo
+    from jugadores
+    group by cod_equipo;
+    
+    if v_conteo_minimo < 2 then
+        raise_application_error(20001,'No se puede cerrar la etapa de inscripciones. Hay equipos que tienen menos de 2 jugadores.');
+    end if;
+
+exception
+    when no_data_found then
+        raise_application_error(-20002, 'No hay jugadores en ningún equipo.');
+end tr_numero_jugadores_min;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 

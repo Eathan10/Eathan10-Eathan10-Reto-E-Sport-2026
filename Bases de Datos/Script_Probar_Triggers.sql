@@ -38,7 +38,16 @@ update jugadores
 set cod_equipo = 3
 where cod_jugador = 101;
 
+-- Pruebas para el trigger tr_numero_jugadores_min
 
+-- Fallos
+
+
+insert into competiciones (cod_comp, nombre, estado, premio) 
+values (1, 'Liga Masters', 'Abierta', 50000);
+
+
+-- Exitos
 
 
 

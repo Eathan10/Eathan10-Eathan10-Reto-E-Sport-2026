@@ -9,6 +9,9 @@ values (2, 'fantasmas', to_date('14-03-2004', 'dd-mm-yyyy'));
 insert into equipos (cod_equipo, nombre, fecha_fundacion) 
 values (3, 'leviatan', to_date('19-03-2020', 'dd-mm-yyyy'));
 
+insert into equipos (cod_equipo, nombre, fecha_fundacion) 
+values (4, 'Los Invencibles', sysdate);
+
 --Inserts tabla jugadores
 
 insert into jugadores (cod_jugador, nombre, apellido, nacionalidad, fecha_nac, nickname, rol, sueldo, cod_equipo)

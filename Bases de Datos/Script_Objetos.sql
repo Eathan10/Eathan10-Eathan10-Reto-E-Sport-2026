@@ -82,7 +82,7 @@ create table perfiles(
     constraint per_tipo_ck check(tipo in ('usuario','administrador'))
 );
 
-
+commit;
 
 
 
