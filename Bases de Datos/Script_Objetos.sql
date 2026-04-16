@@ -82,6 +82,17 @@ create table perfiles(
     constraint per_tipo_ck check(tipo in ('usuario','administrador'))
 );
 
+--creamos la vista para utilizarla en el procedimiento informe_jugadores
+--y que la select dentro del procedimiento esté mas simplificada
+
+CREATE OR REPLACE VIEW datos_jugadores AS
+SELECT j.nombre, j.apellido, j.rol, j.sueldo, e.nombre as nombre_equipo
+FROM jugadores j JOIN equipos e 
+on j.cod_equipo = e.cod_equipo;
+
+
+
+
 commit;
 
 
