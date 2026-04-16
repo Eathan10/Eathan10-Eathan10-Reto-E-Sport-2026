@@ -61,11 +61,13 @@ public class EquipoController {
 
     /**
      * Actualizar los datos de los equipos, que exista ya de antemano
-     * @param codigoFinal El codigo actualizado del equipo
-     * @param nombreFinal El nombre actualizado del equipo
+     *
+     * @param codigoFinal    El codigo actualizado del equipo
+     * @param nombreFinal    El nombre actualizado del equipo
+     * @param nuevoCodigo
      * @param fechaFundacion La fecha actualizada del equipo
      */
-    public static void actualizarEquipo(String codigoFinal, String nombreFinal, LocalDate fechaFundacion) {
+    public static void actualizarEquipo(String codigoFinal, String nombreFinal, String nuevoCodigo, LocalDate fechaFundacion) {
         Equipo equipo = new Equipo(nombreFinal, codigoFinal, fechaFundacion, null);
         EquipoDAO.actualizarEquipo(equipo);
     }

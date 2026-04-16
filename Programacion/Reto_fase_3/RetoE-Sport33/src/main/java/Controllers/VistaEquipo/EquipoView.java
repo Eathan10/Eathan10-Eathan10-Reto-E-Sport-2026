@@ -102,7 +102,7 @@ public class EquipoView {
 
     @FXML
     void onSalir(ActionEvent event) {
-
+        System.exit(0);
     }
 
     @FXML
