@@ -47,15 +47,22 @@ public class AltaEquipoView {
 
         ArrayList<Jugador> seleccionados = new ArrayList<>(lvJugadores.getSelectionModel().getSelectedItems());
 
-        if (seleccionados.size() < 3 || seleccionados.size() > 6) {
-            System.out.println("Error: Cantidad de jugadores no permitida (" + seleccionados.size() + ")");
-            return;
+        if (seleccionados.size() < 2 || seleccionados.size() > 6) {
+            try{
+                EquipoController.insertarEquipo(NombreEquipo, CodigoEquipo, FechaFundacion, seleccionados);
+                mostrarAlerta( "Equipo" + NombreEquipo + "creado correctamente", Alert.AlertType.INFORMATION);
+
+                limpiarFormulario();
+            } catch (Exception e){
+                mostrarAlerta("Error al crear el equipo: " + e.getMessage(), Alert.AlertType.ERROR);
+            }
+        }else{
+            mostrarAlerta("El equipo debe tener entre 2 y 6 jugadores. Has seleccionado: " + seleccionados.size(), Alert.AlertType.ERROR);
         }
 
 
-
-        EquipoController.insertarEquipo(NombreEquipo, CodigoEquipo, FechaFundacion, seleccionados);
     }
+
 
     @FXML
     void onVolver(ActionEvent event) {
@@ -69,5 +76,21 @@ public class AltaEquipoView {
         this.stage = stage;
         this.equipoView = equipoView;
 
+    }
+
+    private void limpiarFormulario() {
+        tfNombreEquipo.clear();
+        tfCodigoEquipo.clear();
+        dpFechaFundacion.setValue(null);
+        lvJugadores.getSelectionModel().clearSelection();
+    }
+
+
+    private void mostrarAlerta(String s, Alert.AlertType alertType) {
+        Alert alert = new Alert(alertType);
+        alert.setTitle("Información");
+        alert.setHeaderText(null);
+        alert.setContentText(s);
+        alert.showAndWait();
     }
 }

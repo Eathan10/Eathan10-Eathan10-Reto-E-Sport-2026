@@ -24,22 +24,27 @@ public class BajaEquipoView {
     void onAceptar(ActionEvent event) {
         String NombreEquipo = tfNombreEquipo.getText().trim();
 
-        if (NombreEquipo.isEmpty()) {
+        // no has puesto nada
+        if (!NombreEquipo.isEmpty()) {
+            // el equipo existe ya en la base de datos
+            if (EquipoController.existeEquipo(NombreEquipo)) {
+                // confirmacio para borrar el equipo
+                if (confirmarAccion("¿Estás seguro de que deseas borrar el equipo: " + NombreEquipo + "?")) {
+                    EquipoController.borrarEquipo(NombreEquipo);
+                    mostrarAlertaInfo("Equipo borrado", "El equipo '" + NombreEquipo + "' ha sido eliminado correctamente.");
+                    limpiarcajas();
+
+                }
+
+            }else {
+                // menasaje de error de q no existe
+                mostrarAlertaError("Equipo no encontrado", "No existe ningún equipo con el nombre: " + NombreEquipo);
+            }
+        }else{
+            // para error si esta vacio el campo de texto
             mostrarAlertaError("Campo obligatorio", "El nombre del equipo no puede estar vacío.");
-            return;
         }
 
-        boolean existe = EquipoController.existeEquipo(NombreEquipo);
-
-        if (!existe) {
-            mostrarAlertaError("Equipo no encontrado", "No existe ningún equipo con el nombre: " + NombreEquipo);
-            return;
-        }
-
-        if (confirmarAccion("¿Estás seguro de que deseas borrar el equipo: " + NombreEquipo + "?")) {
-            EquipoController.borrarEquipo(NombreEquipo);
-            limpiarcajas();
-        }
     }
 
     @FXML
@@ -61,6 +66,15 @@ public class BajaEquipoView {
     // para mensaje de cuadro de error
     private void mostrarAlertaError(String titulo, String contenido) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(contenido);
+        alert.showAndWait();
+    }
+
+    //para mostrar mesaje de cuadro de informacion de equipo borrado
+    private void mostrarAlertaInfo(String titulo, String contenido) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titulo);
         alert.setHeaderText(null);
         alert.setContentText(contenido);
