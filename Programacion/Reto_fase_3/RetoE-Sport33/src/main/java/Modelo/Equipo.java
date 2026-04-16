@@ -78,4 +78,7 @@ public class Equipo {
     }
 
 
+    public Jugador[] getJugadores() {
+        return new Jugador[0];
+    }
 }
