@@ -11,7 +11,7 @@ begin
         (-20001,'error: El sueldo del jugador no puede ser menor al SMI (1.221)');
     end if;
 end tr_sueldo_jugador;
-------------------------------------------
+------------------------------------------------------------
 create or replace trigger tr_numero_jugadores_max
 for insert or update of cod_equipo on jugadores
 compound trigger
@@ -39,8 +39,6 @@ create or replace trigger tr_numero_jugadores_min
 before update of estado on competiciones
 for each row
 
-when (new.estado = 'Cerrado')
-
 declare
 
 v_conteo_minimo number;
@@ -52,13 +50,17 @@ begin
     group by cod_equipo;
     
     if v_conteo_minimo < 2 then
-        raise_application_error(20001,'No se puede cerrar la etapa de inscripciones. Hay equipos que tienen menos de 2 jugadores.');
+        raise_application_error(-20006,'No se puede cerrar la etapa de inscripciones. Hay equipos que tienen menos de 2 jugadores.');
     end if;
 
 exception
     when no_data_found then
-        raise_application_error(-20002, 'No hay jugadores en ningún equipo.');
+        raise_application_error(-20009, 'No hay jugadores en ningún equipo.');
 end tr_numero_jugadores_min;
+
+---------------------------------------------------
+
+
 
 
 
