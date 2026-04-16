@@ -86,6 +86,28 @@ begin
     end if;
 end;
 
+-----------------------------------------------------------------------
+
+
+create or replace trigger tr_equipos_pares
+before update of estado on competiciones
+for each row
+
+declare
+    v_total_equipos number;
+begin
+
+    select count(*) into v_total_equipos
+    from equipos;
+
+    if mod(v_total_equipos, 2) != 0 then
+        raise_application_error(-20020, 'Error: no se puede cerrar la competición. el número total de equipos (' || v_total_equipos || ') es impar, debe ser par.');
+    end if;
+    
+    if v_total_equipos = 0 then
+        raise_application_error(-20021, 'Error: no se puede cerrar la competición. no hay ningún equipo registrado.');
+    end if;
+end tr_equipos_pares;
 
 
 
