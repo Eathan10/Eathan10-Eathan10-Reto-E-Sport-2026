@@ -60,7 +60,40 @@ set estado = 'cerrado'
 where cod_comp = 1;
 
 
+-- Pruebas para los triggers tr_bloqueo_jugadores y tr_bloqueo_equipos
 
+-- Fallos
+
+insert into jornadas (num_jornada, fecha_inicio, cod_comp) 
+values (1, sysdate, 1);
+
+insert into partidos (cod_partido, num_jornada, hora) 
+values (1, 1, current_timestamp);
+
+insert into equipos (cod_equipo, nombre, fecha_fundacion) 
+values (90, 'equipo bloqueado', sysdate);
+
+delete from equipos 
+where cod_equipo = 80;
+
+
+-- Exitos
+
+delete from partidos;
+
+
+insert into equipos (cod_equipo, nombre, fecha_fundacion) 
+values (80, 'equipo de prueba', sysdate);
+
+insert into jugadores (cod_jugador, nombre, apellido, nacionalidad, fecha_nac, nickname, rol, sueldo, cod_equipo) 
+values (800, 'prueba', 'exito', 'españa', sysdate, 'exito_player', 'centinela', 1500, 80);
+
+update jugadores 
+set cod_equipo = 2
+where cod_jugador = 20;
+
+delete from jugadores 
+where cod_jugador = 20;
 
 
 

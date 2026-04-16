@@ -60,6 +60,31 @@ end tr_numero_jugadores_min;
 
 ---------------------------------------------------
 
+create or replace trigger tr_bloqueo_jugadores
+before insert or delete or update of cod_equipo on jugadores
+declare
+    v_total_partidos number;
+begin
+    select count(*) into v_total_partidos 
+    from partidos;
+
+    if v_total_partidos > 0 then
+        raise_application_error(-20010, 'error: el calendario ya está generado. no se pueden modificar los jugadores.');
+    end if;
+end;
+
+create or replace trigger tr_bloqueo_equipos
+before insert or delete on equipos
+declare
+    v_total_partidos number;
+begin
+    select count(*) into v_total_partidos 
+    from partidos;
+
+    if v_total_partidos > 0 then
+        raise_application_error(-20011, 'error: el calendario ya está generado. no se pueden añadir ni eliminar equipos.');
+    end if;
+end;
 
 
 
