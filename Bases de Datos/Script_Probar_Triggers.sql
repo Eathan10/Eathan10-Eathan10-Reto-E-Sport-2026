@@ -96,9 +96,26 @@ delete from jugadores
 where cod_jugador = 20;
 
 
+-- Pruebas para el trigger tr_equipos_pares
+
+-- Fallos
+
+
+update competiciones 
+set estado = 'Cerrado' 
+where cod_comp = 1;
 
 
 
+-- Exitos
+
+insert into equipos (cod_equipo, nombre, fecha_fundacion) 
+values (20, 'equipo 2', sysdate);
+
+
+update competiciones 
+set estado = 'Cerrado' 
+where cod_comp = 1;
 
 
 
