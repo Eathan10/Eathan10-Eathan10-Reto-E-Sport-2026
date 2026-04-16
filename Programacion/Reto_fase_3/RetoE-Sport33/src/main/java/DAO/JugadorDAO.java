@@ -11,8 +11,18 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Clase de Acceso a Datos para la entidad Jugador, para realizar los cambion, altas, bajas que quieras, bucarlos y obtenerlos
+ * @author Fatima
+ * @version 1.0
+ * @since 2026-04-16
+ */
 public class JugadorDAO {
 
+    /**
+     * Metodo para inserta un nuevo jugador en la base de datos
+     * @param jugador Objeto que contiene la informacion de jugador
+     */
     public static void insertarJugador(Jugador jugador) {
         String sql = "INSERT INTO jugadores (cod_jugador, nombre, apellido, nacionalidad," +
                 " fecha_nac, nickname, rol, sueldo, cod_equipo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
@@ -38,6 +48,11 @@ public class JugadorDAO {
         }
     }
 
+    /**
+     * Metodo para eliminar un jugador mediante su nickname como identificador
+     * @param nickname El apodo único del jugador que quieres eliminar
+     * @throws Exception Si ocurre un error durante la conexión o la ejecución SQL
+     */
     public void eliminarJugador(String nickname ) throws Exception {
         String sql = "DELETE FROM jugadores WHERE nickname = ?";
         try {
@@ -53,6 +68,10 @@ public class JugadorDAO {
         }
     }
 
+    /**
+     * Metodo para actualizar los datos de un jugador que ya existe
+     * @param jugador Objeto con los datos actualizados.
+     */
     public void actualizarJugador(Jugador jugador) {
         String sql = "UPDATE jugadores SET nombre = ?, apellido = ?, nacionalidad = ?, " +
                 "fecha_nac = ?, rol = ?, sueldo = ?, cod_equipo = ? WHERE nickname = ?";
@@ -77,6 +96,12 @@ public class JugadorDAO {
         }
     }
 
+    /**
+     * Metodo para buscar un jugador que ya existe utilizando su nickname
+     * @param nickname El apodo unico del jugador que quieres buscar
+     * @return el jugador que has buscado si es que existe
+     * @throws exception si ocurre un error en la consulta SQL
+     */
     public Jugador buscarJugadorPorNickname(String nickname) throws Exception{
         String sql = "SELECT * FROM jugadores WHERE nickname = ?";
         Jugador jugador = null;
@@ -110,6 +135,10 @@ public class JugadorDAO {
         return jugador;
     }
 
+    /**
+     * Metodo para obtener la lista completa de todos los jugadores registrados
+     * @return la lista con todos los jugadores . En caso de no tener jugadores la devolvera vacia
+     */
     public List<Jugador> obtenerTodos() {
         String sql = "SELECT * FROM jugadores";
         List<Jugador> listaJugadores = new ArrayList<>();
