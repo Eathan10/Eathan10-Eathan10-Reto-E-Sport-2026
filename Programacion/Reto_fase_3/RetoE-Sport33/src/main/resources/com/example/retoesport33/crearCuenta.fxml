@@ -1,3 +1,4 @@
+
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Button?>
@@ -20,3 +21,4 @@
       <Button fx:id="btaceptar" layoutX="271.0" layoutY="337.0" mnemonicParsing="false" text="Aceptar" />
    </children>
 </AnchorPane>
+
