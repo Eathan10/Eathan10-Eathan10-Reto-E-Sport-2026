@@ -42,12 +42,22 @@ where cod_jugador = 101;
 
 -- Fallos
 
+delete from jugadores
+where cod_jugador = 30;
 
-insert into competiciones (cod_comp, nombre, estado, premio) 
-values (1, 'Liga Masters', 'Abierta', 50000);
-
+-- Esto tiene que dar el error de "No hay jugadores en ningún equipo."
+update competiciones 
+set estado = 'cerrado' 
+where cod_comp = 1;
 
 -- Exitos
+
+insert into jugadores (cod_jugador, nombre, apellido, nacionalidad, fecha_nac, nickname, rol, sueldo, cod_equipo) 
+values (30, 'Carlos', 'López', 'España', sysdate, 'Carlitos', 'iniciador', 1500, 2);
+
+update competiciones 
+set estado = 'cerrado' 
+where cod_comp = 1;
 
 
 
