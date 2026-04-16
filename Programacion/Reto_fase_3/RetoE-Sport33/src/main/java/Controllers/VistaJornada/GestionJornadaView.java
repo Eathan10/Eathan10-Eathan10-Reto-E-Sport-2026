@@ -49,6 +49,8 @@ public class GestionJornadaView {
                 Jornada jornadaNueva = new Jornada(numJornada, fecha);
 
 
+                Controllers.JornadaController.crearJornada(jornadaNueva);
+
                 // lllamar al abrir ventana para q me lleve a la siguiente venatana
                 abrirVentanaPartidos(jornadaNueva);
 
