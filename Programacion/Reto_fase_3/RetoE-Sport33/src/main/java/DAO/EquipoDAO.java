@@ -5,9 +5,21 @@ import Modelo.Jugador;
 import Utilidades.BaseDatos;
 
 import java.sql.*;
-import java.util.List;
 
+/**
+ * Clase de Acceso a Datos (DAO) para la entidad Equipo, para realizar los cambion, altas y bajas que quieras
+ * @author Urko
+ * @version 1.0
+ * @since 2026-04-15
+ */
 public class EquipoDAO {
+
+    /**
+     * Metodo para insertar un equipo nuevo en la base de dato, con su nombre, codigo y fecha de fundacion
+     * 1. Inserta los datos básicos del equipo en la tabla equipos
+     * 2. Recorre la lista de jugadores seleccionados y les asigna el nombre del equipo, para asignar jugadores a equipo
+     * @param equipo Objeto de tipo Equipo que contiene los datos y la lista de jugadores
+     */
     public static void insertarEquipo(Equipo equipo) {
         //para el equipo
         String sqlEquipo = "INSERT INTO equipos (nombre_equipo, codigo_equipo, fecha_fundacion) VALUES (?, ?, ?)";
@@ -45,6 +57,10 @@ public class EquipoDAO {
         }
     }
 
+    /**
+     * Metodo para eliminar los equipos existentes de la base de datos, mediante su nombre para identificarlo
+     * @param nombreEquipo El nombre del equipo que quieres borrar
+     */
     public static void borrarEquipo(String nombreEquipo) {
         String sql = "DELETE FROM equipos WHERE nombre_equipo = ?";
 
@@ -66,6 +82,11 @@ public class EquipoDAO {
         }
     }
 
+    /**
+     * Metodo para comrpobar si existen los equipos buscado por el nombre
+     * @param nombreEquipo El nombre del equipo que quieres comprobar
+     * @return true si el equipo ya existe en la base de datos, false sino.
+     */
     public static boolean comprobarExistencia(String nombreEquipo) {
         String sql = "SELECT COUNT(*) FROM equipos WHERE nombre_equipo = ?";
 
@@ -91,6 +112,11 @@ public class EquipoDAO {
         return false;
     }
 
+    /**
+     * Metodo para actualizar los datos del equipo que quieras que ya exista en la base de datos
+     * utilizando el nombre del equipo como clave de búsqueda.
+     * * @param equipo Objeto con los datos actualizados.
+     */
     public static void actualizarEquipo(Equipo equipo) {
         String sql = "UPDATE equipos SET codigo_equipo = ?, fecha_fundacion = ? WHERE nombre_equipo = ?";
 

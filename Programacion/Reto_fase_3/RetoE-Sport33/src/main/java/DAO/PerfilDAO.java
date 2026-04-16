@@ -1,7 +1,6 @@
 package DAO;
 
 
-
 import Modelo.Perfil;
 
 import Utilidades.*;
@@ -123,3 +122,4 @@ public class PerfilDAO{
     }
 
 }
+
