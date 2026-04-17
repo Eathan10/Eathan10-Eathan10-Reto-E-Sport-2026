@@ -1,3 +1,7 @@
+-- Autor Equipo 1: Unax Gonzales, Urko Lopez, Fatima Din, Eathan Garzon
+
+
+
 --Inserts tabla equipos
 
 insert into equipos (cod_equipo, nombre, fecha_fundacion) 
