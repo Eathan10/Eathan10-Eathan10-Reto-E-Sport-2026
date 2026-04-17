@@ -1,3 +1,4 @@
+-- Autor Equipo 1: Unax Gonzales, Urko Lopez, Fatima Din, Eathan Garzon
 
 drop table jugadores cascade constraints;
 drop table equipos cascade constraints;
@@ -81,16 +82,28 @@ create table perfiles(
     constraint per_nombre_uq unique (nombre),
     constraint per_tipo_ck check(tipo in ('usuario','administrador'))
 );
-
---creamos la vista para utilizarla en el procedimiento informe_jugadores
---y que la select dentro del procedimiento esté mas simplificada
-
-CREATE OR REPLACE VIEW datos_jugadores AS
-SELECT j.nombre, j.apellido, j.rol, j.sueldo, e.nombre as nombre_equipo
-FROM jugadores j JOIN equipos e 
+/*
+creamos la vista para utilizarla en el procedimiento informe_jugadores
+y que la select dentro del procedimiento este mas simplificada
+*/
+create or replace view datos_jugadores as
+select j.nombre, j.apellido, j.rol, j.sueldo, e.nombre as nombre_equipo
+from jugadores j join equipos e 
 on j.cod_equipo = e.cod_equipo;
 
+/*
+creamos la vista para utilizarla en el procedimiento pr_informe_equipos
+y que la select dentro del procedimiento este mas simplificada
+*/
 
+create or replace view vs_sueldos_numeros_equipos as
+select e.nombre "Equipo", e.fecha_fundacion "Fundacios", 
+        count(j.cod_jugador) "NÂº jugadores",max(j.sueldo) "Max. sueldo", 
+        min(j.sueldo) "Min. sueldo", round(avg(j.sueldo),2) "Media sueldos"   
+from equipos e join jugadores j
+on j.cod_equipo = e.cod_equipo
+group by e.nombre, e.fecha_fundacion 
+;
 
 
 commit;
