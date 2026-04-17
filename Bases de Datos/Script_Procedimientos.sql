@@ -28,7 +28,7 @@ begin
     open p_cursor for 
     select * from vs_sueldos_numeros_equipos;
 end pr_obtener_informe_equipos;
-
+/
 
 
 
