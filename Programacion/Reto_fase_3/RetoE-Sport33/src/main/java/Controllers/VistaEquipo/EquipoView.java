@@ -107,7 +107,8 @@ public class EquipoView {
 
     @FXML
     void onVolver(ActionEvent event) {
-
+        equipoView.show();
+        stage.close();
     }
 
 }
