@@ -42,7 +42,7 @@ public class PerfilController {
 
     @FXML
     void onUsuario(ActionEvent event) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("usuario.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/retoesport33/usuario.fxml"));
         Parent root = loader.load();
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
