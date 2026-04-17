@@ -23,11 +23,15 @@ public class PerfilController {
 
     @FXML
     void onAdiminstrador(ActionEvent event) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("administrador.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/retoesport33/administrador.fxml"));
         Parent root = loader.load();
 
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
+        Scene scene = new Scene(root);
+
+        Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
+
+        stage.setScene(scene);
+        stage.setTitle("Panel de Administrador");
         stage.show();
     }
 

@@ -8,7 +8,7 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 
 /**
- * Controlador para la gestión de Equipos, tantopara crear equipos, borrarlos o modificarlos
+ * Controlador para la gestión de Equipos, tantopara crear equipos, borrarlos o modificarlos, intrermediario entre la vista y el DAO
  * @author Urko
  * @version 1.0
  * @since 2026-04-15
