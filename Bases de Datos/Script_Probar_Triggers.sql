@@ -1,3 +1,6 @@
+-- Autor Equipo 1: Unax Gonzales, Urko Lopez, Fatima Din, Eathan Garzon
+
+
 -- Pruebas para el trigger tr_sueldo_jugador
 
 -- Fallos
