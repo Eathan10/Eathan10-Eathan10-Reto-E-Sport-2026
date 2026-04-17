@@ -105,6 +105,9 @@ on j.cod_equipo = e.cod_equipo
 group by e.nombre, e.fecha_fundacion 
 ;
 
+create index idx_cod_equipo 
+on jugadores (cod_equipo);
+
 
 commit;
 

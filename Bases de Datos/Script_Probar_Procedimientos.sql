@@ -1,6 +1,6 @@
 -- Autor Equipo 1: Unax Gonzales, Urko Lopez, Fatima Din, Eathan Garzon
 
-
+-- Procedimiento anonimo para porbar el procedimieno almacenado pr_obtener_informe_equipos
 declare
     p_cursor sys_refcursor;
     
@@ -29,4 +29,23 @@ begin
     end loop;
     
 end;
+
+
+/*
+equipo: leones | fundacion: 01/01/2014 | nº jugadores: 5 | max sueldo: 2590 | min sueldo: 2000 | media: 2454
+equipo: fantasmas | fundacion: 14/03/2004 | nº jugadores: 2 | max sueldo: 3000 | min sueldo: 1500 | media: 2250
+equipo: leviatan | fundacion: 19/03/2020 | nº jugadores: 3 | max sueldo: 2900 | min sueldo: 1500 | media: 2366,67
+equipo: equipo de prueba | fundacion: 16/04/2026 | nº jugadores: 1 | max sueldo: 1500 | min sueldo: 1500 | media: 1500
+
+Procedimiento PL/SQL terminado correctamente.
+
+*/
+
+
+
+
+
+
+
+
 
