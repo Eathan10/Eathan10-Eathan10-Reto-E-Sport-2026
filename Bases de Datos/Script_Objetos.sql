@@ -5,6 +5,7 @@ drop table competiciones cascade constraints;
 drop table jornadas cascade constraints;
 drop table partidos cascade constraints;
 drop table resultados cascade constraints;
+drop table perfiles cascade constraints;
 
 create table equipos(
     cod_equipo number, 
@@ -27,7 +28,8 @@ create table jugadores (
     constraint jug_rol_ck 
         check (rol in ('duelista', 'iniciador', 'controlador', 'centinela')),
     constraint jug_cod_equip_fk foreign key (cod_equipo) 
-        references equipos(cod_equipo)
+        references equipos(cod_equipo),
+    constraint jug_nickname_uq unique (nickname)
 );
 
 create table competiciones(
@@ -69,3 +71,32 @@ create table resultados(
     constraint resul_cod_equipo_fk foreign key (cod_equipo)
     references equipos(cod_equipo)
 );
+
+create table perfiles(
+    cod_perfil number,
+    nombre varchar2(55),
+    password varchar2(55),
+    tipo varchar2(55),
+    constraint per_cod_pk primary key (cod_perfil),
+    constraint per_nombre_uq unique (nombre),
+    constraint per_tipo_ck check(tipo in ('usuario','administrador'))
+);
+
+--creamos la vista para utilizarla en el procedimiento informe_jugadores
+--y que la select dentro del procedimiento esté mas simplificada
+
+CREATE OR REPLACE VIEW datos_jugadores AS
+SELECT j.nombre, j.apellido, j.rol, j.sueldo, e.nombre as nombre_equipo
+FROM jugadores j JOIN equipos e 
+on j.cod_equipo = e.cod_equipo;
+
+
+
+
+commit;
+
+
+
+
+
+
