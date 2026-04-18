@@ -13,6 +13,7 @@ import javafx.stage.Stage;
 public class PerfilController {
 
 
+
     @FXML
     private Button btnadministrador;
 
@@ -42,7 +43,7 @@ public class PerfilController {
 
     @FXML
     void onUsuario(ActionEvent event) throws Exception {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/retoesport33/usuario.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/retoesport33/usuario-view.fxml"));
         Parent root = loader.load();
 
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();

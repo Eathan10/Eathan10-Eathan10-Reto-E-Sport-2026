@@ -1,5 +1,5 @@
 package Controllers;
-import Controllers.VistaEquipo.EquipoView;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -7,47 +7,38 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
-import javafx.scene.control.TableColumn;
 import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class verEquiposView {
+public class panelPrincipalView {
 
     @FXML
-    private Button btnVolver;
+    private Button btnEntrar;
 
     @FXML
-    private TableColumn<?, ?> tbCodigo;
+    void onEntrar(ActionEvent event) {
+        cambiarVentana("/com/example/retoesport33/perfil-view.fxml", "Selección de Perfil");
+    }
 
-    @FXML
-    private TableColumn<?, ?> tbFechaFundacion;
-
-    @FXML
-    private TableColumn<?, ?> tbJugador;
-
-    @FXML
-    private TableColumn<?, ?> tbNombre;
-
-
-    @FXML
-    void onVolver(ActionEvent event) {
+    private void cambiarVentana(String rutaFXML, String titulo) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/retoesport33/usuario-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(rutaFXML));
             Parent root = loader.load();
 
-            Stage stage = (Stage) btnVolver.getScene().getWindow();
+            Stage stage = (Stage) btnEntrar.getScene().getWindow();
 
             stage.setScene(new Scene(root));
-            stage.setTitle("Menú de Usuario");
+            stage.setTitle(titulo);
             stage.show();
 
         } catch (IOException e) {
-            mostrarAlerta("Error de Navegación", "No se pudo cargar la ventana de usuario.");
             e.printStackTrace();
+            mostrarAlerta("Error de carga", "No se pudo encontrar el archivo: " + rutaFXML);
+        } catch (NullPointerException e) {
+            mostrarAlerta("Error de ruta", "La ruta al FXML es incorrecta o el archivo no existe.");
         }
     }
-
 
     private void mostrarAlerta(String titulo, String mensaje) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -56,9 +47,4 @@ public class verEquiposView {
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
-
-
 }
-
-
-

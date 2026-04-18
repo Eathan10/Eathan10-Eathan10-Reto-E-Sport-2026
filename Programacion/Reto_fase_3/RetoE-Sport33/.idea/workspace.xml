@@ -4,7 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb6054c9-2684-4387-afef-58c3ca4eb652" name="Changes" comment="" />
+    <list default="true" id="eb6054c9-2684-4387-afef-58c3ca4eb652" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/UsuarioView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/panelPrincipalView.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/panelPrincipal-view.fxml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/usuario-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/CrearCuentaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/PerfilController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/PerfilController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/VistaAdministrador/CrearCuentaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/verEquiposView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/verEquiposView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/verJugadoresView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/verJugadoresView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/retoesport33/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/retoesport33/MainApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/perfil-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/perfil-view.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -26,16 +39,16 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "UrkoLopezDeMunain11"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;UrkoLopezDeMunain11&quot;
   }
-}]]></component>
+}</component>
   <component name="GithubPullRequestsUISettings"><![CDATA[{
   "selectedUrlAndAccountId": {
     "url": "https://github.com/Eathan10/Eathan10-Eathan10-Reto-E-Sport-2026.git",
-    "accountId": "aba53958-e74c-4908-9f7a-1e0b3e8f8d9c"
+    "accountId": "43d65a3b-b60a-41b6-b6ef-3f90a4e8216a"
   }
 }]]></component>
   <component name="MavenImportPreferences">
@@ -61,15 +74,15 @@
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "rama-eathan",
+    "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/141GA07/Eathan10-Eathan10-Reto-E-Sport-2026/Programacion/Reto_fase_3/RetoE-Sport33",
+    "last_opened_file_path": "C:/Users/ruriz/Eathan10-Eathan10-Reto-E-Sport-2026/Programacion/Reto_fase_3/RetoE-Sport33",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.JavaFX",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -84,8 +97,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
       </set>
     </attachedChunks>
   </component>
