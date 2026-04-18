@@ -6,7 +6,6 @@ module com.example.retoesport33 {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.graphics;
-    requires com.example.retoesport33;
 
 
     opens com.example.retoesport33 to javafx.fxml;

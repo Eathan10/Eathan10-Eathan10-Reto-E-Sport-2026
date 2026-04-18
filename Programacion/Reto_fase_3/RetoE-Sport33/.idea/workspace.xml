@@ -4,19 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="eb6054c9-2684-4387-afef-58c3ca4eb652" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/UsuarioView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/panelPrincipalView.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/panelPrincipal-view.fxml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/usuario-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/CrearCuentaController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/PerfilController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/PerfilController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/VistaAdministrador/CrearCuentaController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/verEquiposView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/verEquiposView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/verJugadoresView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/verJugadoresView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/retoesport33/MainApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/retoesport33/MainApplication.java" afterDir="false" />
+    <list default="true" id="eb6054c9-2684-4387-afef-58c3ca4eb652" name="Changes" comment="commit">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/VistaEquipo/EquipoView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/VistaEquipo/EquipoView.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/perfil-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/perfil-view.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,18 +36,21 @@
     &quot;assignee&quot;: &quot;UrkoLopezDeMunain11&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Eathan10/Eathan10-Eathan10-Reto-E-Sport-2026.git",
-    "accountId": "43d65a3b-b60a-41b6-b6ef-3f90a4e8216a"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Eathan10/Eathan10-Eathan10-Reto-E-Sport-2026.git&quot;,
+    &quot;accountId&quot;: &quot;43d65a3b-b60a-41b6-b6ef-3f90a4e8216a&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
         <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
       </MavenGeneralSettings>
     </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 7,
@@ -69,6 +63,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.MainApplication.executor": "Run",
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
@@ -122,6 +117,15 @@
       <workItem from="1776336410092" duration="675000" />
       <workItem from="1776422995262" duration="65000" />
     </task>
+    <task id="LOCAL-00001" summary="commit">
+      <option name="closed" value="true" />
+      <created>1776512093665</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1776512093665</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -131,6 +135,8 @@
     <ignored-roots>
       <path value="$USER_HOME$" />
     </ignored-roots>
+    <MESSAGE value="commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="commit" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
