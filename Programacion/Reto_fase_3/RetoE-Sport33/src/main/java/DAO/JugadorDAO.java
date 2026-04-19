@@ -100,7 +100,7 @@ public class JugadorDAO {
      * Metodo para buscar un jugador que ya existe utilizando su nickname
      * @param nickname El apodo unico del jugador que quieres buscar
      * @return el jugador que has buscado si es que existe
-     * @throws exception si ocurre un error en la consulta SQL
+     * @throws Exception si ocurre un error en la consulta SQL
      */
     public Jugador buscarJugadorPorNickname(String nickname) throws Exception{
         String sql = "SELECT * FROM jugadores WHERE nickname = ?";

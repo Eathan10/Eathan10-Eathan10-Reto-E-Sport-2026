@@ -1,9 +1,9 @@
-package Controllers;
+package Controllers.VistaVer;
 
-import Modelo.Equipo;
+import Controllers.verJugadpresController;
 import Modelo.Jugador;
 import javafx.beans.property.SimpleStringProperty;
-import javafx.event.ActionEvent; // CORRECTO: javafx, no java.awt
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;

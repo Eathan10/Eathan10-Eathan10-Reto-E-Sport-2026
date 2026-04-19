@@ -1,5 +1,5 @@
-package Controllers;
-import Controllers.VistaEquipo.EquipoView;
+package Controllers.VistaVer;
+import Controllers.verEquiposController;
 import Modelo.Equipo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

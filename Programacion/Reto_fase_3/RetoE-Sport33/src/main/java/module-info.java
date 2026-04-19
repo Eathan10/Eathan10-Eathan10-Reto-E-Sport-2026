@@ -18,5 +18,7 @@ module com.example.retoesport33 {
     opens Controllers.VistaEquipo to javafx.fxml;
     exports Controllers.VistaAdministrador;
     opens Controllers.VistaAdministrador to javafx.fxml;
+    exports Controllers.VistaVer;
+    opens Controllers.VistaVer to javafx.fxml;
 
 }

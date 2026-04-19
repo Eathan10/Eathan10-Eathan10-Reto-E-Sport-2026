@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * Clase de Acceso a Datos (DAO) para la entidad Equipo, para realizar los cambion, altas y bajas que quieras
+ * Clase de Acceso a Datos para la entidad Equipo, para realizar los cambion, altas y bajas que quieras
  * @author Urko
  * @version 1.0
  * @since 2026-04-15
@@ -145,9 +145,11 @@ public class EquipoDAO {
 
     private static List<Equipo> listaEquipos = new ArrayList<>();
 
-    // Este método lo usará la ventana Ver Equipos
-    public List<Equipo> obtenerListaEquipos() {
+    /**
+     * Recupera la lista completa de equipos
+     * @return una lista que contiene todos los objetos equipos
+     */
+    public List<Equipo> obtenerListaEquipos() {   // Este método lo usará la ventana Ver Equipos
         return listaEquipos;
-
     }
 }
