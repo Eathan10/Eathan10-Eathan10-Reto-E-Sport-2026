@@ -5,6 +5,8 @@ import Modelo.Jugador;
 import Utilidades.BaseDatos;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Clase de Acceso a Datos (DAO) para la entidad Equipo, para realizar los cambion, altas y bajas que quieras
@@ -140,4 +142,12 @@ public class EquipoDAO {
         }
     }
 
+
+    private static List<Equipo> listaEquipos = new ArrayList<>();
+
+    // Este método lo usará la ventana Ver Equipos
+    public List<Equipo> obtenerListaEquipos() {
+        return listaEquipos;
+
+    }
 }

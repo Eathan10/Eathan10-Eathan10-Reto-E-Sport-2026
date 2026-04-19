@@ -1,5 +1,6 @@
 package Controllers;
 import Controllers.VistaEquipo.EquipoView;
+import Modelo.Equipo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,9 +9,13 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.List;
 
 public class verEquiposView {
 
@@ -18,16 +23,19 @@ public class verEquiposView {
     private Button btnVolver;
 
     @FXML
-    private TableColumn<?, ?> tbCodigo;
+    private TableColumn<Equipo, String> tbCodigo;
 
     @FXML
-    private TableColumn<?, ?> tbFechaFundacion;
+    private TableColumn<Equipo, LocalDate> tbFechaFundacion;
 
     @FXML
-    private TableColumn<?, ?> tbJugador;
+    private TableColumn<Equipo, String> tbJugador;
 
     @FXML
-    private TableColumn<?, ?> tbNombre;
+    private TableColumn<Equipo, String> tbNombre;
+
+    @FXML
+    private TableView<Equipo> tablaEquipos;
 
 
     @FXML
@@ -46,6 +54,19 @@ public class verEquiposView {
             mostrarAlerta("Error de Navegación", "No se pudo cargar la ventana de usuario.");
             e.printStackTrace();
         }
+    }
+
+    private verEquiposController logicController = new verEquiposController();
+
+    @FXML
+    public void initialize() {
+        tbCodigo.setCellValueFactory(new PropertyValueFactory<>("codigo"));
+        tbNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        tbFechaFundacion.setCellValueFactory(new PropertyValueFactory<>("fechaFundacion"));
+
+        // llama al controllador
+        List<Equipo> lista = logicController.getEquiposParaMostrar();
+        tablaEquipos.getItems().addAll(lista);
     }
 
 
