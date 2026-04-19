@@ -25,9 +25,9 @@ class PartidoTest {
     void creacion() {
         ArrayList<Jugador> listaMinima = new ArrayList<>();
 
-        listaMinima.add(new Jugador(1, "Jugador1", "A", "ESP", LocalDate.now(), "Nick1", "Top", 1000, null));
-        listaMinima.add(new Jugador(2, "Jugador2", "B", "ESP", LocalDate.now(), "Nick2", "Mid", 1000, null));
-        listaMinima.add(new Jugador(3, "Jugador3", "C", "ESP", LocalDate.now(), "Nick3", "Adc", 1000, null));
+        listaMinima.add(new Jugador(1, "Mikel", "Hernandez", "española", LocalDate.now(), "Mikel321", "controlador", 1000, null));
+        listaMinima.add(new Jugador(2, "Eneko", "apellido2", "española", LocalDate.now(), "Enekd08", "duelista", 1000, null));
+        listaMinima.add(new Jugador(3, "Maria", "apellido3", "española", LocalDate.now(), "Ma21", "centinela", 1000, null));
 
         e1 = new Equipo("G2 Esports", "E01", LocalDate.parse("2013-02-24"), listaMinima);
         e2 = new Equipo("KOI", "E02", LocalDate.parse("2021-12-15"), listaMinima);

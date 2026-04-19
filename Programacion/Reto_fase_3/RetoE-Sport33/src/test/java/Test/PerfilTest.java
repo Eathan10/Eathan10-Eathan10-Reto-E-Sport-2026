@@ -9,11 +9,11 @@ class PerfilTest {
     @Test
     void testCrearPerfil() {
 
-        Perfil p = new Perfil(1, "Eathan", "1234", "ADMIN");
+        Perfil p = new Perfil(1, "Urko", "1234", "ADMIN");
 
 
         assertEquals(1, p.getCodPerfil());
-        assertEquals("Eathan", p.getNombre());
+        assertEquals("Urko", p.getNombre());
         assertEquals("1234", p.getPassword());
         assertEquals("ADMIN", p.getTipo());
     }

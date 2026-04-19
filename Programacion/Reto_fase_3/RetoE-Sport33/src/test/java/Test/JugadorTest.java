@@ -17,11 +17,11 @@ class JugadorTest {
 
 
         LocalDate fecha = LocalDate.of(2000, 10, 10);
-        Jugador j = new Jugador(1, "Unax", "Prueba", "Española", fecha, "Unaxplayer", "controlador", 2500.0, eq);
+        Jugador j = new Jugador(1, "Mikel", "hernandez", "Española", fecha, "mikel234", "controlador", 2500.0, eq);
 
         assertEquals(1, j.getCodJugador());
-        assertEquals("Unax", j.getNombre());
-        assertEquals("Unaxplayer", j.getNickname());
+        assertEquals("Mikel", j.getNombre());
+        assertEquals("mikel234", j.getNickname());
         assertEquals(2500.0, j.getSueldo());
 
         assertEquals("G2 Esports", j.getEquipo().getNombreEquipo());
