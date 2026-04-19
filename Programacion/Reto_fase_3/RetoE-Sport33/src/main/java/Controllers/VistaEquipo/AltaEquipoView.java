@@ -50,7 +50,7 @@ public class AltaEquipoView {
         if (seleccionados.size() < 2 || seleccionados.size() > 6) {
             try{
                 EquipoController.insertarEquipo(NombreEquipo, CodigoEquipo, FechaFundacion, seleccionados);
-                mostrarAlerta( "Equipo" + NombreEquipo + "creado correctamente", Alert.AlertType.INFORMATION);
+                confirmarAccion( "Equipo" + NombreEquipo + "creado correctamente");
 
                 limpiarFormulario();
             } catch (Exception e){
@@ -92,5 +92,13 @@ public class AltaEquipoView {
         alert.setHeaderText(null);
         alert.setContentText(s);
         alert.showAndWait();
+    }
+
+    private boolean confirmarAccion(String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
+        alert.setTitle("Confirmar acción");
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        return alert.showAndWait().filter(r -> r == ButtonType.OK).isPresent();
     }
 }

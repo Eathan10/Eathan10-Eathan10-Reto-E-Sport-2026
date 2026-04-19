@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
@@ -20,4 +19,3 @@
       <Label fx:id="lbresultadolocal" layoutX="160.0" layoutY="80.0" text="resultado_sin_datos" />
    </children>
 </AnchorPane>
- 82f8bca795f439da82601490e1f496a745b8943f

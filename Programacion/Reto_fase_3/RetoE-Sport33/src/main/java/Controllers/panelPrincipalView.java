@@ -30,6 +30,7 @@ public class panelPrincipalView {
 
             stage.setScene(new Scene(root));
             stage.setTitle(titulo);
+            stage.centerOnScreen();
             stage.show();
 
         } catch (IOException e) {
