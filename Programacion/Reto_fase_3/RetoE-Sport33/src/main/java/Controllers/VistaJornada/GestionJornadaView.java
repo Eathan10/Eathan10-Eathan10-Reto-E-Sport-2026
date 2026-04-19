@@ -1,6 +1,5 @@
 package Controllers.VistaJornada;
 
-import Controllers.PartidoController;
 import Modelo.Jornada;
 import Modelo.Partido;
 import javafx.event.ActionEvent;
