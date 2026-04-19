@@ -20,6 +20,7 @@ public class EquipoDAO {
      * Metodo para insertar un equipo nuevo en la base de dato, con su nombre, codigo y fecha de fundacion
      * 1. Inserta los datos básicos del equipo en la tabla equipos
      * 2. Recorre la lista de jugadores seleccionados y les asigna el nombre del equipo, para asignar jugadores a equipo
+     *
      * @param equipo Objeto de tipo Equipo que contiene los datos y la lista de jugadores
      */
     public static void insertarEquipo(Equipo equipo) {
@@ -51,7 +52,6 @@ public class EquipoDAO {
             BaseDatos.closeConnection();
 
 
-
         } catch (SQLException e) {
             throw new RuntimeException(e);
         } catch (Exception e) {
@@ -61,6 +61,7 @@ public class EquipoDAO {
 
     /**
      * Metodo para eliminar los equipos existentes de la base de datos, mediante su nombre para identificarlo
+     *
      * @param nombreEquipo El nombre del equipo que quieres borrar
      */
     public static void borrarEquipo(String nombreEquipo) {
@@ -86,6 +87,7 @@ public class EquipoDAO {
 
     /**
      * Metodo para comrpobar si existen los equipos buscado por el nombre
+     *
      * @param nombreEquipo El nombre del equipo que quieres comprobar
      * @return true si el equipo ya existe en la base de datos, false sino.
      */
@@ -152,4 +154,42 @@ public class EquipoDAO {
     public List<Equipo> obtenerListaEquipos() {   // Este método lo usará la ventana Ver Equipos
         return listaEquipos;
     }
+
+    /**
+     * Obtiene la lista completa de equipos
+     * @return List de objetos Equipo con sus datos
+     */
+    public static List<Equipo> obtenerTodos() {
+        List<Equipo> lista = new ArrayList<>();
+
+        String sql = "SELECT * FROM equipos";
+
+        try {
+            Connection conn = BaseDatos.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+
+            ResultSet rs = ps.executeQuery();
+
+            while (rs.next()) {
+                Equipo e = new Equipo();
+                e.setNombreEquipo(rs.getString("nombre"));
+                e.setCodigoEquipo(rs.getString("codigo"));
+
+                if (rs.getDate("fecha_fundacion") != null) {
+                    e.setFechaFundacion(rs.getDate("fecha_fundacion").toLocalDate());
+                }
+
+                lista.add(e);
+            }
+
+        } catch (SQLException ex) {
+            System.out.println("Error al listar equipos: " + ex.getMessage());
+        } catch (Exception ex) {
+            throw new RuntimeException(ex);
+        }
+
+        return lista;
+
+    }
+
 }

@@ -6,6 +6,7 @@ import Modelo.Jugador;
 
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Controlador para la gestión de Equipos, tantopara crear equipos, borrarlos o modificarlos, intrermediario entre la vista y el DAO
@@ -61,14 +62,22 @@ public class EquipoController {
 
     /**
      * Actualizar los datos de los equipos, que exista ya de antemano
-     *
      * @param codigoFinal    El codigo actualizado del equipo
      * @param nombreFinal    El nombre actualizado del equipo
-     * @param nuevoCodigo
+     * @param nuevoCodigo      El codigo actualizado del euipo
      * @param fechaFundacion La fecha actualizada del equipo
      */
     public static void actualizarEquipo(String codigoFinal, String nombreFinal, String nuevoCodigo, LocalDate fechaFundacion) {
         Equipo equipo = new Equipo(nombreFinal, codigoFinal, fechaFundacion, null);
         EquipoDAO.actualizarEquipo(equipo);
+    }
+
+
+    /**
+     * Metodo para obtener todos los equipos
+     * @return los equipos
+     */
+    public static List<Equipo> listarTodosLosEquipos() {;
+        return EquipoDAO.obtenerTodos();
     }
 }
