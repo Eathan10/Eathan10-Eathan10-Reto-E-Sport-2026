@@ -1,5 +1,8 @@
 package Controllers;
 
+import Modelo.Equipo;
+import Modelo.Jugador;
+import javafx.beans.property.SimpleStringProperty;
 import javafx.event.ActionEvent; // CORRECTO: javafx, no java.awt
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -8,8 +11,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 import java.io.IOException;
+import java.time.LocalDate;
+import java.util.List;
 
 public class verJugadoresView {
 
@@ -20,25 +27,28 @@ public class verJugadoresView {
     private TableColumn<?, ?> tbApellido;
 
     @FXML
-    private TableColumn<?, ?> tbCodigo;
+    private TableColumn<Jugador, Integer> tbCodigo;
 
     @FXML
-    private TableColumn<?, ?> tbEquipo;
+    private TableColumn<Jugador, String> tbEquipo;
 
     @FXML
-    private TableColumn<?, ?> tbFechaNac;
+    private TableColumn<Jugador, LocalDate> tbFechaNac;
 
     @FXML
-    private TableColumn<?, ?> tbNick;
+    private TableColumn<Jugador, String> tbNick;
 
     @FXML
-    private TableColumn<?, ?> tbNombre;
+    private TableColumn<Jugador, String> tbNombre;
 
     @FXML
-    private TableColumn<?, ?> tbRol;
+    private TableColumn<Jugador, String> tbRol;
 
     @FXML
-    private TableColumn<?, ?> tbSueldo;
+    private TableColumn<Jugador, Double> tbSueldo;
+
+    @FXML
+    private TableView<Jugador> tablaJugadores;
 
 
 
@@ -57,6 +67,37 @@ public class verJugadoresView {
         } catch (IOException e) {
             mostrarAlerta("Error de Navegación", "No se pudo cargar la ventana de usuario.");
             e.printStackTrace();
+        }
+    }
+
+    private verJugadpresController logicController = new verJugadpresController();
+
+    @FXML
+    public void initialize() {
+        tbCodigo.setCellValueFactory(new PropertyValueFactory<>("codJugador"));
+        tbNombre.setCellValueFactory(new PropertyValueFactory<>("nombre"));
+        tbApellido.setCellValueFactory(new PropertyValueFactory<>("apellido"));
+        tbNick.setCellValueFactory(new PropertyValueFactory<>("nickname"));
+        tbRol.setCellValueFactory(new PropertyValueFactory<>("rol"));
+        tbFechaNac.setCellValueFactory(new PropertyValueFactory<>("fechaNac"));
+        tbSueldo.setCellValueFactory(new PropertyValueFactory<>("sueldo"));
+
+        tbEquipo.setCellValueFactory(cellData -> {
+            if (cellData.getValue().getEquipo() != null) {
+                return new SimpleStringProperty(cellData.getValue().getEquipo().getCodigoEquipo());
+            }
+            return new SimpleStringProperty("N/A");
+        });
+
+        // para llamr al controller
+        cargarDatos();
+    }
+
+    // para llamr al controller
+    private void cargarDatos() {
+        List<Jugador> lista = logicController.getListaParaLaTabla();
+        if (lista != null) {
+            tablaJugadores.getItems().setAll(lista);
         }
     }
 
