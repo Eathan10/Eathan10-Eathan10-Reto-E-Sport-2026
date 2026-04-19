@@ -1,4 +1,4 @@
-package Controllers.VistaAdministrador;
+package Controllers.VistaAdministradorUsuario;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
