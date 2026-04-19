@@ -1,5 +1,11 @@
 package Modelo;
 
+/**
+ * Clase para crear administradores con su nombre y contraseñas
+ * @author Urko
+ * @version 1.0
+ * @since 2026-04-19
+ */
 public class Administrador {
     private String nombre;
     private String password;
@@ -9,7 +15,6 @@ public class Administrador {
         this.password = password;
     }
 
-    // Getters
     public String getNombre() { return nombre; }
     public String getPassword() { return password; }
 }
