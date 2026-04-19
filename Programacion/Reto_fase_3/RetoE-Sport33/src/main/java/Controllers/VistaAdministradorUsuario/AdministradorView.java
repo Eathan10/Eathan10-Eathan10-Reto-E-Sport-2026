@@ -1,4 +1,4 @@
-package Controllers.VistaAdministrador;
+package Controllers.VistaAdministradorUsuario;
 
 import Controllers.AministradorController;
 import Utilidades.Valid;
