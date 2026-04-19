@@ -40,9 +40,6 @@ public class Jornada {
         this.fecha_inicio = fecha_inicio;
     }
 
-
-
-
     //GETTER AND SETTER
     public int getNumJornada() {
         return numJornada;

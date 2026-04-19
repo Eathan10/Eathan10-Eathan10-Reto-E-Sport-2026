@@ -31,6 +31,8 @@ public class Equipo {
     }
 
 
+
+
     public String getNombreEquipo() {
         return NombreEquipo;
     }
