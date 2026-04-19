@@ -13,9 +13,9 @@ class EquipoTest {
     void testCrearEquipoCorrecto() {
         ArrayList<Jugador> jugadores = new ArrayList<>();
 
-        jugadores.add(new Jugador(1, "A", "B", "C", LocalDate.now(), "N1", "R", 1000, null));
-        jugadores.add(new Jugador(2, "D", "E", "F", LocalDate.now(), "N2", "R", 1000, null));
-        jugadores.add(new Jugador(3, "G", "H", "I", LocalDate.now(), "N3", "R", 1000, null));
+        jugadores.add(new Jugador(1, "Aitor", "Lopez", "Española", LocalDate.now(), "AitLo12", "centinela", 1000, null));
+        jugadores.add(new Jugador(2, "Lucia", "Rodriguez", "Española", LocalDate.now(), "LuR7", "duelista", 1000, null));
+        jugadores.add(new Jugador(3, "Ander", "Gracia", "Española", LocalDate.now(), "N3", "iniciador", 1000, null));
 
         LocalDate fecha = LocalDate.of(2020, 1, 1);
         Equipo e = new Equipo("G2 Esports", "G2", fecha, jugadores);
@@ -28,7 +28,7 @@ class EquipoTest {
     @Test
     void testEquipoInvalido() {
         ArrayList<Jugador> pocosJugadores = new ArrayList<>();
-        pocosJugadores.add(new Jugador(1, "A", "B", "C", LocalDate.now(), "N1", "R", 1000, null));
+        pocosJugadores.add(new Jugador(1, "Aitor", "Lopez", "Española", LocalDate.now(), "AitLo12", "centinela", 1000, null));
 
         assertThrows(IllegalArgumentException.class, () -> {
             new Equipo("Fallo", "F1", LocalDate.now(), pocosJugadores);
