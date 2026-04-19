@@ -24,7 +24,7 @@ public class  menuAdmistradorView {
     private Button btnCompeticion;
 
     @FXML
-    private Button btnSalir;
+    private Button btnVolver;
 
     @FXML
     private Button btnVerJugadores;
@@ -80,9 +80,12 @@ public class  menuAdmistradorView {
 
 
     @FXML
-    void onSalir(ActionEvent event) {
-        System.exit(0);
+    void onVolver(ActionEvent event) {
+        abrirVentana("/com/example/retoesport33/administrador.fxml", "Login Administrador");
     }
+
+
+
 
 
 

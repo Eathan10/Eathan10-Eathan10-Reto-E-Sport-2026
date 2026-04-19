@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.VistaAdministrador.AdministradorView">
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.VistaAdministrador.AdministradorController">
    <children>
       <Pane prefHeight="200.0" prefWidth="600.0">
          <children>
@@ -19,7 +19,12 @@
       </Pane>
       <Pane layoutY="200.0" prefHeight="200.0" prefWidth="601.0">
          <children>
-            <Button fx:id="btnEntrar" layoutX="253.0" layoutY="51.0" mnemonicParsing="false" onAction="#onClickEntrar" prefHeight="67.0" prefWidth="96.0" text="Entrar">
+            <Button fx:id="btnEntrar" layoutX="367.0" layoutY="49.0" mnemonicParsing="false" onAction="#onClickEntrar" prefHeight="67.0" prefWidth="96.0" text="Entrar">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
+            <Button layoutX="132.0" layoutY="49.0" mnemonicParsing="false" prefHeight="67.0" prefWidth="96.0" text="Volver">
                <font>
                   <Font size="18.0" />
                </font>

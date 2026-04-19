@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb6054c9-2684-4387-afef-58c3ca4eb652" name="Changes" comment="commit">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/VistaAdministrador/AdministradorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/VistaAdministrador/AdministradorView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/VistaEquipo/AltaEquipoView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/VistaEquipo/AltaEquipoView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/panelPrincipalView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/panelPrincipalView.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/AdministradorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/AdministradorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/administrador.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/administrador.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/partido-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/partido-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/VistaAdministrador/menuAdmistradorView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/VistaAdministrador/menuAdmistradorView.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
