@@ -64,7 +64,7 @@ public class EquipoController {
      * Actualizar los datos de los equipos, que exista ya de antemano
      * @param codigoFinal    El codigo actualizado del equipo
      * @param nombreFinal    El nombre actualizado del equipo
-     * @param nuevoCodigo
+     * @param nuevoCodigo      El codigo actualizado del euipo
      * @param fechaFundacion La fecha actualizada del equipo
      */
     public static void actualizarEquipo(String codigoFinal, String nombreFinal, String nuevoCodigo, LocalDate fechaFundacion) {
@@ -78,6 +78,6 @@ public class EquipoController {
      * @return los equipos
      */
     public static List<Equipo> listarTodosLosEquipos() {;
-        return EquipoDAO.obtenerTodos(); // Aquí es donde el controlador sí llama al DAO
+        return EquipoDAO.obtenerTodos();
     }
 }
