@@ -7,9 +7,9 @@ import static org.junit.jupiter.api.Assertions.*;
 class AdministradorTest {
     @Test
     void testCrearAdmin() {
-        Administrador admin = new Administrador("Urko", "1234");
+        Administrador admin = new Administrador("Fatima", "1234");
 
-        assertEquals("Urko", admin.getNombre());
+        assertEquals("Fatima", admin.getNombre());
         assertEquals("1234", admin.getPassword());
     }
 
