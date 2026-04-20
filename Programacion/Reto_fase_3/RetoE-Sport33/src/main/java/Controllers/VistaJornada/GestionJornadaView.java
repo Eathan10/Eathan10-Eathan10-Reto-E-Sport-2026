@@ -38,23 +38,29 @@ public class GestionJornadaView {
 
     @FXML
     void onGuardar(ActionEvent event) {
-        try{
-            // Validar que los campos no estén vacíos
-            if (tfMNumeroJornada.getText().isEmpty() || dpFecha.getValue() == null) {
-                mostrarAlerta("Campos vacíos", "Por favor, introduce el número de jornada y la fecha.");
-                return;
+        String numJornadaStr = tfMNumeroJornada.getText().trim();
+        LocalDate fecha = dpFecha.getValue();
+
+        // validamos si estan vacion o o los campos
+        if (!numJornadaStr.isEmpty() && fecha != null) {
+            try {
+                int numJornada = Integer.parseInt(numJornadaStr);
+                Jornada jornadaNueva = new Jornada(numJornada, fecha);
+
+
+                Controllers.JornadaController.crearJornada(jornadaNueva);
+
+                // lllamar al abrir ventana para q me lleve a la siguiente venatana
+                abrirVentanaPartidos(jornadaNueva);
+
+            } catch (NumberFormatException e) {
+                mostrarAlerta("Error", "El número de jornada debe ser un número.");
+            } catch (IOException e) {
+                mostrarAlerta("Error", "No se encontró el archivo FXML.");
             }
-
-            int numJornada = Integer.parseInt(tfMNumeroJornada.getText());
-            LocalDate fecha = dpFecha.getValue();
-            Jornada jornadaNueva = new Jornada(numJornada, fecha);
-
-            abrirVentanaPartidos(jornadaNueva);
-
-        }catch(NumberFormatException | IOException e){
-            mostrarAlerta("Error de formato", "El número de jornada debe ser un número entero.");
+        } else {
+            mostrarAlerta("Campos vacíos", "Rellena el número y la fecha.");
         }
-
     }
 
 
@@ -63,13 +69,9 @@ public class GestionJornadaView {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("/vistas/partido-view.fxml"));
             Parent root = loader.load();
 
-            PartidoController controllerPartidos = loader.getController();
-            controllerPartidos.setParentController(this);
-
-
 
             Stage stage = new Stage();
-            stage.setTitle("Añadir Partidos - Jornada " + jornadaNueva.getNumJornada());
+            stage.setTitle("Añadir" + jornadaNueva.getNumJornada());
             stage.setScene(new Scene(root));
             stage.show();
 

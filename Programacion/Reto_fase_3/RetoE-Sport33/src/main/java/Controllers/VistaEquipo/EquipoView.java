@@ -4,6 +4,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
@@ -97,17 +98,39 @@ public class EquipoView {
 
     public void show() {
         // Muestra la ventana
-        stage.show();
+        if (stage != null) stage.show();
     }
 
     @FXML
     void onSalir(ActionEvent event) {
-
+        System.exit(0);
     }
 
     @FXML
     void onVolver(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/retoesport33/menuAdministrador-view.fxml"));
+            Parent root = loader.load();
 
+            Stage stage = (Stage) btnVolver.getScene().getWindow();
+
+            stage.setScene(new Scene(root));
+            stage.setTitle("Menú de Usuario");
+            stage.show();
+
+        } catch (IOException e) {
+            mostrarAlerta("Error de Navegación", "No se pudo cargar la ventana de usuario.");
+            e.printStackTrace();
+        }
     }
+
+    private void mostrarAlerta(String titulo, String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
+
 
 }

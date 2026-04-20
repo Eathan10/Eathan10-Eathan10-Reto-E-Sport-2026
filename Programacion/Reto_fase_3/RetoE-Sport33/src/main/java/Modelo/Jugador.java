@@ -2,6 +2,12 @@ package Modelo;
 
 import java.time.LocalDate;
 
+/**
+ * Calse que sirve para crear jugadores con sus atributos
+ * @author Fatima
+ * @version 1.0
+ * @since 2026-04-15
+ */
 public class Jugador {
     private int codJugador;
     private String nombre;

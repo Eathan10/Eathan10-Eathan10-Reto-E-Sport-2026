@@ -3,7 +3,12 @@ package Modelo;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
-
+/**
+ * Clase que sirve para crear las jornadas con sus atributos
+ * @author Urko
+ * @version 1.0
+ * @since 2026-04-15
+ */
 public class Jornada {
 
     private static int contadorGneral = 1;
@@ -34,9 +39,6 @@ public class Jornada {
         this.numJornada = contadorGneral++;
         this.fecha_inicio = fecha_inicio;
     }
-
-
-
 
     //GETTER AND SETTER
     public int getNumJornada() {

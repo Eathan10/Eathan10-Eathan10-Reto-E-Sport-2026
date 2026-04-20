@@ -1,5 +1,6 @@
 package Controllers.VistaJornada;
 
+import Controllers.EquipoController;
 import DAO.EquipoDAO;
 import Modelo.Equipo;
 import Modelo.Partido;
@@ -7,82 +8,66 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.scene.control.Alert;
-import javafx.scene.control.Button;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.util.StringConverter;
 
+import java.util.Collections;
 import java.util.List;
 
 public class PartidoController {
 
     @FXML
-    private Button btnAñadir;
+    private Label lbfecha;
 
     @FXML
-    private ComboBox<Equipo> cbLocal;
+    private Label lbhora;
 
     @FXML
-    private ComboBox<Equipo> cbVisitante;
+    private Label lblocal;
 
     @FXML
-    private TextField tfhora;
+    private Label lbprediccion;
 
-    // referencia a la tabla jornada
-    private GestionJornadaView parentController;
+    @FXML
+    private Label lbresultadolocal;
 
-    public void setParentController(GestionJornadaView parent) {
-        this.parentController = parent;
-    }
+    @FXML
+    private Label lbresultadovisitante;
+
+    @FXML
+    private Label lbvisitante;
+
+    private EquipoDAO equipoDAO = new EquipoDAO();
 
     @FXML
     public void initialize() {
-        List<Equipo> listaEquipos = EquipoDAO.obtenerTodos();
-
-        for (Equipo e : listaEquipos) {
-            cbLocal.getItems().add(e);
-            cbVisitante.getItems().add(e);
-        }
+        generarEnfrentamientosAutomaticos();
     }
 
-    @FXML
-    void onAñadir(ActionEvent event) {
-        Equipo local = cbLocal.getValue();
-        Equipo visitante = cbVisitante.getValue();
-        String hora = tfhora.getText();
+    private void generarEnfrentamientosAutomaticos() {
 
-        if (local == null || visitante == null || hora.isEmpty()) {
-            mostrarAlerta("Campos incompletos", "Por favor, selecciona ambos equipos e introduce una hora.");
-            return;
-        }
 
-        if (local.equals(visitante)) {
-            mostrarAlerta("Error de selección", "Un equipo no puede jugar contra sí mismo. Elige equipos diferentes.");
-            return;
-        }
+        List<Equipo> todosLosEquipos = EquipoController.listarTodosLosEquipos();
 
-        Partido nuevoPartido = new Partido(hora, local, visitante);
+        Collections.shuffle(todosLosEquipos);// mezcalrlos para q sean aleatorios los emparejamenntos
 
-        if (parentController != null) {
-            parentController.agregarPartidoATabla(nuevoPartido);
 
-            mostrarAlerta("Éxito", "Partido añadido a la jornada.");
+        if (todosLosEquipos.size() >= 2) {// de dos en dos los emparejamientos
+            Equipo local = todosLosEquipos.get(0);
+            Equipo visitante = todosLosEquipos.get(1);
 
-            cbLocal.setValue(null);
-            cbVisitante.setValue(null);
-            tfhora.clear();
+            lblocal.setText(local.getNombreEquipo());
+            lbvisitante.setText(visitante.getNombreEquipo());
+
+            lbprediccion.setText(predecirGanadorIA(local, visitante));
         }
 
     }
 
-    private void mostrarAlerta(String titulo, String mensaje) {
-        Alert alert = new Alert(Alert.AlertType.ERROR);
-        alert.setTitle(titulo);
-        alert.setHeaderText(null);
-        alert.setContentText(mensaje);
-        alert.showAndWait();
+    private String predecirGanadorIA(Equipo local, Equipo visitante) {
+        return "";
     }
+
 
 }
 
