@@ -43,9 +43,82 @@ Procedimiento PL/SQL terminado correctamente.
 
 
 
+--BLOQUE ANONIMO PARA PROBAR PROCEDIMIENTO INFORME VICTORIAS
+
+SET SERVEROUTPUT ON; 
+DECLARE
+    v_cursor SYS_REFCURSOR;
+    v_nombre EQUIPOS.nombre%TYPE;
+    v_victorias   NUMBER;
+    v_derrotas   NUMBER;
+BEGIN
+
+    pr_informe_victorias_derrotas(v_cursor);
+    
+    DBMS_OUTPUT.PUT_LINE('CLASIFICACION DE LA LIGA:');
+
+    
+
+    LOOP
+        FETCH v_cursor INTO v_nombre, v_victorias, v_derrotas;
+        EXIT WHEN v_cursor%NOTFOUND;
+        
+        DBMS_OUTPUT.PUT_LINE('Equipo: ' || v_nombre|| ' | Victorias: ' || v_victorias || ' | Derrotas: ' || v_derrotas);
+
+    END LOOP;
+    
+    CLOSE v_cursor;
+EXCEPTION
+    WHEN OTHERS THEN
+        DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
+        IF v_cursor%ISOPEN THEN
+            CLOSE v_cursor;
+        END IF;
+END;
+/
+
+/*
+CLASIFICACION DE LA LIGA:
+Equipo: leones | Victorias: 1 | Derrotas: 0
+Equipo: fantasmas | Victorias: 0 | Derrotas: 1
+
+Procedimiento PL/SQL terminado correctamente.
+
+*/
 
 
+--BLOQUE ANONIMO PARA PROBAR EL PROCEDIMIENTO pr_informe_jugadores
 
+SET SERVEROUTPUT ON
 
+DECLARE
+    v_cursor SYS_REFCURSOR;
+    v_nombre VARCHAR2(50);
+    v_apellido VARCHAR2(50);
+    v_rol VARCHAR2(50);
+    v_sueldo NUMBER;
+BEGIN 
 
+    pr_informe_jugadores('fantasmas', v_cursor);
+    
+    LOOP
+        FETCH v_cursor INTO v_nombre, v_apellido,v_rol, v_sueldo;
+        EXIT WHEN v_cursor%NOTFOUND;
+        
+        DBMS_OUTPUT.PUT_LINE(
+            v_nombre || ' ' || v_apellido || ' ' || v_rol || ' ' || v_sueldo);
+            
+    END LOOP;
+    
+    CLOSE v_cursor;
+END;
+/
+
+/*
+ana martinez centinela 3000
+Carlos López iniciador 1500
+
+Procedimiento PL/SQL terminado correctamente.
+
+*/
 

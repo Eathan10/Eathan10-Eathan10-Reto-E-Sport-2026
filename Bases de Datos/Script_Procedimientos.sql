@@ -4,7 +4,7 @@
 
 set serveroutput on;
 
-create or replace procedure informe_jugadores(
+create or replace procedure pr_informe_jugadores(
 p_nombre_equipo IN varchar2,
 p_cursor OUT SYS_REFCURSOR)
 
@@ -26,9 +26,28 @@ create or replace procedure pr_obtener_informe_equipos (
 as
 begin
     open p_cursor for 
-    select * from vs_sueldos_numeros_equipos;
+    select * 
+    from vs_sueldos_numeros_equipos;
 end pr_obtener_informe_equipos;
 /
+
+
+--PROCEDIMIENTO ALMACENADO CREADO POR NOSOTROS PARA MOSTRAR DESPUï¿½S EL NUMERO DE
+--VICTORIAS Y DERROTAS QUE LLEVA CADA EQUIPO
+
+
+CREATE OR REPLACE PROCEDURE pr_informe_victorias_derrotas(
+p_cursor OUT SYS_REFCURSOR)
+
+IS
+
+BEGIN     
+    
+    OPEN p_cursor FOR
+    SELECT nombre_equipo, victorias, derrotas
+    FROM datos_victorias_derrotas;
+    
+END;
 
 
 

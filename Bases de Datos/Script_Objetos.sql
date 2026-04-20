@@ -105,8 +105,32 @@ on j.cod_equipo = e.cod_equipo
 group by e.nombre, e.fecha_fundacion 
 ;
 
+-- Index creado para mejorar la busqueda por el campo cod_equipo de la tabla jugadores
+
 create index idx_cod_equipo 
 on jugadores (cod_equipo);
+
+--creamos la vista para utilizarla en el procedimiento informe_jugadores
+--y que la select dentro del procedimiento esté mas simplificada
+
+create or replace view datos_jugadores as
+select j.nombre, j.apellido, j.rol, j.sueldo, e.nombre as nombre_equipo
+from jugadores j join equipos e 
+on j.cod_equipo = e.cod_equipo;
+
+
+--vista para obtener cuantas victorias y cuantas derrotas tiene cada equipo y pasarselo al
+--procedimiento almacenado
+    
+create or replace view datos_victorias_derrotas as
+    select e.nombre as nombre_equipo,
+        sum(case when r1.resultado > r2.resultado then 1 else 0 end) as victorias,
+        sum(case when r1.resultado < r2.resultado then 1 else 0 end) as derrotas
+    from equipos e
+    join resultados r1 on e.cod_equipo = r1.cod_equipo
+    join resultados r2 on r1.cod_partido = r2.cod_partido and r1.cod_equipo != r2.cod_equipo
+    group by e.nombre
+    order by victorias desc;
 
 
 commit;
