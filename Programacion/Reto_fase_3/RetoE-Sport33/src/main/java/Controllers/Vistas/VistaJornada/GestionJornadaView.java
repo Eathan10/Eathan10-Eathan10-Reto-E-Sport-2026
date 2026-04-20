@@ -1,4 +1,4 @@
-package Controllers.VistaJornada;
+package Controllers.Vistas.VistaJornada;
 
 import Modelo.Jornada;
 import Modelo.Partido;
