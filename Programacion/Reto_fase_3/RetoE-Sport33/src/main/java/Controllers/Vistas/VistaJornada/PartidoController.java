@@ -8,9 +8,14 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 import javafx.util.StringConverter;
 
+import java.io.IOException;
 import java.util.Collections;
 import java.util.List;
 
@@ -36,6 +41,37 @@ public class PartidoController {
 
     @FXML
     private Label lbvisitante;
+
+    @FXML
+    private Button btnVolver;
+
+    @FXML
+    void onVolver(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vistas/menuAdmistradorView.fxml"));
+            Parent root = loader.load();
+
+            Stage stage = (Stage) btnVolver.getScene().getWindow();
+
+            stage.setScene(new Scene(root));
+            stage.setTitle("Menu Amdinistrador");
+            stage.centerOnScreen();
+            stage.show();
+
+        } catch (IOException e) {
+            e.printStackTrace();
+            mostrarAlerta("Error", "No se pudo cargar el menú principal.");
+        }
+
+    }
+
+    private void mostrarAlerta(String titulo, String mensaje) {
+        Alert alert = new Alert(Alert.AlertType.ERROR);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
 
     private EquipoDAO equipoDAO = new EquipoDAO();
 

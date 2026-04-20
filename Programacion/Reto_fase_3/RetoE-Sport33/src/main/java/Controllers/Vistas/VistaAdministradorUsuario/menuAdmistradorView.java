@@ -44,7 +44,7 @@ public class  menuAdmistradorView {
 
     @FXML
     void onPartidos(ActionEvent event) {
-        abrirVentana("/vistas/partido-view.fxml", "Gestion de Equipo")  ;
+        abrirVentana("/vistas/partido-view.fxml", "Gestion de Partido")  ;
 
     }
 
