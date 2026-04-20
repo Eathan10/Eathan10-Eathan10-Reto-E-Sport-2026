@@ -19,6 +19,7 @@ import java.util.List;
  */
 public class JugadorDAO {
 
+    private final Connection conn;
     /**
      * Metodo para inserta un nuevo jugador en la base de datos
      * @param jugador Objeto que contiene la informacion de jugador
@@ -30,24 +31,31 @@ public class JugadorDAO {
             Connection conn = BaseDatos.getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
 
-            ps.setInt(1, jugador.getCodJugador());
-            ps.setString(2, jugador.getNombre());
-            ps.setString(3, jugador.getApellido());
-            ps.setString(4, jugador.getNacionalidad());
-            ps.setDate(5, java.sql.Date.valueOf(jugador.getFechaNac()));
-            ps.setString(6, jugador.getNickname());
-            ps.setString(7, jugador.getRol());
-            ps.setDouble(8, jugador.getSueldo());
+    public JugadorDAO(Connection conn) {
+        this.conn = conn;
+    }
+    public void insertarJugador(Jugador jugador) {
+        String sql = "INSERT INTO jugadores (nombre, apellido, nacionalidad," +
+                " fecha_nac, nickname, rol, sueldo, cod_equipo) VALUES (?, ?, ?, ?, ?, ?, ?, ? )";
+        try (
+            PreparedStatement ps = conn.prepareStatement(sql)) {
 
-            ps.setInt(9, Integer.parseInt(jugador.getEquipo().getCodigoEquipo()));
+            ps.setString(1, jugador.getNombre());
+            ps.setString(2, jugador.getApellido());
+            ps.setString(3, jugador.getNacionalidad());
+            ps.setDate(4, java.sql.Date.valueOf(jugador.getFechaNac()));
+            ps.setString(5, jugador.getNickname());
+            ps.setString(6, jugador.getRol());
+            ps.setDouble(7, jugador.getSueldo());
+            ps.setInt(8, Integer.parseInt(jugador.getEquipo().getCodigoEquipo()));
             ps.executeUpdate();
 
-            BaseDatos.closeConnection();
         } catch (Exception e) {
             System.out.println("Error al insertar jugador." + e.getMessage());
         }
     }
 
+    public void eliminarJugador(String nickname) throws Exception {
     /**
      * Metodo para eliminar un jugador mediante su nickname como identificador
      * @param nickname El apodo único del jugador que quieres eliminar
@@ -55,16 +63,14 @@ public class JugadorDAO {
      */
     public void eliminarJugador(String nickname ) throws Exception {
         String sql = "DELETE FROM jugadores WHERE nickname = ?";
-        try {
-            Connection conn = BaseDatos.getConnection();
-            PreparedStatement ps = conn.prepareStatement(sql);
+        try (
+            PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, nickname);
-            ps.executeUpdate();
-
-            BaseDatos.closeConnection();
-        } catch (Exception e) {
-            System.out.println("Jugador eliminado correctamente.");
+            int filas = ps.executeUpdate();
+            if (filas == 0) {
+                throw new Exception("No se encontró el jugador con el nickname: " + nickname);
+            }
         }
     }
 
@@ -75,9 +81,8 @@ public class JugadorDAO {
     public void actualizarJugador(Jugador jugador) {
         String sql = "UPDATE jugadores SET nombre = ?, apellido = ?, nacionalidad = ?, " +
                 "fecha_nac = ?, rol = ?, sueldo = ?, cod_equipo = ? WHERE nickname = ?";
-        try {
-            Connection conn = BaseDatos.getConnection();
-            PreparedStatement ps = conn.prepareStatement(sql);
+        try (
+                PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, jugador.getNombre());
             ps.setString(2, jugador.getApellido());
@@ -89,12 +94,12 @@ public class JugadorDAO {
             ps.setString(8, jugador.getNickname());
 
             ps.executeUpdate();
-
-            BaseDatos.closeConnection();
-        } catch (Exception e) {
-            System.out.println("Error al actualizar." + e.getMessage());
+            System.out.println("Jugador modificado correctamente.");
+        } catch (SQLException e) {
+            System.out.println("Error al modificar jugador: " + e.getMessage());
         }
     }
+
 
     /**
      * Metodo para buscar un jugador que ya existe utilizando su nickname
@@ -104,10 +109,8 @@ public class JugadorDAO {
      */
     public Jugador buscarJugadorPorNickname(String nickname) throws Exception{
         String sql = "SELECT * FROM jugadores WHERE nickname = ?";
-        Jugador jugador = null;
-        try {
-            Connection conn = BaseDatos.getConnection();
-            PreparedStatement ps = conn.prepareStatement(sql);
+        try (
+            PreparedStatement ps = conn.prepareStatement(sql)) {
 
             ps.setString(1, nickname);
             try (
@@ -115,8 +118,7 @@ public class JugadorDAO {
                 if (rs.next()) {
                     Equipo equipo = new Equipo();
                     equipo.setCodigoEquipo(String.valueOf(rs.getInt("cod_equipo")));
-
-                    jugador = new Jugador(
+                    return new Jugador(
                             rs.getInt("cod_jugador"),
                             rs.getString("nombre"),
                             rs.getString("apellido"),
@@ -129,10 +131,9 @@ public class JugadorDAO {
                     );
                 }
             }
-        } catch (Exception e) {
-            System.out.println("ERROR. No se encuentra el jugador.");
         }
-        return jugador;
+
+        return null;
     }
 
     /**
@@ -143,7 +144,6 @@ public class JugadorDAO {
         String sql = "SELECT * FROM jugadores";
         List<Jugador> listaJugadores = new ArrayList<>();
         try (
-            Connection conn = BaseDatos.getConnection();
             PreparedStatement ps = conn.prepareStatement(sql);
             ResultSet rs = ps.executeQuery()) {
                 while (rs.next()) {
