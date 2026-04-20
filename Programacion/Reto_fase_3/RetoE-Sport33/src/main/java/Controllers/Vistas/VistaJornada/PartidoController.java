@@ -48,7 +48,7 @@ public class PartidoController {
     @FXML
     void onVolver(ActionEvent event) {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vistas/menuAdmistradorView.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/retoesport33/menuAdmistradorView.fxml"));
             Parent root = loader.load();
 
             Stage stage = (Stage) btnVolver.getScene().getWindow();

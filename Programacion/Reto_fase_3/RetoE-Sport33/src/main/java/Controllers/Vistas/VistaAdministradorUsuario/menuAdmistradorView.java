@@ -24,7 +24,7 @@ public class  menuAdmistradorView {
     private Button btnCompeticion;
 
     @FXML
-    private Button btnPartidos;
+    private Button btnPartido;
 
     @FXML
     private Button btnVolver;
@@ -36,38 +36,46 @@ public class  menuAdmistradorView {
     private Button btnVerEquipos;
 
 
+
+
     @FXML
     void onEquipo(ActionEvent event) {
-        abrirVentana("/vistas/Equipo-view.fxml", "Gestion de Equipo")  ;
+        abrirVentana("/com/example/retoesport33/Equipo-view.fxml", "Gestion de Equipo")  ;
+
+    }
+
+    @FXML
+    void onJornada(ActionEvent event) {
+        abrirVentana("/com/example/retoesport33/GestionJornada-view.fxml", "Gestion de Joirnadas")  ;
 
     }
 
     @FXML
     void onPartidos(ActionEvent event) {
-        abrirVentana("/vistas/partido-view.fxml", "Gestion de Partido")  ;
+        abrirVentana("/com/example/retoesport33/partido-view.fxml", "Gestion de Partidos")  ;
 
     }
 
 
     @FXML
     void onJugador(ActionEvent event) {
-        abrirVentana("/vistas/jugadorVista.fxml", "Gestión de Jugadores")  ;
+        abrirVentana("/com/example/retoesport33/jugadorVista.fxml", "Gestión de Jugadores")  ;
     }
 
 
     @FXML
     void onCompeticion(ActionEvent event) {
-        abrirVentana("/vistas/GestionJornada.fxml", "Gestión de Jornadas")  ;
+        abrirVentana("/com/example/retoesport33/GestionJornada.fxml", "Gestión de Jornadas")  ;
     }
 
     @FXML
     void onVerJugadores(ActionEvent event) {
-        abrirVentana("/vistas/verJugadores.fxml", "Lista de Jugadores")  ;
+        abrirVentana("/com/example/retoesport33/verJugadores.fxml", "Lista de Jugadores")  ;
     }
 
     @FXML
     void onVerEquipos(ActionEvent event) {
-        abrirVentana("/vistas/verEquipos.fxml", "Lista de Equipos")  ;
+        abrirVentana("/com/example/retoesport33/verEquipos.fxml", "Lista de Equipos")  ;
     }
 
 
