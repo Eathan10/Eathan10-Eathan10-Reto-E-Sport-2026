@@ -1,4 +1,4 @@
-package Controllers.Jugador;
+package Controllers.Vistas.Jugador;
 
 import DAO.JugadorDAO;
 import Modelo.Equipo;

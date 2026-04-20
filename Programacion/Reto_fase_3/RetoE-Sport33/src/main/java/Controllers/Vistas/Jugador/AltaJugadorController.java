@@ -1,6 +1,5 @@
-package Controllers.Jugador;
+package Controllers.Vistas.Jugador;
 
-import DAO.EquipoDAO;
 import DAO.JugadorDAO;
 import Modelo.Equipo;
 import Modelo.Jugador;
@@ -17,7 +16,6 @@ import javafx.stage.Stage;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
-import java.util.List;
 import java.util.Locale;
 
 public class AltaJugadorController {

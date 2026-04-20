@@ -10,6 +10,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.text.Font?>
 
+<<<<<<< HEAD
 <AnchorPane prefHeight="350.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.Competicion.AlCompeticionVistaController">
     <children>
         <Label layoutX="165.0" layoutY="29.0" text="NUEVA COMPETICIÓN">
@@ -42,4 +43,37 @@
         <Button fx:id="BtnCrear" layoutX="165.0" layoutY="270.0" mnemonicParsing="false" onAction="#onCrear" prefHeight="30.0" prefWidth="80.0" text="Crear" />
         <Button fx:id="BtnVolver" layoutX="275.0" layoutY="270.0" mnemonicParsing="false" onAction="#onVolver" prefHeight="30.0" prefWidth="80.0" text="Volver" />
     </children>
+=======
+
+<AnchorPane prefHeight="298.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Vistas.Competicion.AlCompeticionVistaController">
+   <children>
+      <Label layoutX="165.0" layoutY="29.0" text="NUEVA COMPETICION">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="29.0" layoutY="65.0" prefHeight="145.0" prefWidth="462.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="240.0" minWidth="10.0" prefWidth="240.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="259.20001220703125" minWidth="10.0" prefWidth="240.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints maxHeight="49.799993896484374" minHeight="10.0" prefHeight="41.000006103515624" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="51.000006103515624" minHeight="10.0" prefHeight="41.59999389648437" vgrow="SOMETIMES" />
+            <RowConstraints maxHeight="51.40000610351562" minHeight="10.0" prefHeight="32.60001220703124" vgrow="SOMETIMES" />
+          <RowConstraints maxHeight="62.400000000000006" minHeight="10.0" prefHeight="50.400000000000006" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <TextField fx:id="tfNombre" prefHeight="26.0" prefWidth="117.0" GridPane.rowIndex="1" />
+            <TextField fx:id="tfPremio" prefHeight="26.0" prefWidth="198.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="Nombre" />
+            <Label text="Premio" GridPane.columnIndex="1" />
+            <Label text="Estado" GridPane.rowIndex="2" />
+            <ComboBox fx:id="cbEstado" prefWidth="150.0" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <Button fx:id="BtnCrear" layoutX="165.0" layoutY="228.0" mnemonicParsing="false" onAction="#onCrear" prefHeight="26.0" prefWidth="73.0" text="Crear" />
+      <Button fx:id="BtnVolver" layoutX="273.0" layoutY="228.0" mnemonicParsing="false" onAction="#onVolver" prefHeight="26.0" prefWidth="67.0" text="Volver" />
+   </children>
+>>>>>>> ef850fbb1072ac398b7c203cde94538e6bda7aa6
 </AnchorPane>

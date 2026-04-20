@@ -9,14 +9,14 @@ drop table resultados cascade constraints;
 drop table perfiles cascade constraints;
 
 create table equipos(
-    cod_equipo number, 
+    cod_equipo number(3) generated always as identity, 
     nombre varchar2(55),
     fecha_fundacion date,
     constraint equi_cod_pk primary key (cod_equipo)
 );
 
 create table jugadores (
-    cod_jugador   number,
+    cod_jugador   number(3) generated always as identity,
     nombre        varchar2(55),
     apellido      varchar2(55),
     nacionalidad  varchar2(55),
@@ -34,7 +34,7 @@ create table jugadores (
 );
 
 create table competiciones(
-    cod_comp number,
+    cod_comp number(3) generated always as identity,
     nombre varchar2(55),
     estado varchar2(7),
     premio number,
@@ -43,8 +43,8 @@ create table competiciones(
 );
 
 
-create table jornadas(
-    num_jornada number,
+create table jornadas (
+    num_jornada number(3) generated always as identity,
     fecha_inicio date,
     cod_comp number,
     constraint jor_num_pk primary key (num_jornada),
@@ -53,8 +53,8 @@ create table jornadas(
 );
 
 create table partidos(
-    cod_partido number,
-    num_jornada number,
+    cod_partido number(3) generated always as identity,
+    num_jornada number(3),
     hora TIMESTAMP,
     constraint part_cod_pk primary key (cod_partido),
     constraint part_num_jorn_fk foreign key (num_jornada)
@@ -62,9 +62,9 @@ create table partidos(
 );
 
 create table resultados(
-    cod_partido number,
-    cod_equipo number,
-    resultado number,
+    cod_partido number(3),
+    cod_equipo number(3),
+    resultado number(2),
     constraint resul_cod_partido_cod_equipo_pk primary key 
     (cod_partido,cod_equipo),
     constraint resul_cod_partido_fk foreign key (cod_partido)
@@ -74,7 +74,7 @@ create table resultados(
 );
 
 create table perfiles(
-    cod_perfil number,
+    cod_perfil number(3) generated always as identity,
     nombre varchar2(55),
     password varchar2(55),
     tipo varchar2(55),
@@ -98,16 +98,35 @@ y que la select dentro del procedimiento este mas simplificada
 
 create or replace view vs_sueldos_numeros_equipos as
 select e.nombre "Equipo", e.fecha_fundacion "Fundacios", 
-        count(j.cod_jugador) "Nº jugadores",max(j.sueldo) "Max. sueldo", 
-        min(j.sueldo) "Min. sueldo", round(avg(j.sueldo),2) "Media sueldos"   
+        count(j.cod_jugador) "Numero_jugadores",max(j.sueldo) "Max_sueldo", 
+        min(j.sueldo) "Min_sueldo", round(avg(j.sueldo),2) "Media_sueldos"   
 from equipos e join jugadores j
 on j.cod_equipo = e.cod_equipo
 group by e.nombre, e.fecha_fundacion 
 ;
 
-create index idx_cod_equipo 
-on jugadores (cod_equipo);
 
+--creamos la vista para utilizarla en el procedimiento informe_jugadores
+--y que la select dentro del procedimiento esté mas simplificada
+
+create or replace view datos_jugadores as
+select j.nombre, j.apellido, j.rol, j.sueldo, e.nombre as nombre_equipo
+from jugadores j join equipos e 
+on j.cod_equipo = e.cod_equipo;
+
+
+--vista para obtener cuantas victorias y cuantas derrotas tiene cada equipo y pasarselo al
+--procedimiento almacenado
+    
+create or replace view datos_victorias_derrotas as
+    select e.nombre as nombre_equipo,
+        sum(case when r1.resultado > r2.resultado then 1 else 0 end) as victorias,
+        sum(case when r1.resultado < r2.resultado then 1 else 0 end) as derrotas
+    from equipos e
+    join resultados r1 on e.cod_equipo = r1.cod_equipo
+    join resultados r2 on r1.cod_partido = r2.cod_partido and r1.cod_equipo != r2.cod_equipo
+    group by e.nombre
+    order by victorias desc;
 
 commit;
 

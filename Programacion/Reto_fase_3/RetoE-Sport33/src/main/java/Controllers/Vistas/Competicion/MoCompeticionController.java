@@ -1,4 +1,4 @@
-package Controllers.Competicion;
+package Controllers.Vistas.Competicion;
 
 import DAO.CompeticionDAO;
 import Modelo.Competicion;
@@ -17,10 +17,10 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class AlCompeticionVistaController {
+public class MoCompeticionController {
 
     @FXML
-    private Button BtnCrear;
+    private Button BtnActualizar;
 
     @FXML
     private Button BtnVolver;
@@ -44,11 +44,10 @@ public class AlCompeticionVistaController {
         competicionDAO = new CompeticionDAO(BaseDatos.getConnection());
 
         cbEstado.setItems(FXCollections.observableArrayList("abierto", "cerrado"));
-        cbEstado.getSelectionModel().selectFirst();
     }
 
     @FXML
-    void onCrear(ActionEvent event) {
+    void onActualizar(ActionEvent event) {
         try {
             if (tfCodigo.getText().isEmpty() || tfNombre.getText().isEmpty() || tfPremio.getText().isEmpty()) {
                 mostrarAlerta("Error", "Todos los campos deben ser completados.");
@@ -60,31 +59,30 @@ public class AlCompeticionVistaController {
             String estado = cbEstado.getValue();
             double premio = Double.parseDouble(tfPremio.getText());
 
-            Competicion nuevaCompeticion = new Competicion(codigo, nombre, estado, premio);
+            Competicion competicion = new Competicion(codigo, nombre, estado, premio);
 
-            competicionDAO.insertarCompeticion(nuevaCompeticion);
-
-            mostrarAlerta("Éxito", "Competición creada correctamente.");
+            competicionDAO.actualizarCompeticion(competicion);
+            mostrarAlerta("Éxito", "Competición con código " + codigo + " actualizada correctamente.");
             onVolver(event);
-        }catch (NumberFormatException e ) {
-            mostrarAlerta("Error", "Código y premio deben ser números válidos.");
+
+        } catch (NumberFormatException e) {
+            mostrarAlerta("Error", "El código debe ser un número entero y el premio un número decimal.");
         } catch (Exception e) {
-            mostrarAlerta("Error", "Ocurrió un error al crear la competición: " + e.getMessage());
-            e.printStackTrace();
+            mostrarAlerta("Error", "No se pudo actualizar la competición: " + e.getMessage());
         }
+
     }
 
     @FXML
     void onVolver(ActionEvent event) {
         try {
             String fxml = "/com/example/retoesport33/CompeticionGestion.fxml";
-            FXMLLoader fxmlLoader = new FXMLLoader(getClass().getResource(fxml));
-            Parent root = fxmlLoader.load();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(fxml));
+            Parent root = loader.load();
             Stage stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
             stage.setScene(new Scene(root));
             stage.setTitle("Gestión de Competiciones");
             stage.show();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -97,4 +95,6 @@ public class AlCompeticionVistaController {
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
+
 }
+

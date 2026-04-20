@@ -1,4 +1,4 @@
-package Controllers.VistaAdministradorUsuario;
+package Controllers.Vistas.VistaAdministradorUsuario;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -24,6 +24,9 @@ public class  menuAdmistradorView {
     private Button btnCompeticion;
 
     @FXML
+    private Button btnPartidos;
+
+    @FXML
     private Button btnVolver;
 
     @FXML
@@ -36,6 +39,12 @@ public class  menuAdmistradorView {
     @FXML
     void onEquipo(ActionEvent event) {
         abrirVentana("/vistas/Equipo-view.fxml", "Gestion de Equipo")  ;
+
+    }
+
+    @FXML
+    void onPartidos(ActionEvent event) {
+        abrirVentana("/vistas/partido-view.fxml", "Gestion de Equipo")  ;
 
     }
 
