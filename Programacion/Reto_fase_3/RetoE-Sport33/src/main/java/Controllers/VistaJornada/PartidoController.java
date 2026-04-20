@@ -64,8 +64,41 @@ public class PartidoController {
 
     }
 
+    // prediccion IA
+    private String API_KEY = "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";
+    private String API_URL = "https://api.groq.com/openai/v1/chat/completions";
+
     private String predecirGanadorIA(Equipo local, Equipo visitante) {
-        return "";
+        try {
+            String textoPrompt = "Dime solo el nombre del ganador de este partido: "
+                    + local.getNombreEquipo() + " vs " + visitante.getNombreEquipo();
+
+            String jsonCuerpo = "{"
+                    + "\"model\": \"llama-3.3-70b-versatile\","
+                    + "\"messages\": [{\"role\": \"user\", \"content\": \"" + textoPrompt + "\"}]"
+                    + "}";
+
+            java.net.http.HttpClient client = java.net.http.HttpClient.newHttpClient();
+            java.net.http.HttpRequest request = java.net.http.HttpRequest.newBuilder()
+                    .uri(java.net.URI.create(API_URL))
+                    .header("Content-Type", "application/json")
+                    .header("Authorization", "Bearer " + API_KEY)
+                    .POST(java.net.http.HttpRequest.BodyPublishers.ofString(jsonCuerpo))
+                    .build();
+
+            java.net.http.HttpResponse<String> response = client.send(request, java.net.http.HttpResponse.BodyHandlers.ofString());
+
+            if (response.statusCode() == 200) {
+                String resultado = response.body();
+                int inicio = resultado.indexOf("\"content\":\"") + 11;
+                int fin = resultado.indexOf("\"", inicio);
+                return resultado.substring(inicio, fin);
+            }
+
+        } catch (Exception e) {
+            System.out.println("Error con la IA: " + e.getMessage());
+        }
+        return "Empate técnico";
     }
 
 
