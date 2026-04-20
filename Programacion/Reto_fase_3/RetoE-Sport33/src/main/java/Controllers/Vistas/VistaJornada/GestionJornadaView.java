@@ -1,4 +1,4 @@
-package Controllers.VistaJornada;
+package Controllers.Vistas.VistaJornada;
 
 import Modelo.Jornada;
 import Modelo.Partido;
@@ -66,7 +66,7 @@ public class GestionJornadaView {
 
     private void abrirVentanaPartidos(Jornada jornadaNueva) throws IOException {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vistas/partido-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vistas/competicion-view.fxml"));
             Parent root = loader.load();
 
 
@@ -76,7 +76,7 @@ public class GestionJornadaView {
             stage.show();
 
         }catch (IOException e){
-            mostrarAlerta("Error al cargar la ventana", "No se pudo abrir la ventana de gestión de partidos.");
+            mostrarAlerta("Error al cargar la ventana", "No se pudo abrir la ventana de competicion.");
         }
     }
 

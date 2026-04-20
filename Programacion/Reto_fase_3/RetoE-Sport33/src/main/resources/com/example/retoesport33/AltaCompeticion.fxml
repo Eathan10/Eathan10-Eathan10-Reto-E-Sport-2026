@@ -11,7 +11,7 @@
 <?import javafx.scene.text.Font?>
 
 
-<AnchorPane prefHeight="298.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Competicion.AlCompeticionVistaController">
+<AnchorPane prefHeight="298.0" prefWidth="520.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Vistas.Competicion.AlCompeticionVistaController">
    <children>
       <Label layoutX="165.0" layoutY="29.0" text="NUEVA COMPETICION">
          <font>

@@ -15,11 +15,15 @@ module com.example.retoesport33 {
     exports Controllers;
     opens Controllers to javafx.fxml;
 
-    exports Controllers.VistaEquipo;
-    opens Controllers.VistaEquipo to javafx.fxml;
-    exports Controllers.VistaAdministradorUsuario;
-    opens Controllers.VistaAdministradorUsuario to javafx.fxml;
-    exports Controllers.VistaVer;
-    opens Controllers.VistaVer to javafx.fxml;
+    exports Controllers.Vistas.VistaEquipo;
+    opens Controllers.Vistas.VistaEquipo to javafx.fxml;
+    exports Controllers.Vistas.VistaAdministradorUsuario;
+    opens Controllers.Vistas.VistaAdministradorUsuario to javafx.fxml;
+    exports Controllers.Vistas;
+    opens Controllers.Vistas to javafx.fxml;
+    exports Controllers.Vistas.VistaVer;
+    opens Controllers.Vistas.VistaVer to javafx.fxml;
+    exports Controllers.Vistas.Jugador;
+    opens Controllers.Vistas.Jugador to javafx.fxml;
 
 }

@@ -1,4 +1,4 @@
-package Controllers;
+package Controllers.Vistas.Jugador;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;

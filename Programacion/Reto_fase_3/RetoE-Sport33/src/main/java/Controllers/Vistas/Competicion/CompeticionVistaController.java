@@ -1,4 +1,4 @@
-package Controllers.Competicion;
+package Controllers.Vistas.Competicion;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;

@@ -1,4 +1,4 @@
-package Controllers.VistaEquipo;
+package Controllers.Vistas.VistaEquipo;
 
 import Controllers.EquipoController;
 import javafx.event.ActionEvent;
