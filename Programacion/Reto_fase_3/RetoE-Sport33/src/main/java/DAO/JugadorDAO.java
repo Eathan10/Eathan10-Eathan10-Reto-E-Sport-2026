@@ -24,16 +24,7 @@ public class JugadorDAO {
      * Metodo para inserta un nuevo jugador en la base de datos
      * @param jugador Objeto que contiene la informacion de jugador
      */
-    public static void insertarJugador(Jugador jugador) {
-        String sql = "INSERT INTO jugadores (cod_jugador, nombre, apellido, nacionalidad," +
-                " fecha_nac, nickname, rol, sueldo, cod_equipo) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
-        try {
-            Connection conn = BaseDatos.getConnection();
-            PreparedStatement ps = conn.prepareStatement(sql);
 
-    public JugadorDAO(Connection conn) {
-        this.conn = conn;
-    }
     public void insertarJugador(Jugador jugador) {
         String sql = "INSERT INTO jugadores (nombre, apellido, nacionalidad," +
                 " fecha_nac, nickname, rol, sueldo, cod_equipo) VALUES (?, ?, ?, ?, ?, ?, ?, ? )";
@@ -55,7 +46,6 @@ public class JugadorDAO {
         }
     }
 
-    public void eliminarJugador(String nickname) throws Exception {
     /**
      * Metodo para eliminar un jugador mediante su nickname como identificador
      * @param nickname El apodo único del jugador que quieres eliminar
