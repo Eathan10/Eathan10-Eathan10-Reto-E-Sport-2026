@@ -3,6 +3,7 @@ package Controllers.Vistas.VistaJornada;
 import Controllers.EquipoController;
 import DAO.EquipoDAO;
 import Modelo.Equipo;
+import Modelo.Jornada;
 import Modelo.Partido;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -32,12 +33,6 @@ public class PartidoController {
 
     @FXML
     private Label lbprediccion;
-
-    @FXML
-    private Label lbresultadolocal;
-
-    @FXML
-    private Label lbresultadovisitante;
 
     @FXML
     private Label lbvisitante;
@@ -77,6 +72,11 @@ public class PartidoController {
 
     @FXML
     public void initialize() {
+        Jornada ultima = Controllers.JornadaController.obtenerUltimaJornada();
+        if (ultima != null) {
+            lbfecha.setText(ultima.getFecha_inicio().toString());
+            lbhora.setText("Jornada " + ultima.getNumJornada());
+        }
         generarEnfrentamientosAutomaticos();
     }
 
@@ -85,17 +85,20 @@ public class PartidoController {
 
         List<Equipo> todosLosEquipos = EquipoController.listarTodosLosEquipos();
 
-        Collections.shuffle(todosLosEquipos);// mezcalrlos para q sean aleatorios los emparejamenntos
+        if (todosLosEquipos.size() >= 2) {
+            Collections.shuffle(todosLosEquipos);
 
-
-        if (todosLosEquipos.size() >= 2) {// de dos en dos los emparejamientos
             Equipo local = todosLosEquipos.get(0);
             Equipo visitante = todosLosEquipos.get(1);
 
             lblocal.setText(local.getNombreEquipo());
             lbvisitante.setText(visitante.getNombreEquipo());
 
-            lbprediccion.setText(predecirGanadorIA(local, visitante));
+            String ganadorIA = predecirGanadorIA(local, visitante);
+            lbprediccion.setText(ganadorIA);
+
+        } else {
+            mostrarAlerta("Error", "No hay suficientes equipos para generar un partido.");
         }
 
     }
