@@ -1,14 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="CONTROLLER_NAME"
-            prefHeight="400.0" prefWidth="600.0">
-
+<AnchorPane prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Competicion.BaCompeticionVistaController">
+    <children>
+        <Label layoutX="96.0" layoutY="25.0" text="ELIMINAR COMPETICIÓN">
+            <font><Font name="System Bold" size="18.0" /></font>
+        </Label>
+        <Label layoutX="50.0" layoutY="80.0" text="Introduce el Código de la Competición:" />
+        <TextField fx:id="tfCodigo" layoutX="50.0" layoutY="105.0" prefWidth="300.0" promptText="Ej: 101" />
+        <Button fx:id="BtnEliminar" layoutX="120.0" layoutY="150.0" onAction="#onEliminar" style="-fx-background-color: #d6cfda; -fx-text-fill: white;" text="Eliminar" />
+        <Button fx:id="BtnVolver" layoutX="210.0" layoutY="150.0" onAction="#onVolver" text="Volver" />
+    </children>
 </AnchorPane>

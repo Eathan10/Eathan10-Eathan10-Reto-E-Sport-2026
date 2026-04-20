@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="380.0" prefWidth="450.0" spacing="15" style="-fx-padding: 25;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="Controllers.Jugador.AltaJugadorController">
+<VBox prefHeight="380.0" prefWidth="450.0" spacing="15" style="-fx-padding: 25;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Jugador.AltaJugadorController">
 
     <Label alignment="CENTER" prefWidth="400.0" style="-fx-font-size: 18; -fx-font-weight: bold;" text="ALTA DE JUGADOR" />
 
@@ -32,7 +32,7 @@
         <TextField fx:id="tfNacionalidad" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
         <Label text="Fecha Nacimiento (dd/MM/yyyy)" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-        <TextField fx:id="tfNacimiento" GridPane.columnIndex="0" GridPane.rowIndex="5" promptText="25/05/1998" />
+        <TextField fx:id="tfNacimiento" promptText="25/05/1998" GridPane.columnIndex="0" GridPane.rowIndex="5" />
 
         <Label text="Sueldo (€)" GridPane.columnIndex="1" GridPane.rowIndex="4" />
         <TextField fx:id="tfSueldo" GridPane.columnIndex="1" GridPane.rowIndex="5" />
@@ -55,8 +55,8 @@
             <ColumnConstraints percentWidth="50" />
         </columnConstraints>
 
-        <Button fx:id="bGuardar" maxWidth="Infinity" onAction="#onGuardar" prefHeight="35.0" text="Guardar Registro" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <Button fx:id="bVolver" maxWidth="Infinity" onAction="#onVolver" prefHeight="35.0" text="Cancelar" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+        <Button fx:id="BtnGuardar" maxWidth="Infinity" onAction="#onGuardar" prefHeight="35.0" text="Guardar Registro" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Button fx:id="BtnVolver" maxWidth="Infinity" onAction="#onVolver" prefHeight="35.0" text="Cancelar" GridPane.columnIndex="1" GridPane.rowIndex="0" />
         <rowConstraints>
             <RowConstraints />
         </rowConstraints>

@@ -10,9 +10,9 @@ public class Competicion {
     private int codComp;
     private String nombre;
     private String estado;
-    private String premio;
+    private Double premio;
 
-    public Competicion(int codComp, String nombre, String estado, String premio) {
+    public Competicion(int codComp, String nombre, String estado, Double premio) {
         this.codComp = codComp;
         this.nombre = nombre;
         this.estado = estado;
@@ -43,11 +43,11 @@ public class Competicion {
         this.estado = estado;
     }
 
-    public String getPremio() {
+    public Double getPremio() {
         return premio;
     }
 
-    public void setPremio(String premio) {
+    public void setPremio(Double premio) {
         this.premio = premio;
     }
 

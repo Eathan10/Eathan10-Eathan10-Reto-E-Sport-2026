@@ -20,6 +20,9 @@ public class Jugador {
 
     private Equipo equipo;
 
+    public Jugador() {
+    }
+
     public Jugador(int codJugador, String nombre, String apellido, String nacionalidad, LocalDate fechaNac, String nickname, String rol, double sueldo, Equipo equipo) {
         this.codJugador = codJugador;
         this.nombre = nombre;

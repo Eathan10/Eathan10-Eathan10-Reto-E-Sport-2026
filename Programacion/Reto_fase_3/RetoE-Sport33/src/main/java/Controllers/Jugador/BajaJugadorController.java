@@ -1,15 +1,20 @@
 package Controllers.Jugador;
 
 import DAO.JugadorDAO;
+import Utilidades.BaseDatos;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.ButtonType;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 import java.util.Optional;
 
 public class BajaJugadorController {
@@ -24,19 +29,17 @@ public class BajaJugadorController {
     private TextField tfNicknameBusqueda;
 
     private JugadorDAO jugadorDAO;
-    private JugadorGestionController jugadorGestionController;
 
-    public void setDatos(JugadorDAO jugadorDAO, JugadorGestionController jugadorGestionController) {
-        this.jugadorDAO = jugadorDAO;
-        this.jugadorGestionController = jugadorGestionController;
+    @FXML
+    private void initialize() {
+        jugadorDAO = new JugadorDAO(BaseDatos.getConnection());
     }
 
     @FXML
     void onEliminar(ActionEvent event) {
         String nickname = tfNicknameBusqueda.getText().trim();
         if (nickname.isEmpty()) {
-            mostrarAlerta(Alert.AlertType.WARNING, "El campo de nickname no puede estar vacío.", "Por favor, ingresa un nickname para eliminar.");
-            return;
+            mostrarAlerta(Alert.AlertType.WARNING, "Campo vacío", "El nickname no puede estar vacío.");            return;
         }
 
         Alert confirmacion = new Alert(Alert.AlertType.CONFIRMATION);
@@ -59,21 +62,26 @@ public class BajaJugadorController {
         }
     }
 
+    @FXML
+    void onVolver(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/retoesport33/JugadorGestion.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) BtnVolver.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Gestión de Jugadores");
+            stage.show();
+        } catch (IOException e) {
+            mostrarAlerta(Alert.AlertType.ERROR, "Error de Navegación", "No se pudo volver a la pantalla anterior.");
+        }
+    }
+
     private void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensaje) {
         Alert alerta = new Alert(tipo);
         alerta.setTitle(titulo);
         alerta.setHeaderText(null);
         alerta.setContentText(mensaje);
         alerta.showAndWait();
-    }
-
-    @FXML
-    void onVolver(ActionEvent event) {
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.close();
-    }
-
-    public void setJugadorDAO(JugadorDAO jugadorDAO) {
     }
 }
 

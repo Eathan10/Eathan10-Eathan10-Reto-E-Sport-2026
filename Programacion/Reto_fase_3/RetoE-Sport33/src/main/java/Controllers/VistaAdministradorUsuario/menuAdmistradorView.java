@@ -42,7 +42,7 @@ public class  menuAdmistradorView {
 
     @FXML
     void onJugador(ActionEvent event) {
-        abrirVentana("/vistas/jugadorVista.fxml", "Gestión de Jugadores")  ;
+        abrirVentana("/vistas/JugadorGestion.fxml", "Gestión de Jugadores")  ;
     }
 
 
