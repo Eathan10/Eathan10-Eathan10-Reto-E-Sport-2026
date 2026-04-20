@@ -1,35 +1,45 @@
 -- Autor Equipo 1: Unax Gonzales, Urko Lopez, Fatima Din, Eathan Garzon
 
-set serveroutput on;
 
 create or replace trigger tr_sueldo_jugador 
 before insert or update of sueldo on jugadores
 for each row
+declare
+    e_sueldo exception;
 
 begin
     if :new.sueldo < 1221 then
-        raise_application_error
-        (-20001,'error: El sueldo del jugador no puede ser menor al SMI (1.221)');
+        raise e_sueldo;
     end if;
+exception 
+    when e_sueldo then
+        raise_application_error(-20001,'error: El sueldo del jugador no puede ser menor al SMI (1.221)');
 end tr_sueldo_jugador;
 ------------------------------------------------------------
 create or replace trigger tr_numero_jugadores_max
 for insert or update of cod_equipo on jugadores
 compound trigger
 
-    after statement is
-        v_max_jugadores number;
-    begin
-        
-        select max(count(*)) into v_max_jugadores
-        from jugadores
-        group by cod_equipo;
+    v_cod_equipo jugadores.cod_equipo%type;
 
-        if v_max_jugadores > 6 then
-            raise_application_error
-            (-20001,'error: Operación cancelada. Ningún equipo puede tener más de 6 jugadores.');
-        end if;
+    before each row is
+    begin
+        v_cod_equipo := :new.cod_equipo;
+    end before each row;
+
+    after statement is
+        v_count number;
+    begin
+        select count(*) into v_count
+        from jugadores
+        where cod_equipo = v_cod_equipo;
         
+        if v_count > 6 then
+            raise_application_error(
+                -20001,
+                'error: el equipo ya tiene 6 jugadores. no se puede agregar mas.'
+            );
+        end if;
     end after statement;
 
 end tr_numero_jugadores_max;
