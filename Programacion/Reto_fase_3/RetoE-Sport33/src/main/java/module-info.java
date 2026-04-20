@@ -7,6 +7,7 @@ module com.example.retoesport33 {
     requires javafx.fxml;
     requires javafx.graphics;
     requires com.example.retoesport33;
+    requires java.net.http;
 
 
     opens com.example.retoesport33 to javafx.fxml;
