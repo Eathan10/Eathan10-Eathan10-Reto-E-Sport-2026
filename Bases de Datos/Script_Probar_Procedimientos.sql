@@ -45,7 +45,8 @@ Procedimiento PL/SQL terminado correctamente.
 
 --BLOQUE ANONIMO PARA PROBAR PROCEDIMIENTO INFORME VICTORIAS
 
-SET SERVEROUTPUT ON; 
+--BLOQUE ANONIMO PARA PROBAR PROCEDIMIENTO INFORME VICTORIAS
+
 DECLARE
     v_cursor SYS_REFCURSOR;
     v_nombre EQUIPOS.nombre%TYPE;
@@ -67,15 +68,12 @@ BEGIN
 
     END LOOP;
     
-    CLOSE v_cursor;
+
 EXCEPTION
     WHEN OTHERS THEN
         DBMS_OUTPUT.PUT_LINE('Error: ' || SQLERRM);
-        IF v_cursor%ISOPEN THEN
-            CLOSE v_cursor;
-        END IF;
+
 END;
-/
 
 /*
 CLASIFICACION DE LA LIGA:
@@ -89,7 +87,8 @@ Procedimiento PL/SQL terminado correctamente.
 
 --BLOQUE ANONIMO PARA PROBAR EL PROCEDIMIENTO pr_informe_jugadores
 
-SET SERVEROUTPUT ON
+--BLOQUE ANONIMO PARA PROBAR EL PROCEDIMIENTO pr_informe_jugadores
+
 
 DECLARE
     v_cursor SYS_REFCURSOR;
@@ -106,13 +105,17 @@ BEGIN
         EXIT WHEN v_cursor%NOTFOUND;
         
         DBMS_OUTPUT.PUT_LINE(
-            v_nombre || ' ' || v_apellido || ' ' || v_rol || ' ' || v_sueldo);
+            v_nombre || ' ' || v_apellido || ' | rol: ' || v_rol || ' | sueldo: ' || v_sueldo);
             
     END LOOP;
     
     CLOSE v_cursor;
+    
+exception 
+when others then
+    dbms_output.put_line('Error: ' || sqlerrm);
+
 END;
-/
 
 /*
 ana martinez centinela 3000
