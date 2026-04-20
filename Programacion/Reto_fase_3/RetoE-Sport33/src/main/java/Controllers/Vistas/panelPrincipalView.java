@@ -1,4 +1,4 @@
-package Controllers.VistaAdministradorUsuario;
+package Controllers.Vistas;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -11,51 +11,34 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class UsuarioView{
+public class panelPrincipalView {
 
     @FXML
-    private Button btnVerEquipos;
+    private Button btnEntrar;
 
     @FXML
-    private Button btnVerJugadores;
-
-    @FXML
-    private Button btnVolver;
-
-    @FXML
-    void onVerEquipos(ActionEvent event) {
-        cambiarVentana("/com/example/retoesport33/verEquipos.fxml", "Lista de Equipos");
-    }
-
-
-    @FXML
-    void onVerJugadores(ActionEvent event) {
-        cambiarVentana("/com/example/retoesport33/verJugadores.fxml", "Lista de Jugadores");
-    }
-
-    @FXML
-    void onVolver(ActionEvent event) {
+    void onEntrar(ActionEvent event) {
         cambiarVentana("/com/example/retoesport33/perfil-view.fxml", "Selección de Perfil");
     }
-
-
-
 
     private void cambiarVentana(String rutaFXML, String titulo) {
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource(rutaFXML));
             Parent root = loader.load();
 
-            Stage stage = (Stage) btnVerEquipos.getScene().getWindow();
+            Stage stage = (Stage) btnEntrar.getScene().getWindow();
 
             stage.setScene(new Scene(root));
             stage.setTitle(titulo);
+            stage.centerOnScreen();
             stage.show();
 
         } catch (IOException e) {
-            mostrarAlerta("Error al cargar la ventana", "No se pudo abrir la ventana de Menu del administrador.");
+            e.printStackTrace();
+            mostrarAlerta("Error de carga", "No se pudo encontrar el archivo: " + rutaFXML);
+        } catch (NullPointerException e) {
+            mostrarAlerta("Error de ruta", "La ruta al FXML es incorrecta o el archivo no existe.");
         }
-
     }
 
     private void mostrarAlerta(String titulo, String mensaje) {
@@ -65,5 +48,4 @@ public class UsuarioView{
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
-
 }

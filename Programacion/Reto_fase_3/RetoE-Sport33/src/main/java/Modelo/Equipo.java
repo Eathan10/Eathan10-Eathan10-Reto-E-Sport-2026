@@ -81,6 +81,5 @@ public class Equipo {
 
 
     public Jugador[] getJugadores() {
-        return new Jugador[0];
-    }
+        return listaJugadores.toArray(new Jugador[0]);    }
 }

@@ -1,4 +1,4 @@
-package Controllers.Competicion;
+package Controllers.Vistas.Competicion;
 
 public class BaCompeticionVistaController {
 }

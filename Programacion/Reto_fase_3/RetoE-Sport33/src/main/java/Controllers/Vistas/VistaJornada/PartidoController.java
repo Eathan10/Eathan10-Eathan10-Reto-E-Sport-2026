@@ -1,4 +1,4 @@
-package Controllers.VistaJornada;
+package Controllers.Vistas.VistaJornada;
 
 import Controllers.EquipoController;
 import DAO.EquipoDAO;

@@ -8,7 +8,7 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox prefHeight="250.0" prefWidth="400.0" spacing="20" style="-fx-padding: 30;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="Controllers.Jugador.BajaJugadorController">
+<VBox prefHeight="250.0" prefWidth="400.0" spacing="20" style="-fx-padding: 30;" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/21" fx:controller="Controllers.Vistas.Jugador.BajaJugadorController">
 
     <Label alignment="CENTER" prefWidth="340.0" style="-fx-font-size: 18; -fx-font-weight: bold;" text="BAJA DE JUGADOR" />
 
