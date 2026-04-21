@@ -13,6 +13,14 @@ public class Equipo {
     private String CodigoEquipo;
     private LocalDate FechaFundacion;
 
+    // ATRIBUTOS NUEVOS PARA LOS INFORMES PROCEDURES
+    private int numeroJugadores;
+    private double maxSueldo;
+    private double minSueldo;
+    private double mediaSueldos;
+    private int victorias;
+    private int derrotas;
+
 
     //RELACION
     private ArrayList<Jugador> listaJugadores; //1 equipo -- N jugadores
@@ -82,4 +90,22 @@ public class Equipo {
 
     public Jugador[] getJugadores() {
         return listaJugadores.toArray(new Jugador[0]);    }
+
+    public int getNumeroJugadores() { return numeroJugadores; }
+    public void setNumeroJugadores(int numeroJugadores) { this.numeroJugadores = numeroJugadores; }
+
+    public double getMaxSueldo() { return maxSueldo; }
+    public void setMaxSueldo(double maxSueldo) { this.maxSueldo = maxSueldo; }
+
+    public double getMinSueldo() { return minSueldo; }
+    public void setMinSueldo(double minSueldo) { this.minSueldo = minSueldo; }
+
+    public double getMediaSueldos() { return mediaSueldos; }
+    public void setMediaSueldos(double mediaSueldos) { this.mediaSueldos = mediaSueldos; }
+
+    public int getVictorias() { return victorias; }
+    public void setVictorias(int victorias) { this.victorias = victorias; }
+
+    public int getDerrotas() { return derrotas; }
+    public void setDerrotas(int derrotas) { this.derrotas = derrotas; }
 }
