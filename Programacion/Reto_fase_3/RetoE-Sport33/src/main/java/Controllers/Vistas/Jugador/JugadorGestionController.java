@@ -45,7 +45,7 @@ public class JugadorGestionController {
     void onBorrar(ActionEvent event) {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("Controllers/Jugador/AltaJugador.fxml"));
         Parent vista = loader.load();
-        BajaJugadorController ctrl = loader.getController();
+        Controllers.Jugador.BajaJugadorController ctrl = loader.getController();
         ctrl.setJugadorDAO(jugadorDAO);
         panelPrincipal.setCenter(vista);
 

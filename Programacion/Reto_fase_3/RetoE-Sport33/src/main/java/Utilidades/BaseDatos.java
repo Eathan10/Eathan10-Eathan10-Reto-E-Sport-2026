@@ -6,7 +6,8 @@ import java.sql.SQLException;
 
 public class BaseDatos {
 
-    static Connection conn;
+    // Inicializamos a null explícitamente
+    private static Connection conn = null;
 
     public static void connect() {
         try {
@@ -15,15 +16,34 @@ public class BaseDatos {
             String user = "eqdaw01";
             String password = "eqdaw01";
             conn = DriverManager.getConnection(url, user, password);
+            System.out.println("Conexión establecida con éxito.");
         } catch (ClassNotFoundException e) {
-            System.out.println("Error en Class.forName " + e.getMessage());
-        } catch (Exception e) {
-            System.out.println("Error al abrir conexion " + e.getMessage());
-
+            System.out.println("Error: No se encontró el driver de Oracle " + e.getMessage());
+        } catch (SQLException e) {
+            System.out.println("Error al abrir conexión SQL: " + e.getMessage());
         }
     }
+
     public static Connection getConnection() {
+        try {
+            if (conn == null || conn.isClosed()) {
+                connect();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
         return conn;
     }
-}
 
+
+    public static void closeConnection() {
+        try {
+            if (conn != null && !conn.isClosed()) {
+                conn.close();
+                System.out.println("Conexión cerrada.");
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al cerrar la conexión: " + e.getMessage());
+        }
+    }
+}

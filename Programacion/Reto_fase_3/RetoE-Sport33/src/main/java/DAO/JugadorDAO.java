@@ -20,6 +20,10 @@ import java.util.List;
 public class JugadorDAO {
 
     private final Connection conn;
+
+    public JugadorDAO(Connection connection) {
+        this.conn = BaseDatos.getConnection();
+    }
     /**
      * Metodo para inserta un nuevo jugador en la base de datos
      * @param jugador Objeto que contiene la informacion de jugador

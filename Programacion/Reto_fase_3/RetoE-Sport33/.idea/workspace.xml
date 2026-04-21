@@ -1,7 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="53fe0b79-a14b-4013-9592-64e33225d295" name="Changes" comment="" />
+    <list default="true" id="5fcb2fc2-82ac-4c18-990b-392bea12d266" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../../../.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.agent.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.ask.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/copilot.data.migration.edit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Vistas/Jugador/BajaJugadorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Vistas/Jugador/BajaJugadorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Vistas/Jugador/JugadorGestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Vistas/Jugador/JugadorGestionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/verJugadpresController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/verJugadpresController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/JornadaDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/JornadaDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/JugadorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/JugadorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utilidades/BaseDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utilidades/BaseDatos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -9,26 +27,43 @@
   </component>
   <component name="CopilotPersistence">
     <persistenceIdMap>
-      <entry key="_C:/Users/141ga08/Desktop/Reto Fase 3/Programacion/Reto_fase_3/RetoE-Sport33" value="3Cej1HRJKS3yqBSUer4Orf4X976" />
+      <entry key="_C:/Users/141ga08/Desktop/Reto Fase 3/Programacion/Reto_fase_3/RetoE-Sport33" value="3Cen8Z3yPDDI0Pdqjh93SzCer41" />
     </persistenceIdMap>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
+      </MavenGeneralSettings>
+    </option>
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="ProjectErrors" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 7
 }</component>
-  <component name="ProjectId" id="3Cej1HRJKS3yqBSUer4Orf4X976" />
+  <component name="ProjectId" id="3Cen8Z3yPDDI0Pdqjh93SzCer41" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;Application.MainApplication.executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;rama-eathan&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
@@ -43,14 +78,14 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="53fe0b79-a14b-4013-9592-64e33225d295" name="Changes" comment="" />
-      <created>1776752714167</created>
+      <changelist id="5fcb2fc2-82ac-4c18-990b-392bea12d266" name="Changes" comment="" />
+      <created>1776754745753</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1776752714167</updated>
-      <workItem from="1776752715831" duration="141000" />
-      <workItem from="1776752868022" duration="19000" />
-      <workItem from="1776752909849" duration="159000" />
+      <updated>1776754745753</updated>
+      <workItem from="1776754747481" duration="1298000" />
+      <workItem from="1776756063054" duration="144000" />
+      <workItem from="1776756252829" duration="1060000" />
     </task>
     <servers />
   </component>

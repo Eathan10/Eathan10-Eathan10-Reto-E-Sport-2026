@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class verJugadpresController {
 
-    private JugadorDAO jugadorDao = new JugadorDAO();
+    private JugadorDAO jugadorDao = new JugadorDAO(BaseDatos.getConnection());
 
     /**
      * obtiene la lista completa de jugadores
