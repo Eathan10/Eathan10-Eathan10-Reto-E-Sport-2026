@@ -7,6 +7,7 @@ import Utilidades.BaseDatos;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.CallableStatement;
 
 /**
  * Clase de Acceso a Datos para la entidad Equipo, para realizar los cambion, altas y bajas que quieras
@@ -190,6 +191,82 @@ public class EquipoDAO {
 
         return lista;
 
+    }
+
+    /**
+     * Metodo para ejecutar el procedimiento almacenado pr_obtener_informe_equipos
+     */
+    public static List<Equipo> obtenerInformeEquipos() {
+        List<Equipo> listaEquipos = new ArrayList<>();
+        String sql = "{call pr_obtener_informe_equipos(?)}";
+
+        try {
+            Connection conn = BaseDatos.getConnection();
+            CallableStatement cs = conn.prepareCall(sql);
+
+            cs.registerOutParameter(1, java.sql.Types.REF_CURSOR);
+            cs.execute();
+
+            ResultSet rs = (ResultSet) cs.getObject(1);
+            while (rs.next()) {
+                Equipo equipo = new Equipo();
+                equipo.setNombreEquipo(rs.getString("equipo"));
+                
+                if (rs.getDate("fundacion") != null) {
+                    equipo.setFechaFundacion(rs.getDate("fundacion").toLocalDate());
+                }
+                
+                Descomenta estas lineas SOLO si has añadido estos atributos a tu clase Modelo.Equipo
+                equipo.setNumeroJugadores(rs.getInt("numero_jugadores"));
+                equipo.setMaxSueldo(rs.getDouble("max_sueldo"));
+                equipo.setMinSueldo(rs.getDouble("min_sueldo"));
+                equipo.setMediaSueldos(rs.getDouble("Media_sueldos"));
+                
+                listaEquipos.add(equipo);
+            }
+            BaseDatos.closeConnection();
+
+        } catch (SQLException e) {
+            System.out.println("Error al obtener el informe de equipos: " + e.getMessage());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return listaEquipos;
+    }
+
+    /**
+     * Metodo para ejecutar el procedimiento almacenado pr_informe_victorias_derrotas
+     */
+    public static List<Equipo> informeVictoriasDerrotas() {
+        List<Equipo> listaEquipos = new ArrayList<>();
+        String sql = "{call pr_informe_victorias_derrotas(?)}";
+
+        try {
+            Connection conn = BaseDatos.getConnection();
+            CallableStatement cs = conn.prepareCall(sql);
+
+            cs.registerOutParameter(1, java.sql.Types.REF_CURSOR);
+            cs.execute();
+
+            ResultSet rs = (ResultSet) cs.getObject(1);
+            while (rs.next()) {
+                Equipo equipo = new Equipo();
+                equipo.setNombreEquipo(rs.getString("nombre_equipo"));
+                
+              
+                equipo.setVictorias(rs.getInt("victorias"));
+                equipo.setDerrotas(rs.getInt("derrotas"));
+                
+                listaEquipos.add(equipo);
+            }
+            BaseDatos.closeConnection();
+
+        } catch (SQLException e) {
+            System.out.println("Error al obtener el informe de victorias/derrotas: " + e.getMessage());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return listaEquipos;
     }
 
 }

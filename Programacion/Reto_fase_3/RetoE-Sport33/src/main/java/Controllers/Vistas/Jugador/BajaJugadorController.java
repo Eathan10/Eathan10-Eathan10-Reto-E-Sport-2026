@@ -6,6 +6,7 @@ import DAO.JugadorDAO;
 
 import Utilidades.BaseDatos;
 
+import Utilidades.BaseDatos;
 import javafx.event.ActionEvent;
 
 import javafx.fxml.FXML;
@@ -18,6 +19,10 @@ import javafx.scene.Parent;
 
 import javafx.scene.Scene;
 
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 
 import javafx.scene.control.Button;
@@ -32,6 +37,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
+import java.io.IOException;
 import java.util.Optional;
 
 
@@ -68,6 +74,9 @@ public class BajaJugadorController {
 
         jugadorDAO = new JugadorDAO(BaseDatos.getConnection());
 
+    @FXML
+    private void initialize() {
+        jugadorDAO = new JugadorDAO(BaseDatos.getConnection());
     }
 
 
@@ -82,6 +91,7 @@ public class BajaJugadorController {
 
             mostrarAlerta(Alert.AlertType.WARNING, "Campo vacío", "El nickname no puede estar vacío."); return;
 
+            mostrarAlerta(Alert.AlertType.WARNING, "Campo vacío", "El nickname no puede estar vacío.");            return;
         }
 
 
@@ -154,6 +164,20 @@ public class BajaJugadorController {
 
 
 
+    @FXML
+    void onVolver(ActionEvent event) {
+        try {
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/retoesport33/JugadorGestion.fxml"));
+            Parent root = loader.load();
+            Stage stage = (Stage) BtnVolver.getScene().getWindow();
+            stage.setScene(new Scene(root));
+            stage.setTitle("Gestión de Jugadores");
+            stage.show();
+        } catch (IOException e) {
+            mostrarAlerta(Alert.AlertType.ERROR, "Error de Navegación", "No se pudo volver a la pantalla anterior.");
+        }
+    }
+
     private void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensaje) {
 
         Alert alerta = new Alert(tipo);
@@ -167,5 +191,8 @@ public class BajaJugadorController {
         alerta.showAndWait();
 
     }
+        alerta.showAndWait();
+    }
+}
 
 }

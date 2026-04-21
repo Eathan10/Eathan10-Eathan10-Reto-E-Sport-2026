@@ -7,6 +7,8 @@ import Modelo.Jugador;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import javax.swing.JOptionPane;
+
 
 /**
  * Controlador para la gestión de Equipos, tantopara crear equipos, borrarlos o modificarlos, intrermediario entre la vista y el DAO
@@ -79,5 +81,41 @@ public class EquipoController {
      */
     public static List<Equipo> listarTodosLosEquipos() {;
         return EquipoDAO.obtenerTodos();
+    }
+
+    /**
+     * Muestra un JOptionPane con el informe general de los equipos
+     */
+    public static void mostrarInformeGeneralEquipos() {
+        List<Equipo> lista = EquipoDAO.obtenerInformeEquipos();
+        StringBuilder sb = new StringBuilder("--- INFORME GENERAL DE EQUIPOS ---\n\n");
+        
+        for (Equipo e : lista) {
+            sb.append("Equipo: ").append(e.getNombreEquipo()).append("\n")
+              .append("  Fundación: ").append(e.getFechaFundacion()).append("\n")
+              .append("  Nº Jugadores: ").append(e.getNumeroJugadores()).append("\n")
+              .append("  Sueldo Máximo: ").append(e.getMaxSueldo()).append("€\n")
+              .append("  Sueldo Mínimo: ").append(e.getMinSueldo()).append("€\n")
+              .append("  Media Sueldos: ").append(e.getMediaSueldos()).append("€\n")
+              .append("--------------------------------------\n");
+        }
+        
+        JOptionPane.showMessageDialog(null, sb.toString(), "Informe de Equipos", JOptionPane.INFORMATION_MESSAGE);
+    }
+
+    /**
+     * Muestra un joptionPane con la clasificación de victorias y derrotas
+     */
+    public static void mostrarClasificacionEquipos() {
+        List<Equipo> lista = EquipoDAO.informeVictoriasDerrotas();
+        StringBuilder sb = new StringBuilder("--- CLASIFICACIÓN DE EQUIPOS ---\n\n");
+        
+        for (Equipo e : lista) {
+            sb.append("Equipo: ").append(e.getNombreEquipo())
+              .append(" | Victorias: ").append(e.getVictorias())
+              .append(" | Derrotas: ").append(e.getDerrotas()).append("\n");
+        }
+        
+        JOptionPane.showMessageDialog(null, sb.toString(), "Victorias y Derrotas", JOptionPane.INFORMATION_MESSAGE);
     }
 }

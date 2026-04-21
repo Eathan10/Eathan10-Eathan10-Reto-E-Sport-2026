@@ -7,6 +7,7 @@ module com.example.retoesport33 {
     requires javafx.graphics;
     requires java.net.http;
 
+
     opens com.example.retoesport33 to javafx.fxml;
     exports com.example.retoesport33;
 
@@ -27,5 +28,19 @@ module com.example.retoesport33 {
 
     exports Controllers.Vistas.Jugador;
     opens Controllers.Vistas.Jugador to javafx.fxml;
+    exports Controllers.VistaEquipo;
+    opens Controllers.VistaEquipo to javafx.fxml;
+
+    exports Controllers.VistaAdministradorUsuario;
+    opens Controllers.VistaAdministradorUsuario to javafx.fxml;
+
+    exports Controllers.VistaVer;
+    opens Controllers.VistaVer to javafx.fxml;
+
+    exports Controllers.Jugador;
+    opens Controllers.Jugador to javafx.fxml;
+
+    exports Controllers.Competicion;
+    opens Controllers.Competicion to javafx.fxml;
 
 }
