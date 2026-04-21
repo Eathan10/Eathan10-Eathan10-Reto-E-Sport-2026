@@ -5,11 +5,8 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
-<<<<<<< HEAD:Programacion/Reto_fase_3/RetoE-Sport33/src/main/java/Controllers/Jugador/JugadorGestionController.java
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
-=======
->>>>>>> b734a0f2c531b27a090b7af1f25d6c6952e50927:Programacion/Reto_fase_3/RetoE-Sport33/src/main/java/Controllers/Vistas/Jugador/JugadorGestionController.java
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 
@@ -36,6 +33,12 @@ public class JugadorGestionController {
 
     @FXML
     void onBorrar(ActionEvent event) {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("Controllers/Jugador/AltaJugador.fxml"));
+        Parent vista = loader.load();
+        Controllers.Jugador.BajaJugadorController ctrl = loader.getController();
+        ctrl.setJugadorDAO(jugadorDAO);
+        panelPrincipal.setCenter(vista);
+
         cambiarVista("/com/example/retoesport33/BajaJugador.fxml", "Baja de Jugador");
     }
 

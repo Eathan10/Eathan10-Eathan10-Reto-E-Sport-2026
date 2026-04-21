@@ -36,12 +36,8 @@ public class JornadaDAO {
             throw new RuntimeException(e);
         } catch (Exception e) {
             throw new RuntimeException(e);
-        } finally{
-            try {
-                BaseDatos.closeConnection();
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
+        } finally {
+            BaseDatos.closeConnection();
         }
     }
 

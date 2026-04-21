@@ -22,6 +22,8 @@ public class JugadorDAO {
 
     private final Connection conn;
 
+    public JugadorDAO(Connection connection) {
+        this.conn = BaseDatos.getConnection();
     public JugadorDAO(Connection conn) {
         this.conn = conn;
     }
