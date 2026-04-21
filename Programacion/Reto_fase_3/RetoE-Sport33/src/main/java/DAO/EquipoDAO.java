@@ -216,11 +216,11 @@ public class EquipoDAO {
                     equipo.setFechaFundacion(rs.getDate("fundacion").toLocalDate());
                 }
                 
-                // Descomenta estas lineas SOLO si has añadido estos atributos a tu clase Modelo.Equipo
-                // equipo.setNumeroJugadores(rs.getInt("numero_jugadores"));
-                // equipo.setMaxSueldo(rs.getDouble("max_sueldo"));
-                // equipo.setMinSueldo(rs.getDouble("min_sueldo"));
-                // equipo.setMediaSueldos(rs.getDouble("Media_sueldos"));
+                Descomenta estas lineas SOLO si has añadido estos atributos a tu clase Modelo.Equipo
+                equipo.setNumeroJugadores(rs.getInt("numero_jugadores"));
+                equipo.setMaxSueldo(rs.getDouble("max_sueldo"));
+                equipo.setMinSueldo(rs.getDouble("min_sueldo"));
+                equipo.setMediaSueldos(rs.getDouble("Media_sueldos"));
                 
                 listaEquipos.add(equipo);
             }
@@ -253,9 +253,9 @@ public class EquipoDAO {
                 Equipo equipo = new Equipo();
                 equipo.setNombreEquipo(rs.getString("nombre_equipo"));
                 
-                // Descomenta estas lineas SOLO si has añadido estos atributos a tu clase Modelo.Equipo
-                // equipo.setVictorias(rs.getInt("victorias"));
-                // equipo.setDerrotas(rs.getInt("derrotas"));
+              
+                equipo.setVictorias(rs.getInt("victorias"));
+                equipo.setDerrotas(rs.getInt("derrotas"));
                 
                 listaEquipos.add(equipo);
             }
