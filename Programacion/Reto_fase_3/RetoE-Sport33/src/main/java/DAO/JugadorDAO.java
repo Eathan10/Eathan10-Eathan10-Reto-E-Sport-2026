@@ -10,6 +10,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
+import java.sql.CallableStatement;
 
 /**
  * Clase de Acceso a Datos para la entidad Jugador, para realizar los cambion, altas, bajas que quieras, bucarlos y obtenerlos
@@ -128,6 +129,7 @@ public class JugadorDAO {
         return listaJugadores;
     }
 
+
     public List<Equipo> obtenerEquiposDisp() throws SQLException {
         String sql = "SELECT cod_equipo, nombre FROM equipos";
         List<Equipo> listaEquipos = new ArrayList<>();
@@ -159,5 +161,36 @@ public class JugadorDAO {
                 rs.getDouble("sueldo"),
                 equipo
         );
+
+
+    /**
+     * Metodo para ejecutar el procedimiento almacenado pr_informe_jugadores
+     */
+    public List<Jugador> obtenerInformeJugadores(String nombreEquipo) {
+        List<Jugador> listaJugadores = new ArrayList<>();
+        String sql = "{call pr_informe_jugadores(?, ?)}";
+
+        try (CallableStatement cs = conn.prepareCall(sql)) {
+            
+            cs.setString(1, nombreEquipo);
+            cs.registerOutParameter(2, java.sql.Types.REF_CURSOR);
+            cs.execute();
+
+            try (ResultSet rs = (ResultSet) cs.getObject(2)) {
+                while (rs.next()) {
+                    Jugador jugador = new Jugador();
+                    jugador.setNombre(rs.getString("nombre"));
+                    jugador.setApellido(rs.getString("apellido"));
+                    jugador.setRol(rs.getString("rol"));
+                    jugador.setSueldo(rs.getDouble("sueldo"));
+                    
+                    listaJugadores.add(jugador);
+                }
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al obtener el informe de jugadores: " + e.getMessage());
+        }
+        return listaJugadores;
+
     }
 }

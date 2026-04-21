@@ -97,9 +97,9 @@ y que la select dentro del procedimiento este mas simplificada
 */
 
 create or replace view vs_sueldos_numeros_equipos as
-select e.nombre "Equipo", e.fecha_fundacion "Fundacios", 
-        count(j.cod_jugador) "Numero_jugadores",max(j.sueldo) "Max_sueldo", 
-        min(j.sueldo) "Min_sueldo", round(avg(j.sueldo),2) "Media_sueldos"   
+select e.nombre Equipo, e.fecha_fundacion Fundacion, 
+        count(j.cod_jugador) Numero_jugadores,max(j.sueldo) Max_sueldo, 
+        min(j.sueldo) Min_sueldo, round(avg(j.sueldo),2) Media_sueldos   
 from equipos e join jugadores j
 on j.cod_equipo = e.cod_equipo
 group by e.nombre, e.fecha_fundacion 
@@ -115,17 +115,34 @@ from jugadores j join equipos e
 on j.cod_equipo = e.cod_equipo;
 
 
---vista para obtener cuantas victorias y cuantas derrotas tiene cada equipo y pasarselo al
---procedimiento almacenado
-    
-create or replace view datos_victorias_derrotas as
-    select e.nombre as nombre_equipo,
-        sum(case when r1.resultado > r2.resultado then 1 else 0 end) as victorias,
-        sum(case when r1.resultado < r2.resultado then 1 else 0 end) as derrotas
+-- Creamo las vistas para almacenar el numero de victoria y derrotas
+
+create or replace view victorias as
+    select e.nombre as nombre_equipo, count(*) as victorias
     from equipos e
     join resultados r1 on e.cod_equipo = r1.cod_equipo
-    join resultados r2 on r1.cod_partido = r2.cod_partido and r1.cod_equipo != r2.cod_equipo
-    group by e.nombre
+    join resultados r2 on r1.cod_partido = r2.cod_partido 
+        and r1.cod_equipo != r2.cod_equipo
+    where r1.resultado > r2.resultado
+    group by e.nombre;
+
+create or replace view derrotas as
+    select e.nombre as nombre_equipo, count(*) as derrotas
+    from equipos e
+    join resultados r1 on e.cod_equipo = r1.cod_equipo
+    join resultados r2 on r1.cod_partido = r2.cod_partido 
+        and r1.cod_equipo != r2.cod_equipo
+    where r1.resultado < r2.resultado
+    group by e.nombre;
+
+create or replace view datos_victorias_derrotas as
+    select 
+        e.nombre as nombre_equipo, 
+        nvl(v.victorias, 0) as victorias, 
+        nvl(d.derrotas, 0) as derrotas
+    from equipos e
+    left join victorias v on e.nombre = v.nombre_equipo
+    left join derrotas d on e.nombre = d.nombre_equipo
     order by victorias desc;
 
 commit;

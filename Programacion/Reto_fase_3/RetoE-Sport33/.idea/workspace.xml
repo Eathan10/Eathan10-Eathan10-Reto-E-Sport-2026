@@ -1,42 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="eb6054c9-2684-4387-afef-58c3ca4eb652" name="Changes" comment="commit">
-<<<<<<< HEAD
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/AlCompeticionVistaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/AlCompeticionVistaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/AltaCompeticion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/AltaCompeticion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/AltaEquipo-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/AltaEquipo-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/AltaJugador.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/AltaJugador.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/BajaCompeticion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/BajaCompeticion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/BajaEquipo-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/BajaEquipo-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/BajaJugador.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/BajaJugador.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/GestionJornada-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/GestionJornada-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarCompeticion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarCompeticion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarEquipo-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarEquipo-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarEquipo2-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarEquipo2-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarJugador.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarJugador.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/administrador.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/administrador.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/perfil-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/perfil-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/usuario-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/usuario-view.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/verEquipos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/verEquipos.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/verJugadores.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/verJugadores.fxml" afterDir="false" />
-=======
       <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/CompeticionGestionController.java" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/CompeticionGestion.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/AlCompeticionVistaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/AlCompeticionVistaController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/BaCompeticionVistaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/BaCompeticionVistaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/CompeticionController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/CompeticionVistaController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/MoCompeticionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/MoCompeticionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/CompeticionVistaController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Jugador/ModificarJugadorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Jugador/ModificarJugadorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/JugadorVistaController.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CompeticionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CompeticionDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/JugadorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/JugadorDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Modelo/Competicion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modelo/Competicion.java" afterDir="false" />
@@ -47,7 +20,6 @@
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarCompeticion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarCompeticion.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/competicion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/competicion.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/jugadorVista.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/jugadorVista.fxml" afterDir="false" />
->>>>>>> b734a0f2c531b27a090b7af1f25d6c6952e50927
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,226 +28,52 @@
   </component>
   <component name="CopilotPersistence">
     <persistenceIdMap>
-      <entry key="_C:/Users/141GA07/Eathan10-Eathan10-Reto-E-Sport-2026/Programacion/Reto_fase_3/RetoE-Sport33" value="3BeohgkRdklMAsVSkWajWDwA1L2" />
+      <entry key="_C:/Users/141ga08/Desktop/Reto Fase 3/Programacion/Reto_fase_3/RetoE-Sport33" value="3Cej1HRJKS3yqBSUer4Orf4X976" />
     </persistenceIdMap>
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="JUnit5 Test Class" />
-        <option value="FxmlFile" />
-        <option value="Class" />
-      </list>
-    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
-  <component name="GitHubPullRequestSearchHistory">{
-  &quot;lastFilter&quot;: {
-    &quot;state&quot;: &quot;OPEN&quot;,
-    &quot;assignee&quot;: &quot;UrkoLopezDeMunain11&quot;
-  }
-}</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/Eathan10/Eathan10-Eathan10-Reto-E-Sport-2026.git",
-    "accountId": "aba53958-e74c-4908-9f7a-1e0b3e8f8d9c"
-  }
-}]]></component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHomeTypeForPersistence" value="WRAPPER" />
-      </MavenGeneralSettings>
-    </option>
-  </component>
-  <component name="ProblemsViewState">
-    <option name="selectedTabId" value="CurrentFile" />
-  </component>
   <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 7,
-  &quot;fromUser&quot;: false
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
 }</component>
-  <component name="ProjectId" id="3BeohgkRdklMAsVSkWajWDwA1L2" />
+  <component name="ProjectId" id="3Cej1HRJKS3yqBSUer4Orf4X976" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-<<<<<<< HEAD
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
-    &quot;Application.MainApplication.executor&quot;: &quot;Run&quot;,
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;ramaFatima&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/wolfk/Eathan10-Eathan10-Reto-E-Sport-2026/Programacion/Reto_fase_3/RetoE-Sport33&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;rama-eathan&quot;,
     &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
-=======
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.MainApplication.executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "ramaUrko",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/141GA07/Eathan10-Eathan10-Reto-E-Sport-2026/Programacion/Reto_fase_3/RetoE-Sport33",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
->>>>>>> ef850fbb1072ac398b7c203cde94538e6bda7aa6
   }
-}]]></component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ulang\OneDrive\Escritorio\Eathan10-Eathan10-Reto-E-Sport-2026\Programacion\Reto_fase_3\RetoE-Sport33\src\main\java\Modelo" />
-    </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
-    <key name="CreateTestDialog.RecentsKey">
-      <recent name="Test" />
-      <recent name="Modelo" />
-    </key>
-    <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="Modelo" />
-    </key>
-  </component>
-  <component name="RunManager">
-    <configuration default="true" type="JetRunConfigurationType">
-      <module name="RetoE-Sport33" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
-      <module name="RetoE-Sport33" />
-      <option name="filePath" />
-      <method v="2" />
-    </configuration>
-  </component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-<<<<<<< HEAD
         <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
         <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.26830.84" />
-<<<<<<< HEAD
-=======
-=======
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
->>>>>>> ef850fbb1072ac398b7c203cde94538e6bda7aa6
->>>>>>> b734a0f2c531b27a090b7af1f25d6c6952e50927
       </set>
     </attachedChunks>
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="eb6054c9-2684-4387-afef-58c3ca4eb652" name="Changes" comment="" />
-      <created>1774859018443</created>
+      <changelist id="53fe0b79-a14b-4013-9592-64e33225d295" name="Changes" comment="" />
+      <created>1776752714167</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1774859018443</updated>
-      <workItem from="1774859019855" duration="5250000" />
-      <workItem from="1774938297867" duration="5481000" />
-      <workItem from="1775033308964" duration="4397000" />
-      <workItem from="1776242853156" duration="9757000" />
-      <workItem from="1776327079361" duration="173000" />
-      <workItem from="1776327322707" duration="218000" />
-      <workItem from="1776327566193" duration="117000" />
-      <workItem from="1776327752180" duration="631000" />
-      <workItem from="1776328595228" duration="241000" />
-      <workItem from="1776329308027" duration="389000" />
-      <workItem from="1776329704275" duration="256000" />
-      <workItem from="1776336410092" duration="675000" />
-      <workItem from="1776422995262" duration="65000" />
-<<<<<<< HEAD
-      <workItem from="1776666184930" duration="6533000" />
-      <workItem from="1776673910238" duration="40000" />
-      <workItem from="1776673994934" duration="21648000" />
-=======
-<<<<<<< HEAD
-      <workItem from="1776666184930" duration="6533000" />
-      <workItem from="1776673910238" duration="40000" />
-      <workItem from="1776673994934" duration="3927000" />
-=======
-      <workItem from="1776668373139" duration="1603000" />
->>>>>>> ef850fbb1072ac398b7c203cde94538e6bda7aa6
->>>>>>> b734a0f2c531b27a090b7af1f25d6c6952e50927
+      <updated>1776752714167</updated>
+      <workItem from="1776752715831" duration="141000" />
+      <workItem from="1776752868022" duration="19000" />
+      <workItem from="1776752909849" duration="159000" />
     </task>
-    <task id="LOCAL-00001" summary="commit">
-      <option name="closed" value="true" />
-      <created>1776512093665</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1776512093665</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-  </component>
-  <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$USER_HOME$" />
-    </ignored-roots>
-    <MESSAGE value="commit" />
-    <option name="LAST_COMMIT_MESSAGE" value="commit" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
-  </component>
-  <component name="github-copilot-workspace">
-    <instructionFileLocations>
-      <option value=".github/instructions" />
-    </instructionFileLocations>
-    <promptFileLocations>
-      <option value=".github/prompts" />
-    </promptFileLocations>
   </component>
 </project>
