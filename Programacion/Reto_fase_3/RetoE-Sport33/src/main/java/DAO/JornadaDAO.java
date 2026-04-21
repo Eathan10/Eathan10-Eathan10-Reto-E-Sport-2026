@@ -5,6 +5,7 @@ import Utilidades.BaseDatos;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 /**
@@ -42,5 +43,29 @@ public class JornadaDAO {
                 throw new RuntimeException(e);
             }
         }
+    }
+
+    public Jornada obtenerUltima() {
+        Jornada jornada = null;
+        String sql = "SELECT * FROM (SELECT * FROM jornadas ORDER BY num_jornada DESC) WHERE ROWNUM <= 1";
+
+        try {
+            Connection conn = BaseDatos.getConnection();
+            PreparedStatement ps = conn.prepareStatement(sql);
+            ResultSet rs = ps.executeQuery();
+
+
+
+            if (rs.next()) {
+                jornada = new Jornada();
+                jornada.setNumJornada(rs.getInt("num_jornada"));
+                jornada.setFecha_inicio(rs.getDate("fecha").toLocalDate());
+            }
+        } catch (SQLException e) {
+            System.out.println("Error al recuperar la última jornada: " + e.getMessage());
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
+        return jornada;
     }
 }

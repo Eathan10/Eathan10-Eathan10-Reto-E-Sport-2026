@@ -19,4 +19,9 @@ public class JornadaController {
         JornadaDAO jornadaDAO = new JornadaDAO();
         jornadaDAO.crearJornada(jornadaNueva);
     }
+
+    public static Jornada obtenerUltimaJornada() {
+        JornadaDAO jornadaDAO = new JornadaDAO();
+        return jornadaDAO.obtenerUltima();
+    }
 }

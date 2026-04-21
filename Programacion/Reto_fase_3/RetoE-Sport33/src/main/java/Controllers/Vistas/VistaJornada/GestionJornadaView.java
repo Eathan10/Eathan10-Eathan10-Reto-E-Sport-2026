@@ -33,45 +33,13 @@ public class GestionJornadaView {
 
     @FXML
     void onCancelar(ActionEvent event) {
-
-    }
-
-    @FXML
-    void onGuardar(ActionEvent event) {
-        String numJornadaStr = tfMNumeroJornada.getText().trim();
-        LocalDate fecha = dpFecha.getValue();
-
-        // validamos si estan vacion o o los campos
-        if (!numJornadaStr.isEmpty() && fecha != null) {
-            try {
-                int numJornada = Integer.parseInt(numJornadaStr);
-                Jornada jornadaNueva = new Jornada(numJornada, fecha);
-
-
-                Controllers.JornadaController.crearJornada(jornadaNueva);
-
-                // lllamar al abrir ventana para q me lleve a la siguiente venatana
-                abrirVentanaPartidos(jornadaNueva);
-
-            } catch (NumberFormatException e) {
-                mostrarAlerta("Error", "El número de jornada debe ser un número.");
-            } catch (IOException e) {
-                mostrarAlerta("Error", "No se encontró el archivo FXML.");
-            }
-        } else {
-            mostrarAlerta("Campos vacíos", "Rellena el número y la fecha.");
-        }
-    }
-
-
-    private void abrirVentanaPartidos(Jornada jornadaNueva) throws IOException {
         try {
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("/vistas/competicion-view.fxml"));
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("/com/example/retoesport33/menuAdministrador-view.fxml"));
             Parent root = loader.load();
 
 
             Stage stage = new Stage();
-            stage.setTitle("Añadir" + jornadaNueva.getNumJornada());
+            stage.setTitle("Menu de Administrador");
             stage.setScene(new Scene(root));
             stage.show();
 
@@ -79,6 +47,40 @@ public class GestionJornadaView {
             mostrarAlerta("Error al cargar la ventana", "No se pudo abrir la ventana de competicion.");
         }
     }
+
+
+
+    @FXML
+    void onGuardar(ActionEvent event) {
+        String numJornadaStr = tfMNumeroJornada.getText().trim();
+        LocalDate fecha = dpFecha.getValue();
+
+        if (!numJornadaStr.isEmpty() && fecha != null) {
+            try {
+                int numJornada = Integer.parseInt(numJornadaStr);
+                Jornada jornadaNueva = new Jornada(numJornada, fecha);
+
+                Controllers.JornadaController.crearJornada(jornadaNueva);
+
+                // alerta
+                Alert exito = new Alert(Alert.AlertType.INFORMATION);
+                exito.setTitle("Éxito");
+                exito.setHeaderText(null);
+                exito.setContentText("La jornada " + numJornada + " se ha guardado correctamente.");
+                exito.showAndWait();
+
+
+                Stage actual = (Stage) btnGuardar.getScene().getWindow();
+                actual.close();
+
+            } catch (NumberFormatException e) {
+                mostrarAlerta("Error", "El número de jornada debe ser un número.");
+            }
+        } else {
+            mostrarAlerta("Campos vacíos", "Rellena el número y la fecha.");
+        }
+    }
+
 
     private void mostrarAlerta(String titulo, String mensaje) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
@@ -88,7 +90,7 @@ public class GestionJornadaView {
         alert.showAndWait();
     }
 
-    public void agregarPartidoATabla(Partido nuevoPartido) {
 
-    }
+
+
 }
