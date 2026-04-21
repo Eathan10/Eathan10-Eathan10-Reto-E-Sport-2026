@@ -43,7 +43,7 @@ public class AlCompeticionVistaController {
     private void initialize() {
         competicionDAO = new CompeticionDAO(BaseDatos.getConnection());
 
-        cbEstado.setItems(FXCollections.observableArrayList("abierto", "cerrado"));
+        cbEstado.setItems(FXCollections.observableArrayList("abierto"));
         cbEstado.getSelectionModel().selectFirst();
     }
 

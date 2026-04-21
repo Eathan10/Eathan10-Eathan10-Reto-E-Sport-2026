@@ -5,35 +5,13 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="eb6054c9-2684-4387-afef-58c3ca4eb652" name="Changes" comment="commit">
-      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/CompeticionGestionController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/CompeticionGestion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/AlCompeticionVistaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/AlCompeticionVistaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/BaCompeticionVistaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/BaCompeticionVistaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/CompeticionController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/CompeticionVistaController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/CompeticionGestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/CompeticionGestionController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/MoCompeticionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/MoCompeticionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/CompeticionVistaController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Jugador/AltaJugadorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Jugador/AltaJugadorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Jugador/BajaJugadorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Jugador/BajaJugadorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Jugador/JugadorGestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Jugador/JugadorGestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Jugador/ModificarJugadorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Jugador/ModificarJugadorController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/JugadorVistaController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/VistaAdministradorUsuario/menuAdmistradorView.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/VistaAdministradorUsuario/menuAdmistradorView.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/verJugadpresController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/verJugadpresController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CompeticionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CompeticionDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/JugadorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/JugadorDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Modelo/Competicion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modelo/Competicion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Modelo/Jugador.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modelo/Jugador.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Utilidades/BaseDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utilidades/BaseDatos.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/AltaCompeticion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/AltaCompeticion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/AltaJugador.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/AltaJugador.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/BajaCompeticion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/BajaCompeticion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/JugadorGestion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/JugadorGestion.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarCompeticion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarCompeticion.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/competicion.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/jugadorVista.fxml" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -172,7 +150,7 @@
       <workItem from="1776422995262" duration="65000" />
       <workItem from="1776666184930" duration="6533000" />
       <workItem from="1776673910238" duration="40000" />
-      <workItem from="1776673994934" duration="14127000" />
+      <workItem from="1776673994934" duration="18713000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />

@@ -16,6 +16,7 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.sql.SQLException;
 
 public class MoCompeticionController {
 
@@ -24,6 +25,9 @@ public class MoCompeticionController {
 
     @FXML
     private Button BtnVolver;
+
+    @FXML
+    private Button BtnBuscar;
 
     @FXML
     private ComboBox<String> cbEstado;
@@ -47,30 +51,65 @@ public class MoCompeticionController {
     }
 
     @FXML
+    void onBuscar(ActionEvent event) {
+        String codigoStr = tfCodigo.getText().trim();
+        if (codigoStr.isEmpty()) {
+            mostrarAlerta(Alert.AlertType.WARNING, "El campo de código no puede estar vacío.", "Introduzca un código para buscar la competición.");
+            return;
+        }
+        try {
+            int codigo = Integer.parseInt(codigoStr);
+            Competicion competicion = competicionDAO.buscarPorCodigo(codigo);
+
+            if (competicion != null) {
+                tfNombre.setText(competicion.getNombre());
+                cbEstado.setValue(competicion.getEstado());
+                tfPremio.setText(String.valueOf(competicion.getPremio()));
+                tfCodigo.setEditable(false);
+
+                if (competicion.getEstado().equalsIgnoreCase("cerrado")) {
+                    mostrarAlerta(Alert.AlertType.WARNING, "Estado: Cerrado", "Esta competición está cerrada. No se pueden modificar sus datos.");
+                    BtnActualizar.setDisable(true);
+                } else {
+                    BtnActualizar.setDisable(false);
+                    tfPremio.setEditable(true);
+                }
+            } else {
+                mostrarAlerta(Alert.AlertType.ERROR, "Competición no encontrada.", "No se encontró ninguna competición con el código proporcionado.");
+            }
+        }catch (NumberFormatException e) {
+            mostrarAlerta(Alert.AlertType.ERROR, "Código inválido.", "El código debe ser un número entero.");
+        } catch (Exception e) {
+            mostrarAlerta(Alert.AlertType.ERROR, "Error al buscar la competición.", "Ocurrió un error al buscar la competición: " + e.getMessage());
+        }
+    }
+
+    @FXML
     void onActualizar(ActionEvent event) {
         try {
-            if (tfCodigo.getText().isEmpty() || tfNombre.getText().isEmpty() || tfPremio.getText().isEmpty()) {
-                mostrarAlerta("Error", "Todos los campos deben ser completados.");
+            if (tfNombre.getText().isEmpty() || tfPremio.getText().isEmpty()) {
+                mostrarAlerta(Alert.AlertType.WARNING, "Datos incompletos", "Rellena todos los campos.");
                 return;
             }
 
-            int codigo = Integer.parseInt(tfCodigo.getText());
-            String nombre = tfNombre.getText();
-            String estado = cbEstado.getValue();
-            double premio = Double.parseDouble(tfPremio.getText());
+            Competicion compe = new Competicion(
+                    Integer.parseInt(tfCodigo.getText()),
+                    tfNombre.getText(),
+                    cbEstado.getValue(),
+                    Double.parseDouble(tfPremio.getText())
+            );
 
-            Competicion competicion = new Competicion(codigo, nombre, estado, premio);
-
-            competicionDAO.actualizarCompeticion(competicion);
-            mostrarAlerta("Éxito", "Competición con código " + codigo + " actualizada correctamente.");
+            competicionDAO.actualizarCompeticion(compe);
+            mostrarAlerta(Alert.AlertType.INFORMATION, "Éxito", "Competición actualizado correctamente.");
             onVolver(event);
 
+        } catch (SQLException e){
+            mostrarAlerta(Alert.AlertType.ERROR, "Error de Validación (Oracle)", e.getMessage());
         } catch (NumberFormatException e) {
-            mostrarAlerta("Error", "El código debe ser un número entero y el premio un número decimal.");
+            mostrarAlerta(Alert.AlertType.ERROR, "Formato inválido.", " El premio debe ser un número decimal.");
         } catch (Exception e) {
-            mostrarAlerta("Error", "No se pudo actualizar la competición: " + e.getMessage());
+            mostrarAlerta(Alert.AlertType.ERROR, "Error al actualizar la competición.", "Ocurrió un error al actualizar la competición: " + e.getMessage());
         }
-
     }
 
     @FXML
@@ -88,13 +127,12 @@ public class MoCompeticionController {
         }
     }
 
-    private void mostrarAlerta(String titulo, String mensaje) {
-        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+    private void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensaje) {
+        Alert alert = new Alert(tipo);
         alert.setTitle(titulo);
         alert.setHeaderText(null);
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
-
 }
 

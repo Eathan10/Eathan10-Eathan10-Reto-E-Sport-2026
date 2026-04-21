@@ -10,6 +10,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -104,8 +105,16 @@ private void cambiarVentana(ActionEvent event, String fxml, String titulo) {
         stage.setTitle(titulo);
         stage.show();
     } catch (IOException e) {
-        System.err.println("Error al cambiar de ventana: " + e.getMessage());
+        mostrarAlerta(Alert.AlertType.ERROR, "ERROR", "No se encontró la vista" + fxml);
         e.printStackTrace();
     }
 }
+
+    private void mostrarAlerta(Alert.AlertType tipo, String titulo, String mensaje) {
+        Alert alert = new Alert(tipo);
+        alert.setTitle(titulo);
+        alert.setHeaderText(null);
+        alert.setContentText(mensaje);
+        alert.showAndWait();
+    }
 }

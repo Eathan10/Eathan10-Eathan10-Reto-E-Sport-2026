@@ -2,7 +2,10 @@ package Controllers;
 
 import DAO.JugadorDAO;
 import Modelo.Jugador;
+import Utilidades.BaseDatos;
 
+import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -13,13 +16,18 @@ import java.util.List;
  */
 public class verJugadpresController {
 
-    private JugadorDAO jugadorDao = new JugadorDAO();
+    private JugadorDAO jugadorDao = new JugadorDAO(BaseDatos.getConnection());
 
     /**
      * obtiene la lista completa de jugadores
      * @return Una lista de objetos jugador con toda la su informacion
      */
     public List<Jugador> getListaParaLaTabla() {
-        return jugadorDao.obtenerTodos();
+        try {
+            return jugadorDao.obtenerTodos();
+        }catch (SQLException e) {
+            e.printStackTrace();
+            return new ArrayList<>();
+        }
     }
 }
