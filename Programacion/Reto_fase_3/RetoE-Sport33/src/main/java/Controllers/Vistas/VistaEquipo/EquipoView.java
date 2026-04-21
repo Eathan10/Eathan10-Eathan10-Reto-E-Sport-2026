@@ -1,4 +1,4 @@
-package Controllers.VistaEquipo;
+package Controllers.Vistas.VistaEquipo;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;

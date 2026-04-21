@@ -10,7 +10,10 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+<<<<<<< HEAD:Programacion/Reto_fase_3/RetoE-Sport33/src/main/java/Controllers/Competicion/CompeticionGestionController.java
 import javafx.scene.control.Alert;
+=======
+>>>>>>> b734a0f2c531b27a090b7af1f25d6c6952e50927:Programacion/Reto_fase_3/RetoE-Sport33/src/main/java/Controllers/Vistas/Competicion/CompeticionGestionController.java
 import javafx.scene.control.Button;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
@@ -105,6 +108,7 @@ private void cambiarVentana(ActionEvent event, String fxml, String titulo) {
         stage.setTitle(titulo);
         stage.show();
     } catch (IOException e) {
+<<<<<<< HEAD:Programacion/Reto_fase_3/RetoE-Sport33/src/main/java/Controllers/Competicion/CompeticionGestionController.java
         mostrarAlerta(Alert.AlertType.ERROR, "ERROR", "No se encontró la vista" + fxml);
         e.printStackTrace();
     }
@@ -117,4 +121,10 @@ private void cambiarVentana(ActionEvent event, String fxml, String titulo) {
         alert.setContentText(mensaje);
         alert.showAndWait();
     }
+=======
+        System.err.println("Error al cambiar de ventana: " + e.getMessage());
+        e.printStackTrace();
+    }
+}
+>>>>>>> b734a0f2c531b27a090b7af1f25d6c6952e50927:Programacion/Reto_fase_3/RetoE-Sport33/src/main/java/Controllers/Vistas/Competicion/CompeticionGestionController.java
 }

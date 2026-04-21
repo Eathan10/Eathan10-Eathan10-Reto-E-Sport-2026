@@ -1,4 +1,4 @@
-package Controllers.VistaVer;
+package Controllers.Vistas.VistaVer;
 
 import Controllers.verJugadpresController;
 import Modelo.Jugador;

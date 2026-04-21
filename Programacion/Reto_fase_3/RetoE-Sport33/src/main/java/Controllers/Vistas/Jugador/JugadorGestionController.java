@@ -1,19 +1,17 @@
-package Controllers.Jugador;
+package Controllers.Vistas.Jugador;
 
 import DAO.JugadorDAO;
-import Modelo.Jugador;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
-import javafx.scene.Node;
 import javafx.scene.Parent;
+<<<<<<< HEAD:Programacion/Reto_fase_3/RetoE-Sport33/src/main/java/Controllers/Jugador/JugadorGestionController.java
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+=======
+>>>>>>> b734a0f2c531b27a090b7af1f25d6c6952e50927:Programacion/Reto_fase_3/RetoE-Sport33/src/main/java/Controllers/Vistas/Jugador/JugadorGestionController.java
 import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Stage;
-
-import java.io.IOException;
 
 public class JugadorGestionController {
 
