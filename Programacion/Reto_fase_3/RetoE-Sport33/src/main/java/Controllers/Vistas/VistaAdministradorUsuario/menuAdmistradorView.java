@@ -59,7 +59,9 @@ public class  menuAdmistradorView {
 
     @FXML
     void onJugador(ActionEvent event) {
-        abrirVentana("/com/example/retoesport33/jugadorVista.fxml", "Gestión de Jugadores")  ;
+
+        abrirVentana("/vistas/JugadorGestion.fxml", "Gestión de Jugadores")  ;
+
     }
 
 

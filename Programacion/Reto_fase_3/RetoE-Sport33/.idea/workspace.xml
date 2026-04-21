@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="53fe0b79-a14b-4013-9592-64e33225d295" name="Changes" comment="" />
+    <list default="true" id="eb6054c9-2684-4387-afef-58c3ca4eb652" name="Changes" comment="commit">
+      <change afterPath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/CompeticionGestionController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/CompeticionGestion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/AlCompeticionVistaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/AlCompeticionVistaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/BaCompeticionVistaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/BaCompeticionVistaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/MoCompeticionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/MoCompeticionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Jugador/ModificarJugadorController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Jugador/ModificarJugadorController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CompeticionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CompeticionDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/JugadorDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/JugadorDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Modelo/Competicion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Modelo/Competicion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Utilidades/BaseDatos.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Utilidades/BaseDatos.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/module-info.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/module-info.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/AltaCompeticion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/AltaCompeticion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/BajaCompeticion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/BajaCompeticion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarCompeticion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarCompeticion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/competicion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/competicion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/jugadorVista.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/jugadorVista.fxml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -36,8 +55,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-fbdcb00ec9e3-intellij.indexing.shared.core-IU-251.26927.53" />
-        <option value="bundled-js-predefined-d6986cc7102b-09060db00ec0-JavaScript-IU-251.26927.53" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.26830.84" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-IU-252.26830.84" />
       </set>
     </attachedChunks>
   </component>
@@ -56,13 +75,5 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="github-copilot-workspace">
-    <instructionFileLocations>
-      <option value=".github/instructions" />
-    </instructionFileLocations>
-    <promptFileLocations>
-      <option value=".github/prompts" />
-    </promptFileLocations>
   </component>
 </project>

@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<?import javafx.scene.control.*?>
-<?import javafx.scene.layout.*?>
-<?import javafx.scene.text.*?>
 
-<<<<<<< HEAD
-<AnchorPane prefHeight="200.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controladores.Competicion.BaCompeticionVistaController">
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="320.0" prefWidth="450.0" spacing="25" style="-fx-padding: 40; -fx-background-color: #F4F9F4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Competicion.BaCompeticionVistaController">
     <children>
-        <Label layoutX="96.0" layoutY="25.0" text="ELIMINAR COMPETICIÓN">
-            <font><Font name="System Bold" size="18.0" /></font>
-        </Label>
-        <Label layoutX="50.0" layoutY="80.0" text="Introduce el Código de la Competición:" />
-        <TextField fx:id="tfCodigo" layoutX="50.0" layoutY="105.0" prefWidth="300.0" promptText="Ej: 101" />
-        <Button fx:id="BtnEliminar" layoutX="120.0" layoutY="150.0" onAction="#onEliminar" style="-fx-background-color: #d6cfda; -fx-text-fill: white;" text="Eliminar" />
-        <Button fx:id="BtnVolver" layoutX="210.0" layoutY="150.0" onAction="#onVolver" text="Volver" />
-    </children>
-=======
-<AnchorPane xmlns="http://javafx.com/javafx"
-            xmlns:fx="http://javafx.com/fxml"
-            fx:controller="Controllers.Vistas.Competicion.BaCompeticionVistaController"
-            prefHeight="400.0" prefWidth="600.0">
+        <Label style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #1B5E20;" text="ELIMINAR COMPETICIÓN" />
 
->>>>>>> ef850fbb1072ac398b7c203cde94538e6bda7aa6
-</AnchorPane>
+        <VBox spacing="10" style="-fx-background-color: #E8F5E9; -fx-padding: 15; -fx-background-radius: 10; -fx-border-color: #C8E6C9; -fx-border-radius: 10;">
+            <children>
+                <Label style="-fx-font-weight: bold; -fx-text-fill: #1B5E20;" text="Código de la Competición:" />
+                <TextField fx:id="tfCodigo" prefHeight="40.0" promptText="Introduce el ID (ej: 101)" style="-fx-background-radius: 5; -fx-border-color: #BDC3C7;" />
+            </children>
+        </VBox>
+
+        <HBox alignment="CENTER" spacing="15">
+            <children>
+                <Button fx:id="BtnEliminar" onAction="#onEliminar" prefHeight="45.0" prefWidth="140.0" style="-fx-background-color: #1B5E20; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-cursor: hand;" text="ELIMINAR" />
+                <Button fx:id="BtnVolver" onAction="#onVolver" prefHeight="45.0" prefWidth="140.0" style="-fx-background-color: #95A5A6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-cursor: hand;" text="VOLVER" />
+            </children>
+        </HBox>
+    </children>
+</VBox>
