@@ -8,57 +8,65 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox prefHeight="380.0" prefWidth="450.0" spacing="15" style="-fx-padding: 25;" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Jugador.AltaJugadorController">
+<VBox prefHeight="450.0" prefWidth="500.0" spacing="15" style="-fx-padding: 30; -fx-background-color: #F4F9F4;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.Jugador.AltaJugadorController">
+    <children>
+        <Label alignment="CENTER" prefWidth="440.0" style="-fx-font-size: 24; -fx-font-weight: bold; -fx-text-fill: #1B5E20;" text="ALTA DE JUGADOR" />
 
-    <Label alignment="CENTER" prefWidth="400.0" style="-fx-font-size: 18; -fx-font-weight: bold;" text="ALTA DE JUGADOR" />
+        <GridPane hgap="15" vgap="12">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50" />
+                <ColumnConstraints percentWidth="50" />
+            </columnConstraints>
 
-    <GridPane hgap="12" vgap="10">
-        <columnConstraints>
-            <ColumnConstraints percentWidth="50" />
-            <ColumnConstraints percentWidth="50" />
-        </columnConstraints>
+            <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;" text="Nombre" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <TextField fx:id="tfNombre" style="-fx-background-radius: 5; -fx-border-color: #DCDCDC; -fx-border-radius: 5;" GridPane.columnIndex="0" GridPane.rowIndex="1" />
 
-        <Label text="Nombre" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <TextField fx:id="tfNombre" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+            <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;" text="Nickname" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <TextField fx:id="tfNickname" style="-fx-background-radius: 5; -fx-border-color: #DCDCDC; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
-        <Label text="Nickname" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-        <TextField fx:id="tfNickname" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;" text="Apellido" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+            <TextField fx:id="tfApellido" style="-fx-background-radius: 5; -fx-border-color: #DCDCDC; -fx-border-radius: 5;" GridPane.columnIndex="0" GridPane.rowIndex="3" />
 
-        <Label text="Apellido" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-        <TextField fx:id="tfApellido" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+            <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;" text="Nacionalidad" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="tfNacionalidad" style="-fx-background-radius: 5; -fx-border-color: #DCDCDC; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
 
-        <Label text="Nacionalidad" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-        <TextField fx:id="tfNacionalidad" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;" text="Fecha Nacimiento" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+            <TextField fx:id="tfNacimiento" promptText="dd/mm/yyyy" style="-fx-background-radius: 5; -fx-border-color: #DCDCDC; -fx-border-radius: 5;" GridPane.columnIndex="0" GridPane.rowIndex="5" />
 
-        <Label text="Fecha Nacimiento (dd/MM/yyyy)" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-        <TextField fx:id="tfNacimiento" promptText="25/05/1998" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+            <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;" text="Sueldo (€)" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="tfSueldo" style="-fx-background-radius: 5; -fx-border-color: #DCDCDC; -fx-border-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="5" />
 
-        <Label text="Sueldo (€)" GridPane.columnIndex="1" GridPane.rowIndex="4" />
-        <TextField fx:id="tfSueldo" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;" text="Rol" GridPane.columnIndex="0" GridPane.rowIndex="6" />
+            <ComboBox fx:id="cbRol" maxWidth="Infinity" style="-fx-background-radius: 5;" GridPane.columnIndex="0" GridPane.rowIndex="7" />
 
-        <Label text="Rol" GridPane.columnIndex="0" GridPane.rowIndex="6" />
-        <ComboBox fx:id="cbRol" maxWidth="Infinity" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+            <Label style="-fx-text-fill: #2c3e50; -fx-font-weight: bold;" text="Asignar Equipo" GridPane.columnIndex="1" GridPane.rowIndex="6" />
+            <ComboBox fx:id="cbEquipo" maxWidth="Infinity" style="-fx-background-radius: 5;" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints />
+            </rowConstraints>
+        </GridPane>
 
-        <Label text="Asignar Equipo" GridPane.columnIndex="1" GridPane.rowIndex="6" />
-        <ComboBox fx:id="cbEquipo" maxWidth="Infinity" GridPane.columnIndex="1" GridPane.rowIndex="7" />
-
-        <rowConstraints>
-            <RowConstraints /> <RowConstraints /> <RowConstraints /> <RowConstraints />
-            <RowConstraints /> <RowConstraints /> <RowConstraints /> <RowConstraints />
-        </rowConstraints>
-    </GridPane>
-
-    <GridPane hgap="20" style="-fx-padding: 10 0 0 0;">
-        <columnConstraints>
-            <ColumnConstraints percentWidth="50" />
-            <ColumnConstraints percentWidth="50" />
-        </columnConstraints>
-
-        <Button fx:id="BtnGuardar" maxWidth="Infinity" onAction="#onGuardar" prefHeight="35.0" text="Guardar Registro" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <Button fx:id="BtnVolver" maxWidth="Infinity" onAction="#onVolver" prefHeight="35.0" text="Cancelar" GridPane.columnIndex="1" GridPane.rowIndex="0" />
-        <rowConstraints>
-            <RowConstraints />
-        </rowConstraints>
-    </GridPane>
+        <GridPane hgap="20" style="-fx-padding: 20 0 0 0;">
+            <columnConstraints>
+                <ColumnConstraints percentWidth="50" />
+                <ColumnConstraints percentWidth="50" />
+            </columnConstraints>
+            <children>
+                <Button fx:id="BtnGuardar" maxWidth="Infinity" mnemonicParsing="false" onAction="#onGuardar" prefHeight="40.0" style="-fx-background-color: #2ECC71; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-cursor: hand;" text="GUARDAR REGISTRO" GridPane.columnIndex="0" />
+                <Button fx:id="BtnVolver" maxWidth="Infinity" mnemonicParsing="false" onAction="#onVolver" prefHeight="40.0" style="-fx-background-color: #95A5A6; -fx-text-fill: white; -fx-font-weight: bold; -fx-background-radius: 8; -fx-cursor: hand;" text="CANCELAR" GridPane.columnIndex="1" />
+            </children>
+            <rowConstraints>
+                <RowConstraints />
+            </rowConstraints>
+        </GridPane>
+    </children>
 </VBox>

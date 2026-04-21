@@ -7,11 +7,22 @@
     <list default="true" id="eb6054c9-2684-4387-afef-58c3ca4eb652" name="Changes" comment="commit">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/AlCompeticionVistaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/AlCompeticionVistaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/CompeticionGestionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/CompeticionGestionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/MoCompeticionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/Competicion/MoCompeticionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Controllers/verJugadpresController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Controllers/verJugadpresController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/DAO/CompeticionDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/DAO/CompeticionDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/AltaCompeticion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/AltaCompeticion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/AltaEquipo-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/AltaEquipo-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/AltaJugador.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/AltaJugador.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/BajaCompeticion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/BajaCompeticion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/BajaEquipo-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/BajaEquipo-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/BajaJugador.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/BajaJugador.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/GestionJornada-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/GestionJornada-view.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarCompeticion.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarCompeticion.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarEquipo-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarEquipo-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarEquipo2-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarEquipo2-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarJugador.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/ModificarJugador.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/administrador.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/administrador.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/perfil-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/perfil-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/usuario-view.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/usuario-view.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/verEquipos.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/verEquipos.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/verJugadores.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/com/example/retoesport33/verJugadores.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -150,7 +161,7 @@
       <workItem from="1776422995262" duration="65000" />
       <workItem from="1776666184930" duration="6533000" />
       <workItem from="1776673910238" duration="40000" />
-      <workItem from="1776673994934" duration="18713000" />
+      <workItem from="1776673994934" duration="21648000" />
     </task>
     <task id="LOCAL-00001" summary="commit">
       <option name="closed" value="true" />
